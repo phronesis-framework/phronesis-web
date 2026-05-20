@@ -1,4 +1,5 @@
 import * as React from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface LogoProps extends React.HTMLAttributes<HTMLAnchorElement> {
@@ -47,14 +48,14 @@ export function Logo({
   }
 
   return (
-    <a
+    <Link
       href="/"
       aria-label="Phronesis — home"
       className={classes}
       {...props}
     >
       {inner}
-    </a>
+    </Link>
   );
 }
 

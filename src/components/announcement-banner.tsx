@@ -24,13 +24,15 @@ export function AnnouncementBanner({
 
   // Read dismissal state from localStorage after mount to avoid SSR mismatch.
   React.useEffect(() => {
-    setMounted(true);
+    let stored: string | null = null;
     try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      setDismissed(stored === "true");
+      stored = window.localStorage.getItem(STORAGE_KEY);
     } catch {
-      setDismissed(false);
+      stored = null;
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setDismissed(stored === "true");
+    setMounted(true);
   }, []);
 
   const onDismiss = React.useCallback(() => {

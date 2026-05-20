@@ -10,6 +10,9 @@ export function ThemeToggle({ className }: { className?: string }) {
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
+    // Defer to next tick so the initial render matches SSR markup; only after
+    // hydration do we reveal the theme-dependent icon.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
