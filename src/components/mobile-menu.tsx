@@ -32,12 +32,12 @@ export function MobileMenu() {
         />
         <Dialog.Content
           className={cn(
-            "border-border bg-background fixed inset-y-0 right-0 z-50 flex h-full w-full max-w-sm flex-col border-l shadow-2xl",
+            "border-border bg-background fixed inset-y-0 right-0 z-50 flex h-full w-full max-w-[20rem] flex-col border-l shadow-2xl sm:max-w-sm",
             "focus:outline-none",
           )}
           aria-describedby={undefined}
         >
-          <div className="border-border flex items-center justify-between border-b px-6 py-4">
+          <div className="border-border flex items-center justify-between border-b px-5 py-3 sm:px-6 sm:py-4">
             <Dialog.Title asChild>
               <Logo asSpan />
             </Dialog.Title>
@@ -51,7 +51,7 @@ export function MobileMenu() {
               </button>
             </Dialog.Close>
           </div>
-          <nav className="flex flex-1 flex-col gap-1 px-4 py-6" aria-label="Mobile">
+          <nav className="flex flex-1 flex-col gap-1 px-3 py-5 sm:px-4 sm:py-6" aria-label="Mobile">
             {PRIMARY_NAV.map((link) => (
               <a
                 key={link.href}
@@ -65,7 +65,7 @@ export function MobileMenu() {
               </a>
             ))}
           </nav>
-          <div className="border-border flex items-center justify-between border-t px-6 py-4">
+          <div className="border-border flex items-center justify-between border-t px-5 py-3 sm:px-6 sm:py-4">
             <ThemeToggle />
             <a
               href={GITHUB_FRAMEWORK_REPO}

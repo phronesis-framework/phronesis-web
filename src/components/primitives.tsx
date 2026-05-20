@@ -10,7 +10,7 @@ export function Container({
   return (
     <div
       className={cn(
-        "mx-auto w-full px-6 sm:px-8",
+        "mx-auto w-full px-5 sm:px-6 lg:px-8",
         size === "prose" && "max-w-[720px]",
         size === "default" && "max-w-[1080px]",
         size === "wide" && "max-w-[1200px]",
@@ -42,25 +42,27 @@ export function Section({
   ...props
 }: SectionProps) {
   return (
-    <section className={cn("py-24 sm:py-32", className)} {...props}>
+    <section className={cn("py-16 sm:py-24 lg:py-32", className)} {...props}>
       <Container size={containerSize}>
         {(eyebrow || heading || intro) && (
-          <header className="mb-12 max-w-[720px]">
+          <header className="mb-10 max-w-[720px] sm:mb-12">
             {eyebrow && (
-              <p className="text-accent mb-4 font-mono text-xs tracking-[0.18em] uppercase">
+              <p className="text-accent mb-3 font-mono text-[11px] tracking-[0.18em] uppercase sm:mb-4 sm:text-xs">
                 {eyebrow}
               </p>
             )}
             {heading && (
               <h2
                 id={headingId}
-                className="text-foreground text-3xl font-medium tracking-tight text-balance sm:text-4xl"
+                className="text-foreground text-[26px] leading-[1.15] font-medium tracking-tight text-balance sm:text-3xl sm:leading-tight md:text-4xl"
               >
                 {heading}
               </h2>
             )}
             {intro && (
-              <div className="text-muted-foreground mt-5 text-[17px] leading-[1.65]">{intro}</div>
+              <div className="text-muted-foreground mt-4 text-[15px] leading-[1.65] sm:mt-5 sm:text-[17px]">
+                {intro}
+              </div>
             )}
           </header>
         )}

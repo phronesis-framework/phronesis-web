@@ -12,21 +12,21 @@ export function Install() {
       heading="One command. Python 3.11 or newer."
       headingId="install-heading"
     >
-      <div className="border-border bg-code-background rounded-xl border p-2">
-        <div className="bg-background flex items-center justify-between gap-3 rounded-lg px-5 py-4">
-          <pre className="text-foreground overflow-x-auto font-mono text-[15px]">
-            <span className="text-muted-foreground pr-3 select-none">$</span>
+      <div className="border-border bg-code-background rounded-xl border p-1.5 sm:p-2">
+        <div className="bg-background flex items-center justify-between gap-2 rounded-lg px-3 py-3 sm:gap-3 sm:px-5 sm:py-4">
+          <pre className="text-foreground min-w-0 flex-1 overflow-x-auto font-mono text-[13px] sm:text-[15px]">
+            <span className="text-muted-foreground pr-2 select-none sm:pr-3">$</span>
             <span>{INSTALL_SNIPPET}</span>
           </pre>
           <CopyButton
             value={INSTALL_SNIPPET}
             label="Copy install command"
-            className="opacity-100"
+            className="flex-shrink-0 opacity-100"
           />
         </div>
       </div>
 
-      <div className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm">
+      <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm sm:mt-7 sm:gap-x-7">
         <a
           href={DOCS_URL}
           className="group text-foreground inline-flex items-center gap-1.5 font-medium underline-offset-4 hover:underline"

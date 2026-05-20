@@ -48,27 +48,27 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-border bg-background border-t">
-      <div className="mx-auto max-w-[1200px] px-6 py-16 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_repeat(3,1fr)] lg:gap-16">
-          <div className="max-w-sm">
+      <div className="mx-auto max-w-[1200px] px-5 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="grid gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-[1.2fr_repeat(3,1fr)] lg:gap-16">
+          <div className="sm:col-span-2 lg:col-span-1 lg:max-w-sm">
             <Logo />
-            <p className="text-muted-foreground mt-5 text-sm leading-[1.65]">
+            <p className="text-muted-foreground mt-4 text-[13px] leading-[1.65] sm:mt-5 sm:text-sm">
               An open source Python framework for AI agent systems. Typed, composable, observable.
             </p>
           </div>
           {COLUMNS.map((col) => (
             <div key={col.title}>
-              <h3 className="text-muted-foreground font-mono text-xs tracking-[0.16em] uppercase">
+              <h3 className="text-muted-foreground font-mono text-[11px] tracking-[0.16em] uppercase sm:text-xs">
                 {col.title}
               </h3>
-              <ul className="mt-5 flex flex-col gap-3">
+              <ul className="mt-4 flex flex-col gap-2.5 sm:mt-5 sm:gap-3">
                 {col.links.map((link) => (
                   <li key={`${col.title}-${link.label}`}>
                     <a
                       href={link.href}
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
-                      className="text-foreground hover:text-accent text-sm transition-colors"
+                      className="text-foreground hover:text-accent text-[13px] transition-colors sm:text-sm"
                     >
                       {link.label}
                     </a>
@@ -78,9 +78,9 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="border-border text-muted-foreground mt-14 flex flex-col items-start justify-between gap-4 border-t pt-8 text-xs sm:flex-row sm:items-center">
+        <div className="border-border text-muted-foreground mt-10 flex flex-col items-start justify-between gap-3 border-t pt-6 text-[11px] sm:mt-14 sm:gap-4 sm:pt-8 sm:text-xs md:flex-row md:items-center">
           <p>© {year} Phronesis. Apache 2.0 licensed.</p>
-          <p className="font-mono text-[11px] tracking-[0.16em] uppercase">
+          <p className="font-mono text-[10px] tracking-[0.16em] uppercase sm:text-[11px]">
             Practical wisdom for AI agent systems.
           </p>
         </div>

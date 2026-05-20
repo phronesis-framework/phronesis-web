@@ -46,21 +46,21 @@ export async function CodeBlock({
       )}
     >
       {filename && (
-        <figcaption className="border-border text-muted-foreground flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
-          <span>{filename}</span>
-          <span className="tracking-wide uppercase opacity-70">{lang}</span>
+        <figcaption className="border-border text-muted-foreground flex items-center justify-between gap-3 border-b px-3 py-2 font-mono text-[11px] sm:px-4 sm:text-xs">
+          <span className="truncate">{filename}</span>
+          <span className="flex-shrink-0 tracking-wide uppercase opacity-70">{lang}</span>
         </figcaption>
       )}
       <div className="relative">
         <CopyButton
           value={source}
           label={`Copy ${filename ?? lang} snippet`}
-          className="absolute top-3 right-3 opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100"
+          className="absolute top-2.5 right-2.5 opacity-100 transition-opacity sm:top-3 sm:right-3 md:opacity-0 md:group-hover:opacity-100 md:focus-visible:opacity-100"
         />
         <div
           aria-label={`${lang} code snippet`}
           role="region"
-          className="overflow-x-auto px-4 py-4 font-mono text-[15px] leading-relaxed [&_code]:bg-transparent [&_code]:font-mono [&_pre]:m-0 [&_pre]:bg-transparent [&_pre]:p-0"
+          className="overflow-x-auto px-3 py-3.5 font-mono text-[13px] leading-relaxed sm:px-4 sm:py-4 sm:text-[14px] md:text-[15px] [&_code]:bg-transparent [&_code]:font-mono [&_pre]:m-0 [&_pre]:bg-transparent [&_pre]:p-0"
         >
           <div className="block dark:hidden" dangerouslySetInnerHTML={{ __html: light }} />
           <div className="hidden dark:block" dangerouslySetInnerHTML={{ __html: dark }} />

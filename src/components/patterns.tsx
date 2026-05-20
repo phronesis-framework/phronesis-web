@@ -50,14 +50,14 @@ export function Patterns() {
         {PATTERNS.map((p) => (
           <li
             key={p.title}
-            className="bg-background-elevated hover:bg-background-elevated/70 flex flex-col gap-4 p-7 transition-colors"
+            className="bg-background-elevated hover:bg-background-elevated/70 flex flex-col gap-3.5 p-5 transition-colors sm:gap-4 sm:p-6 lg:p-7"
           >
-            <span className="border-border bg-background text-accent inline-flex h-10 w-10 items-center justify-center rounded-md border">
+            <span className="border-border bg-background text-accent inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md border">
               <p.icon className="h-5 w-5" aria-hidden="true" />
             </span>
             <div>
-              <h3 className="text-foreground text-lg font-medium">{p.title}</h3>
-              <p className="text-muted-foreground mt-2 text-[15px] leading-[1.6]">
+              <h3 className="text-foreground text-base font-medium sm:text-lg">{p.title}</h3>
+              <p className="text-muted-foreground mt-2 text-[14px] leading-[1.6] sm:text-[15px]">
                 {p.description}
               </p>
             </div>

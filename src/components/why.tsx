@@ -9,7 +9,7 @@ export function Why() {
       containerSize="prose"
       headingId="why-heading"
     >
-      <div className="text-muted-foreground space-y-6 text-[17px] leading-[1.7]">
+      <div className="text-muted-foreground space-y-5 text-[15px] leading-[1.65] sm:space-y-6 sm:text-[17px] sm:leading-[1.7]">
         <p>
           LLMs know things — that is <em>episteme</em>. But agents must{" "}
           <strong className="text-foreground font-medium">decide and act</strong> with judgment in

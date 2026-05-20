@@ -40,11 +40,15 @@ export function Principles() {
       heading="Six choices, applied everywhere."
       headingId="principles-heading"
     >
-      <ul className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-x-8 gap-y-9 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-3">
         {PRINCIPLES.map((p) => (
           <li key={p.title}>
-            <h3 className="text-foreground text-[17px] font-medium tracking-tight">{p.title}</h3>
-            <p className="text-muted-foreground mt-3 text-[15px] leading-[1.65]">{p.body}</p>
+            <h3 className="text-foreground text-base font-medium tracking-tight sm:text-[17px]">
+              {p.title}
+            </h3>
+            <p className="text-muted-foreground mt-2.5 text-[14px] leading-[1.6] sm:mt-3 sm:text-[15px] sm:leading-[1.65]">
+              {p.body}
+            </p>
           </li>
         ))}
       </ul>

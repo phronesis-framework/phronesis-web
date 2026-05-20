@@ -7,7 +7,7 @@ import { PRIMARY_NAV, GITHUB_FRAMEWORK_REPO } from "./nav-data";
 export function SiteHeader() {
   return (
     <header className="border-border bg-background/85 supports-[backdrop-filter]:bg-background/70 sticky top-0 z-30 w-full border-b backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-[1200px] items-center gap-6 px-6 sm:px-8">
+      <div className="mx-auto flex h-14 max-w-[1200px] items-center gap-4 px-5 sm:gap-6 sm:px-6 lg:px-8">
         <Logo />
         <nav className="hidden flex-1 items-center justify-center md:flex" aria-label="Primary">
           <ul className="flex items-center gap-7">

@@ -11,15 +11,15 @@ export function Status() {
       headingId="status-heading"
       containerSize="prose"
     >
-      <div className="border-border bg-background-elevated rounded-xl border p-7 sm:p-9">
-        <div className="flex items-start gap-4">
+      <div className="border-border bg-background-elevated rounded-xl border p-5 sm:p-7 lg:p-9">
+        <div className="flex flex-col items-start gap-4 sm:flex-row">
           <span
             className="border-accent/30 bg-accent-muted text-accent inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md border"
             aria-hidden="true"
           >
             <AlertTriangle className="h-4 w-4" />
           </span>
-          <div className="text-muted-foreground space-y-4 text-[17px] leading-[1.65]">
+          <div className="text-muted-foreground space-y-4 text-[15px] leading-[1.6] sm:text-[17px] sm:leading-[1.65]">
             <p>
               The API will change. We are working in public to build a framework that takes agent
               systems seriously — typed, composable, observable. No production claims, no fabricated

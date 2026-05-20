@@ -19,9 +19,9 @@ interface LogoProps extends React.HTMLAttributes<HTMLAnchorElement> {
 export function Logo({ className, markOnly = false, asSpan = false, ...props }: LogoProps) {
   const inner = (
     <>
-      <PhiMark className="text-foreground h-7 w-7" />
+      <PhiMark className="text-foreground h-6 w-6 sm:h-7 sm:w-7" />
       {!markOnly && (
-        <span className="text-foreground font-sans text-[17px] font-medium tracking-tight">
+        <span className="text-foreground font-sans text-[15px] font-medium tracking-tight sm:text-[17px]">
           Phronesis
         </span>
       )}
