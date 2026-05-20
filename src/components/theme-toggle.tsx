@@ -24,19 +24,13 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label={mounted ? `Switch to ${isDark ? "light" : "dark"} mode` : "Toggle theme"}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(
-        "inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background-elevated text-muted-foreground transition-colors hover:text-foreground hover:border-accent/40",
+        "border-border bg-background-elevated text-muted-foreground hover:text-foreground hover:border-accent/40 inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors",
         className,
       )}
     >
       {/* Render both icons to avoid hydration flicker; toggle via class. */}
-      <Sun
-        className={cn("h-4 w-4", mounted && isDark ? "hidden" : "block")}
-        aria-hidden="true"
-      />
-      <Moon
-        className={cn("h-4 w-4", mounted && isDark ? "block" : "hidden")}
-        aria-hidden="true"
-      />
+      <Sun className={cn("h-4 w-4", mounted && isDark ? "hidden" : "block")} aria-hidden="true" />
+      <Moon className={cn("h-4 w-4", mounted && isDark ? "block" : "hidden")} aria-hidden="true" />
     </button>
   );
 }

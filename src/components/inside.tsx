@@ -76,27 +76,26 @@ export function Inside() {
       heading="A small, principled surface."
       intro={
         <>
-          The framework is intentionally narrow. Each layer earns its place by
-          either making a system safer to operate or making the code simpler to
-          read six months later.
+          The framework is intentionally narrow. Each layer earns its place by either making a
+          system safer to operate or making the code simpler to read six months later.
         </>
       }
       headingId="inside-heading"
     >
-      <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border lg:grid-cols-3">
+      <div className="border-border bg-border grid gap-px overflow-hidden rounded-xl border lg:grid-cols-3">
         {GROUPS.map((group) => (
-          <div key={group.title} className="flex flex-col gap-5 bg-background-elevated p-7">
+          <div key={group.title} className="bg-background-elevated flex flex-col gap-5 p-7">
             <div>
-              <h3 className="text-[17px] font-medium tracking-tight text-foreground">
+              <h3 className="text-foreground text-[17px] font-medium tracking-tight">
                 {group.title}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground">{group.description}</p>
+              <p className="text-muted-foreground mt-2 text-sm">{group.description}</p>
             </div>
             <ul className="flex flex-col gap-2.5">
               {group.items.map((item) => (
-                <li key={item.label} className="flex items-start gap-3 text-[15px] text-foreground">
+                <li key={item.label} className="text-foreground flex items-start gap-3 text-[15px]">
                   <item.icon
-                    className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent"
+                    className="text-accent mt-0.5 h-4 w-4 flex-shrink-0"
                     aria-hidden="true"
                   />
                   <span className="leading-snug">{item.label}</span>
@@ -107,10 +106,10 @@ export function Inside() {
         ))}
       </div>
 
-      <div className="mt-10 rounded-xl border border-border bg-background-elevated/50 p-6 sm:p-7">
+      <div className="border-border bg-background-elevated/50 mt-10 rounded-xl border p-6 sm:p-7">
         <div className="flex items-center gap-3">
-          <Boxes className="h-4 w-4 text-accent" aria-hidden="true" />
-          <h3 className="text-sm font-mono uppercase tracking-[0.16em] text-muted-foreground">
+          <Boxes className="text-accent h-4 w-4" aria-hidden="true" />
+          <h3 className="text-muted-foreground font-mono text-sm tracking-[0.16em] uppercase">
             Execution modes
           </h3>
         </div>
@@ -118,15 +117,15 @@ export function Inside() {
           {EXECUTION_MODES.map((mode) => (
             <li
               key={mode}
-              className="inline-flex items-center rounded-md border border-border bg-code-background px-3 py-1.5 font-mono text-[13px] text-foreground"
+              className="border-border bg-code-background text-foreground inline-flex items-center rounded-md border px-3 py-1.5 font-mono text-[13px]"
             >
               {mode}
             </li>
           ))}
         </ul>
-        <div className="mt-5 inline-flex items-center gap-2 text-xs text-muted-foreground">
-          <Network className="h-3.5 w-3.5" aria-hidden="true" />
-          A closed catalog — expressive enough, finite enough to reason about.
+        <div className="text-muted-foreground mt-5 inline-flex items-center gap-2 text-xs">
+          <Network className="h-3.5 w-3.5" aria-hidden="true" />A closed catalog — expressive
+          enough, finite enough to reason about.
         </div>
       </div>
     </Section>

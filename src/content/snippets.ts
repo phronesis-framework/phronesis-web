@@ -85,8 +85,7 @@ export const CODE_TOUR_TABS: readonly CodeTourTab[] = [
   {
     value: "agent",
     label: "Agent",
-    description:
-      "An agent binds a model, tools, and memory under a single declarative spec.",
+    description: "An agent binds a model, tools, and memory under a single declarative spec.",
     code: AGENT_SNIPPET,
     filename: "agent.py",
   },

@@ -38,7 +38,7 @@
   /* Dark mode — default. Near-black background, warm muted neutrals. */
   --background: oklch(0.16 0.004 80);
   --foreground: oklch(0.96 0.005 80);
-  --background-elevated: oklch(0.20 0.005 80);
+  --background-elevated: oklch(0.2 0.005 80);
   --muted: oklch(0.24 0.006 80);
   --muted-foreground: oklch(0.68 0.01 80);
   --accent: oklch(0.78 0.13 80);

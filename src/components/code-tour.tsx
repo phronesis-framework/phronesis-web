@@ -18,18 +18,18 @@ export function CodeTour({ panels }: CodeTourProps) {
     <Tabs.Root defaultValue={CODE_TOUR_TABS[0].value} className="w-full">
       <Tabs.List
         aria-label="Phronesis code tour"
-        className="flex flex-wrap items-center gap-1 border-b border-border pb-2"
+        className="border-border flex flex-wrap items-center gap-1 border-b pb-2"
       >
         {CODE_TOUR_TABS.map((tab) => (
           <Tabs.Trigger
             key={tab.value}
             value={tab.value}
             className={cn(
-              "relative inline-flex h-9 items-center rounded-md px-3 text-sm font-medium text-muted-foreground transition-colors",
+              "text-muted-foreground relative inline-flex h-9 items-center rounded-md px-3 text-sm font-medium transition-colors",
               "hover:text-foreground",
               "data-[state=active]:text-foreground",
-              "data-[state=active]:after:absolute data-[state=active]:after:-bottom-[10px] data-[state=active]:after:left-3 data-[state=active]:after:right-3 data-[state=active]:after:h-px data-[state=active]:after:bg-accent",
-              "focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2",
+              "data-[state=active]:after:bg-accent data-[state=active]:after:absolute data-[state=active]:after:right-3 data-[state=active]:after:-bottom-[10px] data-[state=active]:after:left-3 data-[state=active]:after:h-px",
+              "focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-2",
             )}
           >
             {tab.label}
@@ -37,12 +37,8 @@ export function CodeTour({ panels }: CodeTourProps) {
         ))}
       </Tabs.List>
       {CODE_TOUR_TABS.map((tab) => (
-        <Tabs.Content
-          key={tab.value}
-          value={tab.value}
-          className="mt-8 focus-visible:outline-none"
-        >
-          <p className="mb-5 max-w-[640px] text-[17px] leading-[1.65] text-muted-foreground">
+        <Tabs.Content key={tab.value} value={tab.value} className="mt-8 focus-visible:outline-none">
+          <p className="text-muted-foreground mb-5 max-w-[640px] text-[17px] leading-[1.65]">
             {tab.description}
           </p>
           {panels[tab.value]}

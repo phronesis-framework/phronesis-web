@@ -6,7 +6,7 @@ import { PRIMARY_NAV, GITHUB_FRAMEWORK_REPO } from "./nav-data";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 w-full border-b border-border bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/70">
+    <header className="border-border bg-background/85 supports-[backdrop-filter]:bg-background/70 sticky top-0 z-30 w-full border-b backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-[1200px] items-center gap-6 px-6 sm:px-8">
         <Logo />
         <nav className="hidden flex-1 items-center justify-center md:flex" aria-label="Primary">
@@ -17,7 +17,7 @@ export function SiteHeader() {
                   href={link.href}
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
                   {link.label}
                 </a>
@@ -32,13 +32,13 @@ export function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Phronesis on GitHub"
-            className="hidden h-9 w-9 items-center justify-center rounded-md border border-border bg-background-elevated text-muted-foreground transition-colors hover:text-foreground md:inline-flex"
+            className="border-border bg-background-elevated text-muted-foreground hover:text-foreground hidden h-9 w-9 items-center justify-center rounded-md border transition-colors md:inline-flex"
           >
             <Github className="h-4 w-4" aria-hidden="true" />
           </a>
           <a
             href="#install"
-            className="hidden h-9 items-center rounded-full bg-accent px-4 text-sm font-medium text-accent-foreground transition-colors hover:opacity-90 md:inline-flex"
+            className="bg-accent text-accent-foreground hidden h-9 items-center rounded-full px-4 text-sm font-medium transition-colors hover:opacity-90 md:inline-flex"
           >
             Get started
           </a>

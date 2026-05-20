@@ -12,18 +12,18 @@ See [`BOOTSTRAP.md`](./BOOTSTRAP.md) for the full editorial brief, design princi
 
 ## Tech stack
 
-| Concern              | Choice                                  |
-| -------------------- | --------------------------------------- |
-| Framework            | Next.js 15+ (App Router, RSC by default) |
-| Language             | TypeScript (strict)                     |
-| Styling              | Tailwind CSS v4 (CSS-first config)      |
-| Primitives           | Radix UI (Dialog, Tabs, Slot)           |
-| Icons                | `lucide-react`                          |
-| Code highlighting    | Shiki (server-rendered, zero client JS) |
-| Fonts                | Geist Sans + Geist Mono via `next/font` |
-| Theme                | `next-themes` (dark default)            |
-| Package manager      | `pnpm`                                  |
-| Node                 | 22 (LTS) — see `.nvmrc`                 |
+| Concern           | Choice                                   |
+| ----------------- | ---------------------------------------- |
+| Framework         | Next.js 15+ (App Router, RSC by default) |
+| Language          | TypeScript (strict)                      |
+| Styling           | Tailwind CSS v4 (CSS-first config)       |
+| Primitives        | Radix UI (Dialog, Tabs, Slot)            |
+| Icons             | `lucide-react`                           |
+| Code highlighting | Shiki (server-rendered, zero client JS)  |
+| Fonts             | Geist Sans + Geist Mono via `next/font`  |
+| Theme             | `next-themes` (dark default)             |
+| Package manager   | `pnpm`                                   |
+| Node              | 22 (LTS) — see `.nvmrc`                  |
 
 ## Local development
 
@@ -36,15 +36,15 @@ Open <http://localhost:3000>.
 
 ## Scripts
 
-| Script                | Purpose                                  |
-| --------------------- | ---------------------------------------- |
-| `pnpm dev`            | Start the dev server                     |
-| `pnpm build`          | Production build (static export ready)   |
-| `pnpm start`          | Serve the production build               |
-| `pnpm lint`           | ESLint                                   |
-| `pnpm typecheck`      | TypeScript with `--noEmit`               |
-| `pnpm format`         | Prettier (write)                         |
-| `pnpm format:check`   | Prettier (verify)                        |
+| Script              | Purpose                                |
+| ------------------- | -------------------------------------- |
+| `pnpm dev`          | Start the dev server                   |
+| `pnpm build`        | Production build (static export ready) |
+| `pnpm start`        | Serve the production build             |
+| `pnpm lint`         | ESLint                                 |
+| `pnpm typecheck`    | TypeScript with `--noEmit`             |
+| `pnpm format`       | Prettier (write)                       |
+| `pnpm format:check` | Prettier (verify)                      |
 
 CI runs `lint`, `typecheck`, `format:check`, and `build` on every PR. See [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
 

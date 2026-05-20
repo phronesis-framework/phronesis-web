@@ -16,17 +16,12 @@ interface LogoProps extends React.HTMLAttributes<HTMLAnchorElement> {
  * The final identity will be designed separately; the SVG below is intentionally
  * neutral so it works in both color modes without modification.
  */
-export function Logo({
-  className,
-  markOnly = false,
-  asSpan = false,
-  ...props
-}: LogoProps) {
+export function Logo({ className, markOnly = false, asSpan = false, ...props }: LogoProps) {
   const inner = (
     <>
-      <PhiMark className="h-7 w-7 text-foreground" />
+      <PhiMark className="text-foreground h-7 w-7" />
       {!markOnly && (
-        <span className="font-sans text-[17px] font-medium tracking-tight text-foreground">
+        <span className="text-foreground font-sans text-[17px] font-medium tracking-tight">
           Phronesis
         </span>
       )}
@@ -48,12 +43,7 @@ export function Logo({
   }
 
   return (
-    <Link
-      href="/"
-      aria-label="Phronesis — home"
-      className={classes}
-      {...props}
-    >
+    <Link href="/" aria-label="Phronesis — home" className={classes} {...props}>
       {inner}
     </Link>
   );
@@ -69,29 +59,10 @@ function PhiMark({ className }: { className?: string }) {
       className={className}
     >
       {/* Hairline circle — represents wholeness / deliberation. */}
-      <circle
-        cx="16"
-        cy="16"
-        r="14"
-        stroke="currentColor"
-        strokeWidth="1.25"
-        opacity="0.55"
-      />
+      <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="1.25" opacity="0.55" />
       {/* Phi (φ) glyph — stem with horizontal bowl. */}
-      <path
-        d="M16 6.5V25.5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-      <ellipse
-        cx="16"
-        cy="16"
-        rx="6.25"
-        ry="4.5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      />
+      <path d="M16 6.5V25.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <ellipse cx="16" cy="16" rx="6.25" ry="4.5" stroke="currentColor" strokeWidth="1.6" />
       {/* Accent dot — represents the act of judgment. */}
       <circle cx="16" cy="16" r="1.1" fill="var(--accent)" />
     </svg>

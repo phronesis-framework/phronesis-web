@@ -47,19 +47,18 @@ const COLUMNS: readonly FooterColumn[] = [
 export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="border-border bg-background border-t">
       <div className="mx-auto max-w-[1200px] px-6 py-16 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_repeat(3,1fr)] lg:gap-16">
           <div className="max-w-sm">
             <Logo />
-            <p className="mt-5 text-sm leading-[1.65] text-muted-foreground">
-              An open source Python framework for AI agent systems. Typed,
-              composable, observable.
+            <p className="text-muted-foreground mt-5 text-sm leading-[1.65]">
+              An open source Python framework for AI agent systems. Typed, composable, observable.
             </p>
           </div>
           {COLUMNS.map((col) => (
             <div key={col.title}>
-              <h3 className="text-xs font-mono uppercase tracking-[0.16em] text-muted-foreground">
+              <h3 className="text-muted-foreground font-mono text-xs tracking-[0.16em] uppercase">
                 {col.title}
               </h3>
               <ul className="mt-5 flex flex-col gap-3">
@@ -69,7 +68,7 @@ export function SiteFooter() {
                       href={link.href}
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
-                      className="text-sm text-foreground transition-colors hover:text-accent"
+                      className="text-foreground hover:text-accent text-sm transition-colors"
                     >
                       {link.label}
                     </a>
@@ -79,9 +78,9 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center">
+        <div className="border-border text-muted-foreground mt-14 flex flex-col items-start justify-between gap-4 border-t pt-8 text-xs sm:flex-row sm:items-center">
           <p>© {year} Phronesis. Apache 2.0 licensed.</p>
-          <p className="font-mono text-[11px] uppercase tracking-[0.16em]">
+          <p className="font-mono text-[11px] tracking-[0.16em] uppercase">
             Practical wisdom for AI agent systems.
           </p>
         </div>

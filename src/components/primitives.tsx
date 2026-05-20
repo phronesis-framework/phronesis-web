@@ -42,30 +42,25 @@ export function Section({
   ...props
 }: SectionProps) {
   return (
-    <section
-      className={cn("py-24 sm:py-32", className)}
-      {...props}
-    >
+    <section className={cn("py-24 sm:py-32", className)} {...props}>
       <Container size={containerSize}>
         {(eyebrow || heading || intro) && (
           <header className="mb-12 max-w-[720px]">
             {eyebrow && (
-              <p className="mb-4 text-xs font-mono uppercase tracking-[0.18em] text-accent">
+              <p className="text-accent mb-4 font-mono text-xs tracking-[0.18em] uppercase">
                 {eyebrow}
               </p>
             )}
             {heading && (
               <h2
                 id={headingId}
-                className="text-balance text-3xl font-medium tracking-tight text-foreground sm:text-4xl"
+                className="text-foreground text-3xl font-medium tracking-tight text-balance sm:text-4xl"
               >
                 {heading}
               </h2>
             )}
             {intro && (
-              <div className="mt-5 text-[17px] leading-[1.65] text-muted-foreground">
-                {intro}
-              </div>
+              <div className="text-muted-foreground mt-5 text-[17px] leading-[1.65]">{intro}</div>
             )}
           </header>
         )}

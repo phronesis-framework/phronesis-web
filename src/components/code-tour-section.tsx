@@ -12,12 +12,7 @@ export async function CodeTourSection() {
     await Promise.all(
       CODE_TOUR_TABS.map(async (tab) => [
         tab.value,
-        <CodeBlock
-          key={tab.value}
-          code={tab.code}
-          lang="python"
-          filename={tab.filename}
-        />,
+        <CodeBlock key={tab.value} code={tab.code} lang="python" filename={tab.filename} />,
       ]),
     ),
   ) as Record<string, React.ReactNode>;
@@ -29,8 +24,8 @@ export async function CodeTourSection() {
       heading="The API in four snippets."
       intro={
         <>
-          Real Python. Real shape. The framework you see below is in early alpha —
-          the surface area will grow, but the design will stay this lean.
+          Real Python. Real shape. The framework you see below is in early alpha — the surface area
+          will grow, but the design will stay this lean.
         </>
       }
       headingId="code-tour-heading"

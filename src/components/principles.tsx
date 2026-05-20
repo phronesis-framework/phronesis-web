@@ -43,12 +43,8 @@ export function Principles() {
       <ul className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {PRINCIPLES.map((p) => (
           <li key={p.title}>
-            <h3 className="text-[17px] font-medium tracking-tight text-foreground">
-              {p.title}
-            </h3>
-            <p className="mt-3 text-[15px] leading-[1.65] text-muted-foreground">
-              {p.body}
-            </p>
+            <h3 className="text-foreground text-[17px] font-medium tracking-tight">{p.title}</h3>
+            <p className="text-muted-foreground mt-3 text-[15px] leading-[1.65]">{p.body}</p>
           </li>
         ))}
       </ul>

@@ -23,14 +23,12 @@ const PATTERNS: readonly Pattern[] = [
   {
     icon: Network,
     title: "Multi-agent pipelines",
-    description:
-      "Pipelines composing specialized agents through handoffs, debate, or consensus.",
+    description: "Pipelines composing specialized agents through handoffs, debate, or consensus.",
   },
   {
     icon: Wrench,
     title: "Tool-using assistants",
-    description:
-      "Agents that invoke typed tools and MCP servers under explicit safety contracts.",
+    description: "Agents that invoke typed tools and MCP servers under explicit safety contracts.",
   },
 ];
 
@@ -42,24 +40,24 @@ export function Patterns() {
       heading="Designed for the agent shapes that recur."
       intro={
         <>
-          These are patterns the framework supports today. They are not case studies —
-          we have no production users to claim yet, and we will not pretend otherwise.
+          These are patterns the framework supports today. They are not case studies — we have no
+          production users to claim yet, and we will not pretend otherwise.
         </>
       }
       headingId="patterns-heading"
     >
-      <ul className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2">
+      <ul className="border-border bg-border grid gap-px overflow-hidden rounded-xl border sm:grid-cols-2">
         {PATTERNS.map((p) => (
           <li
             key={p.title}
-            className="flex flex-col gap-4 bg-background-elevated p-7 transition-colors hover:bg-background-elevated/70"
+            className="bg-background-elevated hover:bg-background-elevated/70 flex flex-col gap-4 p-7 transition-colors"
           >
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-background text-accent">
+            <span className="border-border bg-background text-accent inline-flex h-10 w-10 items-center justify-center rounded-md border">
               <p.icon className="h-5 w-5" aria-hidden="true" />
             </span>
             <div>
-              <h3 className="text-lg font-medium text-foreground">{p.title}</h3>
-              <p className="mt-2 text-[15px] leading-[1.6] text-muted-foreground">
+              <h3 className="text-foreground text-lg font-medium">{p.title}</h3>
+              <p className="text-muted-foreground mt-2 text-[15px] leading-[1.6]">
                 {p.description}
               </p>
             </div>

@@ -38,12 +38,12 @@ export function CopyButton({ value, label = "Copy code", className }: CopyButton
       onClick={onCopy}
       aria-label={copied ? "Copied" : label}
       className={cn(
-        "inline-flex h-8 w-8 items-center justify-center rounded-md border border-border/60 bg-background-elevated/70 text-muted-foreground backdrop-blur transition-colors hover:text-foreground hover:border-accent/40",
+        "border-border/60 bg-background-elevated/70 text-muted-foreground hover:text-foreground hover:border-accent/40 inline-flex h-8 w-8 items-center justify-center rounded-md border backdrop-blur transition-colors",
         className,
       )}
     >
       {copied ? (
-        <Check className="h-3.5 w-3.5 text-accent" aria-hidden="true" />
+        <Check className="text-accent h-3.5 w-3.5" aria-hidden="true" />
       ) : (
         <Copy className="h-3.5 w-3.5" aria-hidden="true" />
       )}
