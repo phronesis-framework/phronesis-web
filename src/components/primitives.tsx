@@ -1,4 +1,5 @@
 import * as React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Eyebrow } from "./ui/eyebrow";
 
@@ -33,9 +34,7 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   containerSize?: "default" | "prose" | "wide";
   headingId?: string;
   variant?: SectionVariant;
-  /** Background image URL (for variant="image"). */
   backgroundImage?: string;
-  /** Overlay opacity 0–100 (for variant="image"). Default 70. */
   overlayOpacity?: number;
 }
 
@@ -67,24 +66,25 @@ export function Section({
     >
       {isImage && (
         <>
-          {/* Fallback stone gradient — visible if image fails or is absent. */}
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(250,245,235,0.9),_rgba(220,210,195,1)_75%)] dark:bg-[radial-gradient(ellipse_at_top,_rgba(60,55,45,0.6),_rgba(15,15,15,1)_75%)]"
           />
           {backgroundImage && (
-            <div
+            <Image
+              src={backgroundImage}
+              alt=""
+              fill
+              quality={80}
+              sizes="100vw"
               aria-hidden="true"
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${backgroundImage})` }}
+              className="object-cover object-center"
             />
           )}
-          {/* Light-mode overlay: warm cream tint that brightens the marble. */}
           <div
             aria-hidden="true"
             className="absolute inset-0 block bg-amber-50/55 dark:hidden"
           />
-          {/* Dark-mode overlay: deep black filter. */}
           <div
             aria-hidden="true"
             className="absolute inset-0 hidden bg-black dark:block"
