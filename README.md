@@ -36,7 +36,11 @@
 
 ---
 
+<div align="center">
+
 ## Project shape
+
+</div>
 
 A **single multilingual landing page**, not a SaaS marketing site. No signup, no analytics, no third-party tracking, no fabricated social proof. The audience is developers and technical decision-makers evaluating whether to adopt the framework.
 
@@ -45,7 +49,11 @@ A **single multilingual landing page**, not a SaaS marketing site. No signup, no
 - Code snippets are syntax-highlighted at **build time** with Shiki — zero highlighter JS reaches the browser.
 - Lighthouse budget: **95+ across all categories**.
 
+<div align="center">
+
 ## Tech stack
+
+</div>
 
 | Concern              | Choice                                                    |
 | -------------------- | --------------------------------------------------------- |
@@ -63,7 +71,11 @@ A **single multilingual landing page**, not a SaaS marketing site. No signup, no
 | Package manager      | `pnpm`                                                    |
 | Node                 | 22 (LTS) — pinned in [`.nvmrc`](./.nvmrc)                 |
 
+<div align="center">
+
 ## Locales
+
+</div>
 
 | Code | Language     | Code | Language       |
 | ---- | ------------ | ---- | -------------- |
@@ -76,7 +88,11 @@ A **single multilingual landing page**, not a SaaS marketing site. No signup, no
 
 Default locale is `en`. The prefix is always present in the URL (`/en/...`, `/es/...`). Translation messages live in [`messages/<locale>.json`](./messages); routing and the RTL set are configured in [`src/i18n/routing.ts`](./src/i18n/routing.ts).
 
+<div align="center">
+
 ## Local development
+
+</div>
 
 ```bash
 pnpm install
@@ -85,7 +101,11 @@ pnpm dev
 
 Open <http://localhost:3000>. You will be redirected to the prefix for the negotiated locale.
 
+<div align="center">
+
 ## Scripts
+
+</div>
 
 | Script              | Purpose                                              |
 | ------------------- | ---------------------------------------------------- |
@@ -100,7 +120,11 @@ Open <http://localhost:3000>. You will be redirected to the prefix for the negot
 
 CI runs `lint`, `typecheck`, `format:check`, and `build` on every PR — see [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
 
+<div align="center">
+
 ## Repository layout
+
+</div>
 
 The codebase is organised by **bounded context**, not by file kind. Each subfolder of `src/components/` owns one concern. UI primitives live separately from page sections, layout chrome, and cross-cutting concerns like theme or i18n.
 
@@ -133,7 +157,11 @@ src/
 └── middleware.ts               # next-intl locale negotiation
 ```
 
+<div align="center">
+
 ### Import conventions
+
+</div>
 
 - The `@/` alias maps to `src/`.
 - Inside a bounded context, sibling imports stay relative (`./logo`, `./nav-data`).
@@ -141,7 +169,11 @@ src/
 - Hooks are always `@/hooks/use-xxx`.
 - No barrel `index.ts` files — direct imports keep the dependency graph explicit and preserve Next.js tree-shaking.
 
+<div align="center">
+
 ## Design principles
+
+</div>
 
 - **Polished and honest.** Polished typography, generous whitespace; every claim points to something real.
 - **Show code, not screenshots of code.** Real, syntax-highlighted, copy-paste-able snippets — driven from [`src/content/snippets.ts`](./src/content/snippets.ts).
@@ -151,7 +183,11 @@ src/
 - **Performance is part of the message.** Lighthouse 95+ on all metrics. Shiki runs at build time. No motion libraries — animation is a ~40-line `useReveal` hook on top of `IntersectionObserver`.
 - **WCAG 2.1 AA.** Semantic HTML, keyboard navigable, visible focus rings, RTL aware.
 
+<div align="center">
+
 ## Editing content
+
+</div>
 
 | What you want to edit               | Where it lives                                              |
 | ----------------------------------- | ----------------------------------------------------------- |
@@ -161,10 +197,18 @@ src/
 | Locale list / RTL set               | [`src/i18n/routing.ts`](./src/i18n/routing.ts)              |
 | Section composition / order         | [`src/app/[locale]/page.tsx`](./src/app/[locale]/page.tsx)  |
 
+<div align="center">
+
 ## Deployment
 
+</div>
+
 Optimised for Vercel or Cloudflare Pages. `next build` emits prerendered routes for every locale prefix plus dynamic `/icon` and `/opengraph-image`. Configure the deployment platform to serve `.next/`.
+
+<div align="center">
 
 ## License
 
 [Apache 2.0](./LICENSE).
+
+</div>
