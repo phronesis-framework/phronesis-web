@@ -27,8 +27,7 @@ export function CopyButton({ value, label = "Copy code", className }: CopyButton
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
       timeoutRef.current = setTimeout(() => setCopied(false), 1800);
     } catch {
-      // Clipboard API failed — fall back silently. No user-visible error needed
-      // for a landing-page copy button.
+      /* clipboard unavailable */
     }
   }, [value]);
 
@@ -38,7 +37,7 @@ export function CopyButton({ value, label = "Copy code", className }: CopyButton
       onClick={onCopy}
       aria-label={copied ? "Copied" : label}
       className={cn(
-        "border-border/60 bg-background-elevated/70 text-muted-foreground hover:text-foreground hover:border-accent/40 inline-flex h-8 w-8 items-center justify-center rounded-md border backdrop-blur transition-colors",
+        "border-border/60 bg-background-elevated/70 text-muted-foreground hover:border-accent/40 hover:text-foreground inline-flex h-8 w-8 items-center justify-center rounded-md border backdrop-blur transition-all duration-150 ease-out hover:scale-[1.05] active:scale-[0.95]",
         className,
       )}
     >

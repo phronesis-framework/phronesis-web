@@ -8,6 +8,7 @@ import { PRIMARY_NAV, GITHUB_FRAMEWORK_REPO } from "./nav-data";
 import { Logo } from "./logo";
 import { ThemeToggle } from "./theme-toggle";
 import { LanguageSwitcher } from "./language-switcher";
+import { IconButton, iconButtonStyles } from "./ui/icon-button";
 import { cn } from "@/lib/utils";
 
 export function MobileMenu() {
@@ -18,13 +19,9 @@ export function MobileMenu() {
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
-        <button
-          type="button"
-          aria-label={tCommon("openMenu")}
-          className="border-border bg-background-elevated text-muted-foreground hover:text-foreground inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors md:hidden"
-        >
+        <IconButton aria-label={tCommon("openMenu")} className="md:hidden">
           <Menu className="h-4 w-4" aria-hidden="true" />
-        </button>
+        </IconButton>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay
@@ -46,16 +43,15 @@ export function MobileMenu() {
               <Logo asSpan />
             </Dialog.Title>
             <Dialog.Close asChild>
-              <button
-                type="button"
-                aria-label={tCommon("closeMenu")}
-                className="border-border bg-background-elevated text-muted-foreground hover:text-foreground inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors"
-              >
+              <IconButton aria-label={tCommon("closeMenu")}>
                 <X className="h-4 w-4" aria-hidden="true" />
-              </button>
+              </IconButton>
             </Dialog.Close>
           </div>
-          <nav className="flex flex-1 flex-col gap-1 px-3 py-5 sm:px-4 sm:py-6" aria-label={tNav("mobileLabel")}>
+          <nav
+            className="flex flex-1 flex-col gap-1 px-3 py-5 sm:px-4 sm:py-6"
+            aria-label={tNav("mobileLabel")}
+          >
             {PRIMARY_NAV.map((link) => (
               <a
                 key={link.href}
@@ -63,7 +59,7 @@ export function MobileMenu() {
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
                 onClick={() => setOpen(false)}
-                className="text-foreground hover:bg-background-elevated rounded-md px-3 py-3 text-base font-medium transition-colors"
+                className="text-foreground hover:bg-background-elevated rounded-md px-3 py-3 text-base font-medium transition-colors duration-150"
               >
                 {tNav(link.key)}
               </a>
@@ -79,7 +75,7 @@ export function MobileMenu() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={tCommon("githubAria")}
-              className="border-border bg-background-elevated text-muted-foreground hover:text-foreground inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors"
+              className={iconButtonStyles()}
             >
               <Github className="h-4 w-4" aria-hidden="true" />
             </a>

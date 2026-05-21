@@ -2,6 +2,7 @@ import { ArrowRight, Github } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { CodeBlock } from "./code-block";
 import { Container } from "./primitives";
+import { pillButtonStyles } from "./ui/pill-button";
 import { HERO_SNIPPET } from "@/content/snippets";
 import { GITHUB_FRAMEWORK_REPO } from "./nav-data";
 
@@ -35,7 +36,11 @@ export async function Hero() {
             <div className="mt-6 flex flex-col gap-2.5 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3 md:mt-9">
               <a
                 href="#install"
-                className="bg-accent text-accent-foreground inline-flex h-11 w-full items-center justify-center gap-2 rounded-full px-5 text-sm font-medium transition-opacity hover:opacity-90 sm:w-auto sm:justify-start"
+                className={pillButtonStyles({
+                  variant: "primary",
+                  fullWidth: true,
+                  className: "sm:w-auto sm:justify-start",
+                })}
               >
                 {tCommon("getStarted")}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -44,7 +49,11 @@ export async function Hero() {
                 href={GITHUB_FRAMEWORK_REPO}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-border bg-background-elevated text-foreground hover:border-accent/40 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border px-5 text-sm font-medium transition-colors sm:w-auto sm:justify-start"
+                className={pillButtonStyles({
+                  variant: "secondary",
+                  fullWidth: true,
+                  className: "sm:w-auto sm:justify-start",
+                })}
               >
                 <Github className="h-4 w-4" aria-hidden="true" />
                 {tCommon("viewOnGithub")}

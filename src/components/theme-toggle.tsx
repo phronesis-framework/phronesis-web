@@ -3,6 +3,7 @@
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { IconButton } from "./ui/icon-button";
 import { cn } from "@/lib/utils";
 
 export function ThemeToggle({ className }: { className?: string }) {
@@ -10,8 +11,6 @@ export function ThemeToggle({ className }: { className?: string }) {
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
-    // Defer to next tick so the initial render matches SSR markup; only after
-    // hydration do we reveal the theme-dependent icon.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
@@ -19,18 +18,13 @@ export function ThemeToggle({ className }: { className?: string }) {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <button
-      type="button"
+    <IconButton
       aria-label={mounted ? `Switch to ${isDark ? "light" : "dark"} mode` : "Toggle theme"}
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className={cn(
-        "border-border bg-background-elevated text-muted-foreground hover:text-foreground hover:border-accent/40 inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors",
-        className,
-      )}
+      className={className}
     >
-      {/* Render both icons to avoid hydration flicker; toggle via class. */}
       <Sun className={cn("h-4 w-4", mounted && isDark ? "hidden" : "block")} aria-hidden="true" />
       <Moon className={cn("h-4 w-4", mounted && isDark ? "block" : "hidden")} aria-hidden="true" />
-    </button>
+    </IconButton>
   );
 }
