@@ -97,3 +97,11 @@ body {
 .shiki span {
   background-color: transparent !important;
 }
+
+/* Pre-paint dismissal of the announcement banner. The inline script in the
+   layout sets this attribute on <html> before paint when the user previously
+   dismissed the banner, avoiding the layout shift that would otherwise
+   appear from a client-side mount gate. */
+html[data-announcement-dismissed="true"] .announcement-banner {
+  display: none;
+}
