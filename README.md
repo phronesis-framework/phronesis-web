@@ -38,7 +38,7 @@
 
 <div align="center">
 
-## Project shape
+## 🎯 Project shape
 
 </div>
 
@@ -51,7 +51,7 @@ A **single multilingual landing page**, not a SaaS marketing site. No signup, no
 
 <div align="center">
 
-## Tech stack
+## 🛠️ Tech stack
 
 </div>
 
@@ -73,7 +73,7 @@ A **single multilingual landing page**, not a SaaS marketing site. No signup, no
 
 <div align="center">
 
-## Locales
+## 🌐 Locales
 
 </div>
 
@@ -90,7 +90,7 @@ Default locale is `en`. The prefix is always present in the URL (`/en/...`, `/es
 
 <div align="center">
 
-## Local development
+## 💻 Local development
 
 </div>
 
@@ -103,7 +103,7 @@ Open <http://localhost:3000>. You will be redirected to the prefix for the negot
 
 <div align="center">
 
-## Scripts
+## ⚡ Scripts
 
 </div>
 
@@ -122,7 +122,7 @@ CI runs `lint`, `typecheck`, `format:check`, and `build` on every PR — see [`.
 
 <div align="center">
 
-## Repository layout
+## 📁 Repository layout
 
 </div>
 
@@ -159,7 +159,7 @@ src/
 
 <div align="center">
 
-### Import conventions
+### 🔗 Import conventions
 
 </div>
 
@@ -171,7 +171,7 @@ src/
 
 <div align="center">
 
-## Design principles
+## 🎨 Design principles
 
 </div>
 
@@ -185,7 +185,7 @@ src/
 
 <div align="center">
 
-## Editing content
+## ✏️ Editing content
 
 </div>
 
@@ -199,7 +199,7 @@ src/
 
 <div align="center">
 
-## Deployment
+## 🚀 Deployment
 
 </div>
 
@@ -207,7 +207,7 @@ Optimised for Vercel or Cloudflare Pages. `next build` emits prerendered routes 
 
 <div align="center">
 
-## License
+## 📄 License
 
 [Apache 2.0](./LICENSE).
 
