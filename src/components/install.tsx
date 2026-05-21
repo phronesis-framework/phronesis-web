@@ -2,6 +2,7 @@ import { Star } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Section } from "./primitives";
 import { CopyButton } from "./copy-button";
+import { Eyebrow } from "./ui/eyebrow";
 import { LinkWithArrow } from "./ui/link-with-arrow";
 import { INSTALL_SNIPPET } from "@/content/snippets";
 import { DOCS_URL, GITHUB_FRAMEWORK_REPO } from "./nav-data";
@@ -16,9 +17,7 @@ export async function Install() {
       overlayOpacity={70}
     >
       <div className="rounded-2xl border border-stone-900/10 bg-white/60 p-6 backdrop-blur-md sm:p-8 lg:p-10 dark:border-white/15 dark:bg-black/40">
-        <p className="text-accent mb-3 font-mono text-[11px] tracking-[0.18em] uppercase sm:mb-4 sm:text-xs">
-          {t("eyebrow")}
-        </p>
+        <Eyebrow>{t("eyebrow")}</Eyebrow>
         <h2
           id="install-heading"
           className="text-[26px] leading-[1.15] font-medium tracking-tight text-balance text-stone-900 sm:text-3xl sm:leading-tight md:text-4xl dark:text-white"

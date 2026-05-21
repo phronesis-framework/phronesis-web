@@ -17,16 +17,31 @@ import {
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Section } from "./primitives";
+import { Card, CardGrid } from "./ui/card-grid";
 
 type GroupKey = "core" | "state" | "orchestration";
-type ItemKey = string;
+type CoreItemKey = "agents" | "tools" | "mcp" | "prompts" | "capabilities";
+type StateItemKey = "memory" | "context" | "sessions";
+type OrchestrationItemKey =
+  | "pipelines"
+  | "modes"
+  | "communication"
+  | "policies"
+  | "observability";
+type ItemKey = CoreItemKey | StateItemKey | OrchestrationItemKey;
 
-interface InsideGroup {
+type IconComponent = React.ComponentType<{ className?: string }>;
+
+interface InsideGroup<K extends ItemKey = ItemKey> {
   key: GroupKey;
-  items: { icon: React.ComponentType<{ className?: string }>; itemKey: ItemKey }[];
+  items: readonly { icon: IconComponent; itemKey: K }[];
 }
 
-const GROUPS: readonly InsideGroup[] = [
+const GROUPS: readonly [
+  InsideGroup<CoreItemKey>,
+  InsideGroup<StateItemKey>,
+  InsideGroup<OrchestrationItemKey>,
+] = [
   {
     key: "core",
     items: [
@@ -79,20 +94,17 @@ export async function Inside() {
       headingId="inside-heading"
       variant="elevated"
     >
-      <div className="border-border bg-border grid gap-px overflow-hidden rounded-xl border lg:grid-cols-3">
+      <CardGrid as="div" columns={3}>
         {GROUPS.map((group) => (
-          <div
-            key={group.key}
-            className="bg-background-elevated flex flex-col gap-4 p-5 sm:gap-5 sm:p-6 lg:p-7"
-          >
-            <div>
+          <Card key={group.key} as="div" className="gap-4 sm:gap-5">
+            <header>
               <h3 className="text-foreground text-base font-medium tracking-tight sm:text-[17px]">
                 {t(`groups.${group.key}.title`)}
               </h3>
               <p className="text-muted-foreground mt-1.5 text-[13px] sm:mt-2 sm:text-sm">
                 {t(`groups.${group.key}.description`)}
               </p>
-            </div>
+            </header>
             <ul className="flex flex-col gap-2.5">
               {group.items.map((item) => (
                 <li
@@ -109,11 +121,14 @@ export async function Inside() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Card>
         ))}
-      </div>
+      </CardGrid>
 
-      <div className="border-border bg-background-elevated/50 mt-8 rounded-xl border p-5 sm:mt-10 sm:p-6 lg:p-7">
+      <aside
+        aria-label={t("executionModesTitle")}
+        className="border-border bg-background-elevated/50 mt-8 rounded-xl border p-5 sm:mt-10 sm:p-6 lg:p-7"
+      >
         <div className="flex items-center gap-3">
           <Boxes className="text-accent h-4 w-4 flex-shrink-0" aria-hidden="true" />
           <h3 className="text-muted-foreground font-mono text-[11px] tracking-[0.16em] uppercase sm:text-sm">
@@ -130,11 +145,11 @@ export async function Inside() {
             </li>
           ))}
         </ul>
-        <div className="text-muted-foreground mt-4 flex items-start gap-2 text-[12px] leading-[1.5] sm:mt-5 sm:text-xs">
+        <p className="text-muted-foreground mt-4 flex items-start gap-2 text-[12px] leading-[1.5] sm:mt-5 sm:text-xs">
           <Network className="mt-0.5 h-3.5 w-3.5 flex-shrink-0" aria-hidden="true" />
           <span>{t("executionModesNote")}</span>
-        </div>
-      </div>
+        </p>
+      </aside>
     </Section>
   );
 }

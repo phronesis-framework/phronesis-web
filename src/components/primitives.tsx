@@ -1,5 +1,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { Eyebrow } from "./ui/eyebrow";
 
 export function Container({
   className,
@@ -94,16 +95,7 @@ export function Section({
       <Container size={containerSize} className="relative z-10">
         {(eyebrow || heading || intro) && (
           <header className="mb-10 sm:mb-12">
-            {eyebrow && (
-              <p
-                className={cn(
-                  "mb-3 font-mono text-[11px] tracking-[0.18em] uppercase sm:mb-4 sm:text-xs",
-                  isImage ? "text-accent" : "text-accent",
-                )}
-              >
-                {eyebrow}
-              </p>
-            )}
+            {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
             {heading && (
               <h2
                 id={headingId}

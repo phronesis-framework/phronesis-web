@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Section } from "./primitives";
+import { Card, CardGrid } from "./ui/card-grid";
 
 type PrincipleKey =
   | "composition"
@@ -27,21 +28,18 @@ export async function Principles() {
       heading={t("heading")}
       headingId="principles-heading"
     >
-      <ul className="border-border bg-border grid gap-px overflow-hidden rounded-xl border sm:grid-cols-2 lg:grid-cols-3">
+      <CardGrid columns={3}>
         {PRINCIPLE_KEYS.map((key) => (
-          <li
-            key={key}
-            className="bg-background-elevated flex flex-col p-5 sm:p-6 lg:p-7"
-          >
+          <Card key={key}>
             <h3 className="text-foreground text-base font-medium tracking-tight sm:text-[17px]">
               {t(`items.${key}.title`)}
             </h3>
             <p className="text-muted-foreground mt-2.5 text-[14px] leading-[1.6] sm:mt-3 sm:text-[15px] sm:leading-[1.65]">
               {t(`items.${key}.body`)}
             </p>
-          </li>
+          </Card>
         ))}
-      </ul>
+      </CardGrid>
     </Section>
   );
 }
