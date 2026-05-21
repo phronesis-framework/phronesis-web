@@ -1,5 +1,6 @@
+# 
 <div align="center">
-  <img src="./public/assets/phronesis-banner.png" alt="Phronesis Framework" width="100%" />
+  <img src="./public/assets/lockup/lockup-horizontal-dark.svg" alt="Phronesis Framework" width="60%" />
 </div>
 
 <div align="center">
