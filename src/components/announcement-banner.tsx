@@ -5,13 +5,15 @@ import { ArrowRight, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { CHANGELOG_URL } from "./nav-data";
+import { useDismissible } from "@/hooks/use-dismissible";
 
 const STORAGE_KEY = "announcement-dismissed-v1";
+const DATASET_KEY = "announcementDismissed";
 
 const PREPAINT_SCRIPT = `
 try {
   if (localStorage.getItem('${STORAGE_KEY}') === 'true') {
-    document.documentElement.dataset.announcementDismissed = 'true';
+    document.documentElement.dataset.${DATASET_KEY} = 'true';
   }
 } catch (_) {}
 `;
@@ -22,15 +24,7 @@ export function AnnouncementBannerScript() {
 
 export function AnnouncementBanner({ className }: { className?: string }) {
   const t = useTranslations("Announcement");
-  const [dismissed, setDismissed] = React.useState<boolean>(false);
-
-  const onDismiss = React.useCallback(() => {
-    setDismissed(true);
-    try {
-      window.localStorage.setItem(STORAGE_KEY, "true");
-      document.documentElement.dataset.announcementDismissed = "true";
-    } catch {}
-  }, []);
+  const { dismissed, dismiss } = useDismissible(STORAGE_KEY, { datasetKey: DATASET_KEY });
 
   if (dismissed) return null;
 
@@ -59,7 +53,7 @@ export function AnnouncementBanner({ className }: { className?: string }) {
         </a>
         <button
           type="button"
-          onClick={onDismiss}
+          onClick={dismiss}
           aria-label={t("dismiss")}
           className="text-muted-foreground hover:bg-background-elevated hover:text-foreground absolute top-1/2 right-2 inline-flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-md transition-colors sm:right-3"
         >
