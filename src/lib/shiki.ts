@@ -10,10 +10,6 @@ const THEMES: BundledTheme[] = ["github-dark-dimmed", "github-light"];
 
 let highlighterPromise: Promise<Highlighter> | null = null;
 
-/**
- * Returns a singleton Shiki highlighter, created on first use.
- * Runs server-side at build/render time — no client JS is shipped.
- */
 export function getHighlighter(): Promise<Highlighter> {
   if (!highlighterPromise) {
     highlighterPromise = createHighlighter({
@@ -24,10 +20,6 @@ export function getHighlighter(): Promise<Highlighter> {
   return highlighterPromise;
 }
 
-/**
- * Render a code snippet to HTML strings for both themes.
- * The caller can swap visibility based on the active color scheme.
- */
 export async function highlightCode(
   code: string,
   lang: BundledLanguage,
