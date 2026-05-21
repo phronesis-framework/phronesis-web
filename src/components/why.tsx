@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { Section } from "./primitives";
+import { Section } from "./ui/section";
 
 export async function Why() {
   const t = await getTranslations("Why");

@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Section } from "./primitives";
+import { Section } from "./ui/section";
 import { CopyButton } from "./copy-button";
 import { Eyebrow } from "./ui/eyebrow";
 import { LinkWithArrow } from "./ui/link-with-arrow";

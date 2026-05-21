@@ -1,7 +1,7 @@
 import { ArrowRight, Github } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { CodeBlock } from "./code-block";
-import { Container } from "./primitives";
+import { Container } from "./ui/container";
 import { pillButtonStyles } from "./ui/pill-button";
 import { HERO_SNIPPET } from "@/content/snippets";
 import { GITHUB_FRAMEWORK_REPO } from "./nav-data";

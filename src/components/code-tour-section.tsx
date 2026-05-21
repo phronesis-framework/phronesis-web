@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { Section } from "./primitives";
+import { Section } from "./ui/section";
 import { CodeBlock } from "./code-block";
 import { CodeTour } from "./code-tour";
 import { CODE_TOUR_TABS } from "@/content/snippets";

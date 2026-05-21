@@ -1,6 +1,6 @@
 import { AlertTriangle } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Section } from "./primitives";
+import { Section } from "./ui/section";
 import { LinkWithArrow } from "./ui/link-with-arrow";
 import { DISCUSSIONS_URL, ISSUES_URL } from "./nav-data";
 
