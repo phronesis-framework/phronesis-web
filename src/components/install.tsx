@@ -1,7 +1,8 @@
-import { ArrowUpRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Section } from "./primitives";
 import { CopyButton } from "./copy-button";
+import { LinkWithArrow } from "./ui/link-with-arrow";
 import { INSTALL_SNIPPET } from "@/content/snippets";
 import { DOCS_URL, GITHUB_FRAMEWORK_REPO } from "./nav-data";
 
@@ -11,7 +12,7 @@ export async function Install() {
     <Section
       id="install"
       variant="image"
-      backgroundImage="/background.jpg"
+      backgroundImage="/images/background.jpg"
       overlayOpacity={70}
     >
       <div className="rounded-2xl border border-stone-900/10 bg-white/60 p-6 backdrop-blur-md sm:p-8 lg:p-10 dark:border-white/15 dark:bg-black/40">
@@ -40,29 +41,18 @@ export async function Install() {
         </div>
 
         <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm sm:mt-6 sm:gap-x-7">
-          <a
-            href={DOCS_URL}
-            className="group inline-flex items-center gap-1.5 font-medium text-stone-900 underline-offset-4 hover:underline dark:text-white"
-          >
+          <LinkWithArrow href={DOCS_URL} tone="stone">
             {t("readDocs")}
-            <ArrowUpRight
-              className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              aria-hidden="true"
-            />
-          </a>
-          <a
+          </LinkWithArrow>
+          <LinkWithArrow
             href={GITHUB_FRAMEWORK_REPO}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 font-medium text-stone-900 underline-offset-4 hover:underline dark:text-white"
+            tone="stone"
+            leading={<Star className="text-accent h-4 w-4" aria-hidden="true" />}
           >
-            <Star className="text-accent h-4 w-4" aria-hidden="true" />
             {t("starGithub")}
-            <ArrowUpRight
-              className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              aria-hidden="true"
-            />
-          </a>
+          </LinkWithArrow>
         </div>
       </div>
     </Section>
