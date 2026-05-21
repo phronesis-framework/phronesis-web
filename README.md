@@ -2,19 +2,23 @@
   <img src="./public/assets/phronesis-banner.png" alt="Phronesis Framework" width="100%" />
 </div>
 
-<h1 align="center">phronesis-web</h1>
+<div align="center">
 
-<p align="center">
+# phronesis-web
+
+</div>
+
+<div align="center">
   The public landing page for the <a href="https://github.com/phronesis-framework/phronesis">Phronesis</a> framework —
   an open-source Python framework for AI agent systems with typed contracts,
   composable execution patterns, and observability built in.
-</p>
+</div>
 
-<p align="center">
+<div align="center">
   <a href="https://phronesis-framework.com">phronesis-framework.com</a> ·
   <a href="https://github.com/phronesis-framework/phronesis">framework repo</a> ·
   <a href="./LICENSE">license</a>
-</p>
+</div>
 
 ---
 
