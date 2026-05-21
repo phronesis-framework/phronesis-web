@@ -22,10 +22,8 @@
 
 <div align="center">
 
-[![Phronesis Framework](https://img.shields.io/badge/Phronesis%20Framework-2d2d2d?logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjYwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMTAiLz4KICA8bGluZSB4MT0iMTAwIiB5MT0iMjAiIHgyPSIxMDAiIHkyPSIxODAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxMCIvPgo8L3N2Zz4K&logoColor=white)](https://github.com/phronesis-framework/phronesis)
-[![CI](https://img.shields.io/github/actions/workflow/status/phronesis-framework/phronesis-web/ci.yml?branch=main&label=CI&logo=github)](https://github.com/phronesis-framework/phronesis-web/actions/workflows/ci.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
-[![Lighthouse](https://img.shields.io/badge/Lighthouse-95%2B-0CCE6B?logo=lighthouse&logoColor=white)](https://developers.google.com/web/tools/lighthouse)
+[![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=next.js&logoColor=white)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
 
 </div>
 
