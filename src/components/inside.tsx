@@ -15,44 +15,44 @@ import {
   Sparkles,
   Wrench,
 } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { Section } from "./primitives";
 
+type GroupKey = "core" | "state" | "orchestration";
+type ItemKey = string;
+
 interface InsideGroup {
-  title: string;
-  description: string;
-  items: { icon: React.ComponentType<{ className?: string }>; label: string }[];
+  key: GroupKey;
+  items: { icon: React.ComponentType<{ className?: string }>; itemKey: ItemKey }[];
 }
 
 const GROUPS: readonly InsideGroup[] = [
   {
-    title: "Core",
-    description: "The primitives every agent is built from.",
+    key: "core",
     items: [
-      { icon: Bot, label: "Agents" },
-      { icon: Wrench, label: "Tools" },
-      { icon: Plug, label: "MCP integration" },
-      { icon: MessageSquare, label: "Prompts" },
-      { icon: Sparkles, label: "Capabilities" },
+      { icon: Bot, itemKey: "agents" },
+      { icon: Wrench, itemKey: "tools" },
+      { icon: Plug, itemKey: "mcp" },
+      { icon: MessageSquare, itemKey: "prompts" },
+      { icon: Sparkles, itemKey: "capabilities" },
     ],
   },
   {
-    title: "State and context",
-    description: "How agents remember and what they share.",
+    key: "state",
     items: [
-      { icon: Brain, label: "Memory (episodic, semantic, working, shared)" },
-      { icon: Layers, label: "Context management" },
-      { icon: ScrollText, label: "Sessions" },
+      { icon: Brain, itemKey: "memory" },
+      { icon: Layers, itemKey: "context" },
+      { icon: ScrollText, itemKey: "sessions" },
     ],
   },
   {
-    title: "Orchestration",
-    description: "How agents compose into systems.",
+    key: "orchestration",
     items: [
-      { icon: GitBranch, label: "Pipelines" },
-      { icon: Combine, label: "Execution modes" },
-      { icon: Link2, label: "Inter-agent communication" },
-      { icon: ShieldCheck, label: "Policies" },
-      { icon: Activity, label: "Observability" },
+      { icon: GitBranch, itemKey: "pipelines" },
+      { icon: Combine, itemKey: "modes" },
+      { icon: Link2, itemKey: "communication" },
+      { icon: ShieldCheck, itemKey: "policies" },
+      { icon: Activity, itemKey: "observability" },
     ],
   },
 ];
@@ -68,45 +68,44 @@ const EXECUTION_MODES = [
   "Conditional",
 ] as const;
 
-export function Inside() {
+export async function Inside() {
+  const t = await getTranslations("Inside");
   return (
     <Section
       id="inside"
-      eyebrow="What's inside"
-      heading="A small, principled surface."
-      intro={
-        <>
-          The framework is intentionally narrow. Each layer earns its place by either making a
-          system safer to operate or making the code simpler to read six months later.
-        </>
-      }
+      eyebrow={t("eyebrow")}
+      heading={t("heading")}
+      intro={<>{t("intro")}</>}
       headingId="inside-heading"
+      variant="elevated"
     >
       <div className="border-border bg-border grid gap-px overflow-hidden rounded-xl border lg:grid-cols-3">
         {GROUPS.map((group) => (
           <div
-            key={group.title}
+            key={group.key}
             className="bg-background-elevated flex flex-col gap-4 p-5 sm:gap-5 sm:p-6 lg:p-7"
           >
             <div>
               <h3 className="text-foreground text-base font-medium tracking-tight sm:text-[17px]">
-                {group.title}
+                {t(`groups.${group.key}.title`)}
               </h3>
               <p className="text-muted-foreground mt-1.5 text-[13px] sm:mt-2 sm:text-sm">
-                {group.description}
+                {t(`groups.${group.key}.description`)}
               </p>
             </div>
             <ul className="flex flex-col gap-2.5">
               {group.items.map((item) => (
                 <li
-                  key={item.label}
+                  key={item.itemKey}
                   className="text-foreground flex items-start gap-3 text-[14px] sm:text-[15px]"
                 >
                   <item.icon
                     className="text-accent mt-0.5 h-4 w-4 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="leading-snug">{item.label}</span>
+                  <span className="leading-snug">
+                    {t(`groups.${group.key}.items.${item.itemKey}`)}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -118,7 +117,7 @@ export function Inside() {
         <div className="flex items-center gap-3">
           <Boxes className="text-accent h-4 w-4 flex-shrink-0" aria-hidden="true" />
           <h3 className="text-muted-foreground font-mono text-[11px] tracking-[0.16em] uppercase sm:text-sm">
-            Execution modes
+            {t("executionModesTitle")}
           </h3>
         </div>
         <ul className="mt-4 flex flex-wrap gap-1.5 sm:mt-5 sm:gap-2">
@@ -133,7 +132,7 @@ export function Inside() {
         </ul>
         <div className="text-muted-foreground mt-4 flex items-start gap-2 text-[12px] leading-[1.5] sm:mt-5 sm:text-xs">
           <Network className="mt-0.5 h-3.5 w-3.5 flex-shrink-0" aria-hidden="true" />
-          <span>A closed catalog — expressive enough, finite enough to reason about.</span>
+          <span>{t("executionModesNote")}</span>
         </div>
       </div>
     </Section>

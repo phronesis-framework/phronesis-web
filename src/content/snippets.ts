@@ -73,44 +73,17 @@ agent = Agent(
 
 export const INSTALL_SNIPPET = `pip install phronesis-framework`;
 
+export type CodeTourTabKey = "agent" | "tool" | "pipeline" | "mcp";
+
 export interface CodeTourTab {
-  value: string;
-  label: string;
-  description: string;
+  value: CodeTourTabKey;
   code: string;
   filename: string;
 }
 
 export const CODE_TOUR_TABS: readonly CodeTourTab[] = [
-  {
-    value: "agent",
-    label: "Agent",
-    description: "An agent binds a model, tools, and memory under a single declarative spec.",
-    code: AGENT_SNIPPET,
-    filename: "agent.py",
-  },
-  {
-    value: "tool",
-    label: "Tool",
-    description:
-      "Tools are typed contracts. Effects are declared so the runtime can reason about safety.",
-    code: TOOL_SNIPPET,
-    filename: "tools.py",
-  },
-  {
-    value: "pipeline",
-    label: "Pipeline",
-    description:
-      "Pipelines compose stages. Each stage runs in one of a closed catalog of execution modes.",
-    code: PIPELINE_SNIPPET,
-    filename: "pipeline.py",
-  },
-  {
-    value: "mcp",
-    label: "MCP",
-    description:
-      "Attach MCP servers as first-class tool sources, with the same safety contracts as native tools.",
-    code: MCP_SNIPPET,
-    filename: "mcp.py",
-  },
+  { value: "agent", code: AGENT_SNIPPET, filename: "agent.py" },
+  { value: "tool", code: TOOL_SNIPPET, filename: "tools.py" },
+  { value: "pipeline", code: PIPELINE_SNIPPET, filename: "pipeline.py" },
+  { value: "mcp", code: MCP_SNIPPET, filename: "mcp.py" },
 ] as const;

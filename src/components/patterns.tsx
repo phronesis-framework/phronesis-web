@@ -1,68 +1,51 @@
 import { BookOpenText, FileSearch, Network, Wrench } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { Section } from "./primitives";
 
-interface Pattern {
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  description: string;
-}
+type PatternKey = "research" | "document" | "multiAgent" | "toolUsing";
 
-const PATTERNS: readonly Pattern[] = [
-  {
-    icon: FileSearch,
-    title: "Research agents",
-    description:
-      "Agents that gather information, reason over it, and synthesize answers with citations.",
-  },
-  {
-    icon: BookOpenText,
-    title: "Document agents",
-    description:
-      "Agents that read, structure, and act on documents with explicit memory of what they have seen.",
-  },
-  {
-    icon: Network,
-    title: "Multi-agent pipelines",
-    description: "Pipelines composing specialized agents through handoffs, debate, or consensus.",
-  },
-  {
-    icon: Wrench,
-    title: "Tool-using assistants",
-    description: "Agents that invoke typed tools and MCP servers under explicit safety contracts.",
-  },
-];
+const PATTERN_ICONS: Record<PatternKey, React.ComponentType<{ className?: string }>> = {
+  research: FileSearch,
+  document: BookOpenText,
+  multiAgent: Network,
+  toolUsing: Wrench,
+};
 
-export function Patterns() {
+const PATTERN_KEYS: readonly PatternKey[] = ["research", "document", "multiAgent", "toolUsing"];
+
+export async function Patterns() {
+  const t = await getTranslations("Patterns");
   return (
     <Section
       id="patterns"
-      eyebrow="Patterns"
-      heading="Designed for the agent shapes that recur."
-      intro={
-        <>
-          These are patterns the framework supports today. They are not case studies — we have no
-          production users to claim yet, and we will not pretend otherwise.
-        </>
-      }
+      eyebrow={t("eyebrow")}
+      heading={t("heading")}
+      intro={<>{t("intro")}</>}
       headingId="patterns-heading"
+      variant="elevated"
     >
       <ul className="border-border bg-border grid gap-px overflow-hidden rounded-xl border sm:grid-cols-2">
-        {PATTERNS.map((p) => (
-          <li
-            key={p.title}
-            className="bg-background-elevated hover:bg-background-elevated/70 flex flex-col gap-3.5 p-5 transition-colors sm:gap-4 sm:p-6 lg:p-7"
-          >
-            <span className="border-border bg-background text-accent inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md border">
-              <p.icon className="h-5 w-5" aria-hidden="true" />
-            </span>
-            <div>
-              <h3 className="text-foreground text-base font-medium sm:text-lg">{p.title}</h3>
-              <p className="text-muted-foreground mt-2 text-[14px] leading-[1.6] sm:text-[15px]">
-                {p.description}
-              </p>
-            </div>
-          </li>
-        ))}
+        {PATTERN_KEYS.map((key) => {
+          const Icon = PATTERN_ICONS[key];
+          return (
+            <li
+              key={key}
+              className="bg-background-elevated hover:bg-background-elevated/70 flex flex-col gap-3.5 p-5 transition-colors sm:gap-4 sm:p-6 lg:p-7"
+            >
+              <span className="border-border bg-background text-accent inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md border">
+                <Icon className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <div>
+                <h3 className="text-foreground text-base font-medium sm:text-lg">
+                  {t(`items.${key}.title`)}
+                </h3>
+                <p className="text-muted-foreground mt-2 text-[14px] leading-[1.6] sm:text-[15px]">
+                  {t(`items.${key}.description`)}
+                </p>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </Section>
   );

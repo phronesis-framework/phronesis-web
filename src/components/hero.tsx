@@ -1,40 +1,43 @@
 import { ArrowRight, Github } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { CodeBlock } from "./code-block";
 import { Container } from "./primitives";
 import { HERO_SNIPPET } from "@/content/snippets";
 import { GITHUB_FRAMEWORK_REPO } from "./nav-data";
 
-export function Hero() {
+export async function Hero() {
+  const t = await getTranslations("Hero");
+  const tCommon = await getTranslations("Common");
   return (
     <section
       className="border-border relative overflow-hidden border-b"
       aria-labelledby="hero-heading"
     >
-      <Container size="wide" className="relative py-14 sm:py-20 md:py-24 lg:py-36">
-        <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16">
-          <div className="max-w-[640px]">
-            <p className="border-border bg-background-elevated text-muted-foreground mb-5 inline-flex max-w-full items-center gap-2 rounded-full border px-3 py-1 font-mono text-[11px] sm:mb-6 sm:text-xs">
+      <Container size="wide" className="relative py-12 sm:py-16 md:py-20 lg:py-28 xl:py-32">
+        <div className="grid items-center gap-8 sm:gap-10 md:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14 xl:gap-16">
+          <div className="min-w-0 max-w-full lg:max-w-[640px]">
+            <p className="border-border bg-background-elevated text-muted-foreground mb-4 inline-flex max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[10px] sm:mb-5 sm:gap-2 sm:px-3 sm:text-[11px] md:mb-6 md:text-xs">
               <span className="bg-accent inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full" />
-              <span className="truncate">Open source · Apache 2.0 · Python 3.11+</span>
+              <span className="truncate">{t("badge")}</span>
             </p>
             <h1
               id="hero-heading"
-              className="text-foreground text-[34px] leading-[1.05] font-medium tracking-tight text-balance sm:text-5xl md:text-[52px] lg:text-[56px]"
+              className="text-foreground text-[30px] leading-[1.1] font-medium tracking-tight text-balance break-words sm:text-[40px] sm:leading-[1.08] md:text-[48px] md:leading-[1.05] lg:text-[52px] xl:text-[56px]"
             >
-              Practical wisdom for AI agent systems.
+              {t("heading")}
             </h1>
-            <p className="text-muted-foreground mt-5 max-w-[560px] text-[15px] leading-[1.6] text-pretty sm:mt-6 sm:text-[17px] sm:leading-[1.65] md:text-lg">
-              <span className="text-foreground italic">Phronesis</span> (φρόνησις): for Aristotle,{" "}
-              <strong className="text-foreground font-medium">practical wisdom</strong> — the
-              capacity to deliberate well and act with judgment in concrete situations. An LLM has{" "}
-              <em>episteme</em> (knowledge). An agent needs <em>phronesis</em>.
+            <p className="text-muted-foreground mt-4 max-w-full text-[14px] leading-[1.6] text-pretty sm:mt-5 sm:text-[15px] md:mt-6 md:text-[17px] md:leading-[1.65] lg:max-w-[560px] lg:text-lg">
+              <span className="text-foreground italic">Phronesis</span> {t("leadPrefix")}{" "}
+              <strong className="text-foreground font-medium">{t("leadStrong")}</strong>{" "}
+              {t("leadMiddle")} <em>episteme</em> {t("leadEpisteme")} <em>phronesis</em>
+              {t("leadEnd")}
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="mt-6 flex flex-col gap-2.5 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3 md:mt-9">
               <a
                 href="#install"
                 className="bg-accent text-accent-foreground inline-flex h-11 w-full items-center justify-center gap-2 rounded-full px-5 text-sm font-medium transition-opacity hover:opacity-90 sm:w-auto sm:justify-start"
               >
-                Get started
+                {tCommon("getStarted")}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
@@ -44,18 +47,18 @@ export function Hero() {
                 className="border-border bg-background-elevated text-foreground hover:border-accent/40 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border px-5 text-sm font-medium transition-colors sm:w-auto sm:justify-start"
               >
                 <Github className="h-4 w-4" aria-hidden="true" />
-                View on GitHub
+                {tCommon("viewOnGithub")}
               </a>
             </div>
           </div>
 
-          <div className="relative -mx-5 sm:mx-0 lg:pl-4">
+          <div className="relative min-w-0 lg:pl-4">
             <div className="bg-accent-muted/40 absolute -inset-x-6 -inset-y-4 -z-10 hidden rounded-3xl blur-3xl lg:block" />
             <CodeBlock
               code={HERO_SNIPPET}
               lang="python"
               filename="hello_phronesis.py"
-              className="rounded-none border-x-0 sm:rounded-xl sm:border-x lg:shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset]"
+              className="lg:shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset]"
             />
           </div>
         </div>

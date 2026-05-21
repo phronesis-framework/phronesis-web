@@ -1,0 +1,216 @@
+{
+  "Meta": {
+    "title": "Phronesis — AIエージェントシステムのための実践的知恵",
+    "description": "Phronesisは、型付き契約、合成可能な実行パターン、組み込みの可観測性を備えたAIエージェントシステムを構築するためのオープンソースPythonフレームワークです。",
+    "ogDescription": "AIエージェントシステムのためのオープンソースPythonフレームワーク。型付き契約、合成可能なパイプライン、組み込みの可観測性。"
+  },
+  "Common": {
+    "skipToContent": "コンテンツへスキップ",
+    "getStarted": "はじめる",
+    "viewOnGithub": "GitHubで見る",
+    "githubAria": "GitHubのPhronesis",
+    "openMenu": "ナビゲーションメニューを開く",
+    "closeMenu": "ナビゲーションメニューを閉じる",
+    "toggleTheme": "テーマを切り替える",
+    "switchToDark": "ダークモードに切り替え",
+    "switchToLight": "ライトモードに切り替え",
+    "language": "言語",
+    "selectLanguage": "言語を選択"
+  },
+  "Announcement": {
+    "label": "Phronesis v0.1.0 アルファ版が利用可能です",
+    "cta": "アナウンスを読む",
+    "regionLabel": "サイトのお知らせ",
+    "dismiss": "お知らせを閉じる"
+  },
+  "Nav": {
+    "framework": "フレームワーク",
+    "docs": "ドキュメント",
+    "discussions": "ディスカッション",
+    "blog": "ブログ",
+    "primaryLabel": "メイン",
+    "mobileLabel": "モバイル"
+  },
+  "Hero": {
+    "badge": "オープンソース · Apache 2.0 · Python 3.11+",
+    "heading": "AIエージェントシステムのための実践的知恵。",
+    "leadPrefix": "(φρόνησις): アリストテレスにとって",
+    "leadStrong": "実践的知恵",
+    "leadMiddle": "とは、具体的な状況において適切に熟慮し判断をもって行動する能力である。LLMは",
+    "leadEpisteme": "(知識)を持つ。エージェントには",
+    "leadEnd": "が必要だ。"
+  },
+  "Why": {
+    "eyebrow": "なぜPhronesisか",
+    "heading": "エージェントはツールを持つチャットボットではない。",
+    "p1Before": "LLMは物事を知っている — それが",
+    "p1Episteme": "エピステーメー",
+    "p1Middle": "だ。しかしエージェントは具体的な状況において判断をもって",
+    "p1Strong": "決定し行動する",
+    "p1AfterStrong": "必要がある。それが",
+    "p1Phronesis": "フロネシス",
+    "p1End": "だ。多くのエージェントフレームワークはエージェントをツール利用ループに貼り付けられた強化チャットボットとして扱う。Phronesisは、それらを明示的な契約 — 型付き入力、宣言された副作用、有界なメモリ、名付けられた実行パターン — を持つ熟慮するシステムとして扱う。",
+    "p2Before": "既存のフレームワークは選択を迫る。一方では任意の制御フローをコードとして書く: 最大限の表現力と、半年後に誰もデバッグできないマルチエージェントシステム。他方ではすべてがYAMLやグラフビルダーで記述される: 一目では読めるが、非自明なものが必要になった瞬間に不可能になる。Phronesisは宣言的仕様と実行時のランタイムを分離する。エージェント、ツール、メモリ、パイプラインは",
+    "p2Strong": "型付き、不変、JSONシリアライズ可能な仕様",
+    "p2End": "だ。実行パターンは閉じた、明確に定義されたカタログから来る — 混沌のない表現力。",
+    "p3": "すべての実行はOpenTelemetryで可観測であり、すべての仕様はバージョン管理可能、すべての契約はプロンプト内のコメントではなくランタイムチェックだ。これがデモを生み出すフレームワークと、運用できるシステムを生み出すフレームワークの違いだ。"
+  },
+  "CodeTour": {
+    "eyebrow": "コードツアー",
+    "heading": "4つのスニペットで見るAPI。",
+    "intro": "本物のPython。本物の形。以下のフレームワークは初期アルファ — 表面積は拡大するが、設計はこのままスリムに保つ。",
+    "tabs": {
+      "agent": {
+        "label": "Agent",
+        "description": "エージェントは、単一の宣言的仕様の下でモデル、ツール、メモリを結びつける。"
+      },
+      "tool": {
+        "label": "Tool",
+        "description": "ツールは型付き契約。副作用が宣言されているため、ランタイムが安全性について推論できる。"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "description": "パイプラインはステージを構成する。各ステージは閉じた実行モードのカタログのいずれかで動作する。"
+      },
+      "mcp": {
+        "label": "MCP",
+        "description": "MCPサーバーをファーストクラスのツールソースとして接続し、ネイティブツールと同じ安全契約を適用する。"
+      }
+    },
+    "tabsAria": "Phronesis コードツアー"
+  },
+  "Patterns": {
+    "eyebrow": "パターン",
+    "heading": "繰り返し現れるエージェントの形に向けた設計。",
+    "intro": "これらはフレームワークが今日サポートするパターンだ。ケーススタディではない — まだ本番ユーザーを謳う材料はなく、それを偽るつもりもない。",
+    "items": {
+      "research": {
+        "title": "リサーチエージェント",
+        "description": "情報を集め、それについて推論し、引用付きで回答を統合するエージェント。"
+      },
+      "document": {
+        "title": "ドキュメントエージェント",
+        "description": "見たものを明示的に記憶し、ドキュメントを読み、構造化し、操作するエージェント。"
+      },
+      "multiAgent": {
+        "title": "マルチエージェントパイプライン",
+        "description": "受け渡し、討論、合意を通じて専門エージェントを構成するパイプライン。"
+      },
+      "toolUsing": {
+        "title": "ツール利用アシスタント",
+        "description": "明示的な安全契約の下で型付きツールやMCPサーバーを呼び出すエージェント。"
+      }
+    }
+  },
+  "Principles": {
+    "eyebrow": "原則",
+    "heading": "六つの選択、あらゆる場所に適用。",
+    "items": {
+      "composition": {
+        "title": "継承よりコンポジション",
+        "body": "エージェントは部品 — モデル、ツール、メモリ、プロンプト — から構成され、サブクラス化されない。組み立てる; オーバーライドしない。"
+      },
+      "async": {
+        "title": "非同期ファースト",
+        "body": "ストリーミング、並行性、キャンセルは基本前提。同期の影のAPIを保守する必要はない。"
+      },
+      "typed": {
+        "title": "強い型付け",
+        "body": "全体でPydantic v2。型はドキュメントではない — フレームワークが強制するランタイム契約だ。"
+      },
+      "immutable": {
+        "title": "不変な仕様、可変な実行",
+        "body": "定義はJSONシリアライズ可能で再現可能。実行状態は別の場所に存在し、可観測かつクエリ可能だ。"
+      },
+      "observable": {
+        "title": "可観測性を組み込み",
+        "body": "すべてのエージェント実行、ツール呼び出し、パイプラインステージにOpenTelemetryスパン — 最初のコミットから、後付けではない。"
+      },
+      "catalog": {
+        "title": "閉じた実行パターンのカタログ",
+        "body": "Sequence、Parallel、ReActLoop、Consensus、Debate、Handoff。推論できる名前付きモード — 任意の制御フローではない。"
+      }
+    }
+  },
+  "Inside": {
+    "eyebrow": "内部に何があるか",
+    "heading": "小さく、原則に基づいた表面。",
+    "intro": "フレームワークは意図的に狭い。各層は、システムをより安全に運用できるようにするか、半年後にコードをより読みやすくすることで、その存在を正当化する。",
+    "groups": {
+      "core": {
+        "title": "コア",
+        "description": "すべてのエージェントが構築されるプリミティブ。",
+        "items": {
+          "agents": "エージェント",
+          "tools": "ツール",
+          "mcp": "MCP統合",
+          "prompts": "プロンプト",
+          "capabilities": "ケイパビリティ"
+        }
+      },
+      "state": {
+        "title": "状態とコンテキスト",
+        "description": "エージェントはどう記憶し、何を共有するか。",
+        "items": {
+          "memory": "メモリ(エピソード、意味、作業、共有)",
+          "context": "コンテキスト管理",
+          "sessions": "セッション"
+        }
+      },
+      "orchestration": {
+        "title": "オーケストレーション",
+        "description": "エージェントはどうシステムへ構成されるか。",
+        "items": {
+          "pipelines": "パイプライン",
+          "modes": "実行モード",
+          "communication": "エージェント間通信",
+          "policies": "ポリシー",
+          "observability": "可観測性"
+        }
+      }
+    },
+    "executionModesTitle": "実行モード",
+    "executionModesNote": "閉じたカタログ — 十分に表現豊かで、推論できるほど有限。"
+  },
+  "Install": {
+    "eyebrow": "インストール",
+    "heading": "コマンドひとつ。Python 3.11以降。",
+    "readDocs": "ドキュメントを読む",
+    "starGithub": "GitHubでスター",
+    "copyLabel": "インストールコマンドをコピー"
+  },
+  "Status": {
+    "eyebrow": "プロジェクトの状況",
+    "heading": "Phronesisは初期アルファです。",
+    "p1": "APIは変わる。私たちはエージェントシステムを真剣に扱うフレームワーク — 型付き、合成可能、可観測 — を公開で構築している。本番運用の主張も、捏造されたケーススタディも、エンタープライズの壁もない。あるのはコードと、その設計への誠実なコミットメントだけだ。",
+    "p2": "フィードバック、アイデア、貢献はGitHubのDiscussionsとIssuesから歓迎する。ロードマップ、粗い部分、未解決の問いはすべてリポジトリにある。",
+    "discussions": "ディスカッション",
+    "openIssues": "Issueを開く"
+  },
+  "Footer": {
+    "tagline": "AIエージェントシステムのためのオープンソースPythonフレームワーク。型付き、合成可能、可観測。",
+    "rights": "© {year} Phronesis. Apache 2.0ライセンス。",
+    "motto": "AIエージェントシステムのための実践的知恵。",
+    "columns": {
+      "project": {
+        "title": "プロジェクト",
+        "framework": "フレームワーク",
+        "documentation": "ドキュメント",
+        "changelog": "Changelog",
+        "license": "ライセンス"
+      },
+      "community": {
+        "title": "コミュニティ",
+        "discussions": "ディスカッション",
+        "issues": "Issues",
+        "contributing": "コントリビュート"
+      },
+      "resources": {
+        "title": "リソース",
+        "blog": "ブログ",
+        "codeOfConduct": "行動規範",
+        "security": "セキュリティ"
+      }
+    }
+  }
+}

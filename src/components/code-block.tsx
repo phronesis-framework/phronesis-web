@@ -45,26 +45,32 @@ export async function CodeBlock({
         className,
       )}
     >
-      {filename && (
-        <figcaption className="border-border text-muted-foreground flex items-center justify-between gap-3 border-b px-3 py-2 font-mono text-[11px] sm:px-4 sm:text-xs">
-          <span className="truncate">{filename}</span>
-          <span className="flex-shrink-0 tracking-wide uppercase opacity-70">{lang}</span>
+      {filename ? (
+        <figcaption className="border-border text-muted-foreground flex items-center gap-2 border-b py-1.5 pr-1.5 pl-3 font-mono text-[11px] sm:gap-3 sm:py-2 sm:pr-2 sm:pl-4 sm:text-xs">
+          <span className="min-w-0 flex-1 truncate">{filename}</span>
+          <span className="hidden flex-shrink-0 tracking-wide uppercase opacity-70 sm:inline">
+            {lang}
+          </span>
+          <CopyButton
+            value={source}
+            label={`Copy ${filename} snippet`}
+            className="h-7 w-7 flex-shrink-0 sm:h-8 sm:w-8"
+          />
         </figcaption>
-      )}
-      <div className="relative">
+      ) : (
         <CopyButton
           value={source}
-          label={`Copy ${filename ?? lang} snippet`}
-          className="absolute top-2.5 right-2.5 opacity-100 transition-opacity sm:top-3 sm:right-3 md:opacity-0 md:group-hover:opacity-100 md:focus-visible:opacity-100"
+          label={`Copy ${lang} snippet`}
+          className="absolute top-2 right-2 z-10 opacity-100 transition-opacity sm:top-2.5 sm:right-2.5 md:opacity-0 md:group-hover:opacity-100 md:focus-visible:opacity-100"
         />
-        <div
-          aria-label={`${lang} code snippet`}
-          role="region"
-          className="overflow-x-auto px-3 py-3.5 font-mono text-[13px] leading-relaxed sm:px-4 sm:py-4 sm:text-[14px] md:text-[15px] [&_code]:bg-transparent [&_code]:font-mono [&_pre]:m-0 [&_pre]:bg-transparent [&_pre]:p-0"
-        >
-          <div className="block dark:hidden" dangerouslySetInnerHTML={{ __html: light }} />
-          <div className="hidden dark:block" dangerouslySetInnerHTML={{ __html: dark }} />
-        </div>
+      )}
+      <div
+        aria-label={`${lang} code snippet`}
+        role="region"
+        className="overflow-x-auto px-3 py-3 font-mono text-[12.5px] leading-relaxed sm:px-4 sm:py-4 sm:text-[14px] md:text-[15px] [&_code]:bg-transparent [&_code]:font-mono [&_pre]:m-0 [&_pre]:bg-transparent [&_pre]:p-0"
+      >
+        <div className="block dark:hidden" dangerouslySetInnerHTML={{ __html: light }} />
+        <div className="hidden dark:block" dangerouslySetInnerHTML={{ __html: dark }} />
       </div>
     </figure>
   );

@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import { AnnouncementBanner } from "@/components/announcement-banner";
 import { SiteHeader } from "@/components/site-header";
 import { Hero } from "@/components/hero";
@@ -10,19 +11,21 @@ import { Install } from "@/components/install";
 import { Status } from "@/components/status";
 import { SiteFooter } from "@/components/site-footer";
 import { StructuredData } from "@/components/structured-data";
-import { CHANGELOG_URL } from "@/components/nav-data";
 
 export const dynamic = "force-static";
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <StructuredData />
-      <AnnouncementBanner
-        href={CHANGELOG_URL}
-        label="Phronesis v0.1.0 alpha is available"
-        cta="Read the announcement"
-      />
+      <AnnouncementBanner />
       <SiteHeader />
       <main id="main" className="flex flex-col">
         <Hero />

@@ -1,0 +1,216 @@
+{
+  "Meta": {
+    "title": "Phronesis — Sabedoria prática para sistemas de agentes de IA",
+    "description": "Phronesis é um framework Python de código aberto para construir sistemas de agentes de IA com contratos tipados, padrões de execução componíveis e observabilidade integrada.",
+    "ogDescription": "Framework Python de código aberto para sistemas de agentes de IA. Contratos tipados, pipelines componíveis, observabilidade integrada."
+  },
+  "Common": {
+    "skipToContent": "Pular para o conteúdo",
+    "getStarted": "Começar",
+    "viewOnGithub": "Ver no GitHub",
+    "githubAria": "Phronesis no GitHub",
+    "openMenu": "Abrir menu de navegação",
+    "closeMenu": "Fechar menu de navegação",
+    "toggleTheme": "Alternar tema",
+    "switchToDark": "Mudar para modo escuro",
+    "switchToLight": "Mudar para modo claro",
+    "language": "Idioma",
+    "selectLanguage": "Selecionar idioma"
+  },
+  "Announcement": {
+    "label": "Phronesis v0.1.0 alfa está disponível",
+    "cta": "Ler o anúncio",
+    "regionLabel": "Anúncio do site",
+    "dismiss": "Dispensar anúncio"
+  },
+  "Nav": {
+    "framework": "Framework",
+    "docs": "Docs",
+    "discussions": "Discussões",
+    "blog": "Blog",
+    "primaryLabel": "Principal",
+    "mobileLabel": "Móvel"
+  },
+  "Hero": {
+    "badge": "Código aberto · Apache 2.0 · Python 3.11+",
+    "heading": "Sabedoria prática para sistemas de agentes de IA.",
+    "leadPrefix": "(φρόνησις): para Aristóteles,",
+    "leadStrong": "sabedoria prática",
+    "leadMiddle": "— a capacidade de deliberar bem e agir com discernimento em situações concretas. Um LLM tem",
+    "leadEpisteme": "(conhecimento). Um agente precisa de",
+    "leadEnd": "."
+  },
+  "Why": {
+    "eyebrow": "Por que Phronesis",
+    "heading": "Um agente não é um chatbot com ferramentas.",
+    "p1Before": "Os LLMs sabem coisas — isso é",
+    "p1Episteme": "episteme",
+    "p1Middle": ". Mas os agentes precisam",
+    "p1Strong": "decidir e agir",
+    "p1AfterStrong": "com discernimento em situações concretas. Isso é",
+    "p1Phronesis": "phronesis",
+    "p1End": ". A maioria dos frameworks de agentes os trata como chatbots aprimorados colados a um laço de uso de ferramentas. Phronesis os trata como sistemas deliberativos com contratos explícitos: entradas tipadas, efeitos declarados, memória delimitada, padrões de execução nomeados.",
+    "p2Before": "Frameworks existentes forçam uma escolha. De um lado, você escreve fluxo de controle arbitrário como código: expressividade máxima e um sistema multiagente que ninguém consegue depurar seis meses depois. Do outro, tudo é descrito em YAML ou construtores de grafos: legível à primeira vista, impossível assim que você precisa de algo não trivial. Phronesis separa a especificação declarativa da execução em tempo de execução. Agentes, ferramentas, memória, pipelines são",
+    "p2Strong": "specs tipadas, imutáveis, serializáveis em JSON",
+    "p2End": ". Os padrões de execução vêm de um catálogo fechado e bem definido — expressividade sem caos.",
+    "p3": "Cada execução é observável via OpenTelemetry, cada spec é versionável, cada contrato é uma verificação em tempo de execução, não um comentário num prompt. Essa é a diferença entre um framework que produz demos e um que produz sistemas que você pode operar."
+  },
+  "CodeTour": {
+    "eyebrow": "Tour pelo código",
+    "heading": "A API em quatro trechos.",
+    "intro": "Python de verdade. Forma real. O framework abaixo está em alfa inicial — a superfície vai crescer, mas o design vai continuar enxuto.",
+    "tabs": {
+      "agent": {
+        "label": "Agente",
+        "description": "Um agente vincula um modelo, ferramentas e memória sob uma única spec declarativa."
+      },
+      "tool": {
+        "label": "Ferramenta",
+        "description": "Ferramentas são contratos tipados. Efeitos são declarados para que o runtime possa raciocinar sobre segurança."
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "description": "Pipelines compõem etapas. Cada etapa roda em um de um catálogo fechado de modos de execução."
+      },
+      "mcp": {
+        "label": "MCP",
+        "description": "Anexe servidores MCP como fontes de ferramentas de primeira classe, com os mesmos contratos de segurança das nativas."
+      }
+    },
+    "tabsAria": "Tour pelo código Phronesis"
+  },
+  "Patterns": {
+    "eyebrow": "Padrões",
+    "heading": "Projetado para as formas de agente que se repetem.",
+    "intro": "Estes são padrões que o framework suporta hoje. Não são estudos de caso — ainda não temos usuários em produção para reivindicar, e não vamos fingir o contrário.",
+    "items": {
+      "research": {
+        "title": "Agentes de pesquisa",
+        "description": "Agentes que reúnem informações, raciocinam sobre elas e sintetizam respostas com citações."
+      },
+      "document": {
+        "title": "Agentes de documentos",
+        "description": "Agentes que leem, estruturam e agem sobre documentos com memória explícita do que viram."
+      },
+      "multiAgent": {
+        "title": "Pipelines multiagente",
+        "description": "Pipelines que compõem agentes especializados via repasses, debate ou consenso."
+      },
+      "toolUsing": {
+        "title": "Assistentes com ferramentas",
+        "description": "Agentes que invocam ferramentas tipadas e servidores MCP sob contratos de segurança explícitos."
+      }
+    }
+  },
+  "Principles": {
+    "eyebrow": "Princípios",
+    "heading": "Seis escolhas, aplicadas em todo lugar.",
+    "items": {
+      "composition": {
+        "title": "Composição em vez de herança",
+        "body": "Agentes são configurados a partir de partes — modelo, ferramentas, memória, prompts — não subclassificados. Você monta; não sobrescreve."
+      },
+      "async": {
+        "title": "Async primeiro",
+        "body": "Streaming, concorrência e cancelamento são premissas básicas. Não há API síncrona paralela para manter."
+      },
+      "typed": {
+        "title": "Fortemente tipado",
+        "body": "Pydantic v2 em tudo. Tipos não são documentação — são contratos em tempo de execução que o framework faz cumprir."
+      },
+      "immutable": {
+        "title": "Specs imutáveis, execuções mutáveis",
+        "body": "Definições são serializáveis em JSON e reproduzíveis. O estado de execução vive à parte, observável e consultável."
+      },
+      "observable": {
+        "title": "Observabilidade embutida",
+        "body": "Spans do OpenTelemetry para cada execução de agente, chamada de ferramenta e etapa de pipeline — desde o primeiro commit, não parafusados depois."
+      },
+      "catalog": {
+        "title": "Catálogo fechado de padrões de execução",
+        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. Modos nomeados sobre os quais se pode raciocinar — não fluxo de controle arbitrário."
+      }
+    }
+  },
+  "Inside": {
+    "eyebrow": "O que tem dentro",
+    "heading": "Uma superfície pequena e com princípios.",
+    "intro": "O framework é intencionalmente estreito. Cada camada ganha seu lugar tornando um sistema mais seguro de operar ou o código mais fácil de ler seis meses depois.",
+    "groups": {
+      "core": {
+        "title": "Núcleo",
+        "description": "As primitivas a partir das quais cada agente é construído.",
+        "items": {
+          "agents": "Agentes",
+          "tools": "Ferramentas",
+          "mcp": "Integração com MCP",
+          "prompts": "Prompts",
+          "capabilities": "Capacidades"
+        }
+      },
+      "state": {
+        "title": "Estado e contexto",
+        "description": "Como agentes se lembram e o que compartilham.",
+        "items": {
+          "memory": "Memória (episódica, semântica, de trabalho, compartilhada)",
+          "context": "Gestão de contexto",
+          "sessions": "Sessões"
+        }
+      },
+      "orchestration": {
+        "title": "Orquestração",
+        "description": "Como agentes se compõem em sistemas.",
+        "items": {
+          "pipelines": "Pipelines",
+          "modes": "Modos de execução",
+          "communication": "Comunicação entre agentes",
+          "policies": "Políticas",
+          "observability": "Observabilidade"
+        }
+      }
+    },
+    "executionModesTitle": "Modos de execução",
+    "executionModesNote": "Um catálogo fechado — expressivo o bastante, finito o bastante para se raciocinar sobre ele."
+  },
+  "Install": {
+    "eyebrow": "Instalar",
+    "heading": "Um comando. Python 3.11 ou superior.",
+    "readDocs": "Ler os docs",
+    "starGithub": "Dar estrela no GitHub",
+    "copyLabel": "Copiar comando de instalação"
+  },
+  "Status": {
+    "eyebrow": "Status do projeto",
+    "heading": "Phronesis está em alfa inicial.",
+    "p1": "A API vai mudar. Estamos trabalhando em público para construir um framework que leva sistemas de agentes a sério — tipado, componível, observável. Sem afirmações de produção, sem estudos de caso fabricados, sem barreiras corporativas. Apenas o código e um compromisso honesto com seu design.",
+    "p2": "Feedback, ideias e contribuições são bem-vindos via GitHub Discussions e Issues. O roteiro, as arestas e as perguntas em aberto estão todos no repositório.",
+    "discussions": "Discussões",
+    "openIssues": "Abrir issues"
+  },
+  "Footer": {
+    "tagline": "Um framework Python de código aberto para sistemas de agentes de IA. Tipado, componível, observável.",
+    "rights": "© {year} Phronesis. Licença Apache 2.0.",
+    "motto": "Sabedoria prática para sistemas de agentes de IA.",
+    "columns": {
+      "project": {
+        "title": "Projeto",
+        "framework": "Framework",
+        "documentation": "Documentação",
+        "changelog": "Changelog",
+        "license": "Licença"
+      },
+      "community": {
+        "title": "Comunidade",
+        "discussions": "Discussões",
+        "issues": "Issues",
+        "contributing": "Contribuir"
+      },
+      "resources": {
+        "title": "Recursos",
+        "blog": "Blog",
+        "codeOfConduct": "Código de conduta",
+        "security": "Segurança"
+      }
+    }
+  }
+}

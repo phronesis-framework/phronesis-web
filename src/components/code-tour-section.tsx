@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Section } from "./primitives";
 import { CodeBlock } from "./code-block";
 import { CodeTour } from "./code-tour";
@@ -8,6 +9,7 @@ import { CODE_TOUR_TABS } from "@/content/snippets";
  * then hands the HTML to the client-side Tabs component.
  */
 export async function CodeTourSection() {
+  const t = await getTranslations("CodeTour");
   const panels = Object.fromEntries(
     await Promise.all(
       CODE_TOUR_TABS.map(async (tab) => [
@@ -20,14 +22,9 @@ export async function CodeTourSection() {
   return (
     <Section
       id="code-tour"
-      eyebrow="Code tour"
-      heading="The API in four snippets."
-      intro={
-        <>
-          Real Python. Real shape. The framework you see below is in early alpha — the surface area
-          will grow, but the design will stay this lean.
-        </>
-      }
+      eyebrow={t("eyebrow")}
+      heading={t("heading")}
+      intro={<>{t("intro")}</>}
       headingId="code-tour-heading"
     >
       <CodeTour panels={panels} />

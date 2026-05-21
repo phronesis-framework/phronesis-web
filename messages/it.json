@@ -1,0 +1,216 @@
+{
+  "Meta": {
+    "title": "Phronesis — Saggezza pratica per sistemi di agenti IA",
+    "description": "Phronesis è un framework Python open source per costruire sistemi di agenti IA con contratti tipizzati, pattern di esecuzione componibili e osservabilità integrata.",
+    "ogDescription": "Framework Python open source per sistemi di agenti IA. Contratti tipizzati, pipeline componibili, osservabilità integrata."
+  },
+  "Common": {
+    "skipToContent": "Vai al contenuto",
+    "getStarted": "Inizia",
+    "viewOnGithub": "Vedi su GitHub",
+    "githubAria": "Phronesis su GitHub",
+    "openMenu": "Apri menu di navigazione",
+    "closeMenu": "Chiudi menu di navigazione",
+    "toggleTheme": "Cambia tema",
+    "switchToDark": "Passa alla modalità scura",
+    "switchToLight": "Passa alla modalità chiara",
+    "language": "Lingua",
+    "selectLanguage": "Seleziona lingua"
+  },
+  "Announcement": {
+    "label": "Phronesis v0.1.0 alfa è disponibile",
+    "cta": "Leggi l'annuncio",
+    "regionLabel": "Annuncio del sito",
+    "dismiss": "Chiudi annuncio"
+  },
+  "Nav": {
+    "framework": "Framework",
+    "docs": "Docs",
+    "discussions": "Discussioni",
+    "blog": "Blog",
+    "primaryLabel": "Principale",
+    "mobileLabel": "Mobile"
+  },
+  "Hero": {
+    "badge": "Open source · Apache 2.0 · Python 3.11+",
+    "heading": "Saggezza pratica per sistemi di agenti IA.",
+    "leadPrefix": "(φρόνησις): per Aristotele,",
+    "leadStrong": "saggezza pratica",
+    "leadMiddle": "— la capacità di deliberare bene e agire con giudizio in situazioni concrete. Un LLM ha",
+    "leadEpisteme": "(conoscenza). Un agente ha bisogno di",
+    "leadEnd": "."
+  },
+  "Why": {
+    "eyebrow": "Perché Phronesis",
+    "heading": "Un agente non è un chatbot con strumenti.",
+    "p1Before": "Gli LLM sanno cose — quella è",
+    "p1Episteme": "episteme",
+    "p1Middle": ". Ma gli agenti devono",
+    "p1Strong": "decidere e agire",
+    "p1AfterStrong": "con giudizio in situazioni concrete. Quella è",
+    "p1Phronesis": "phronesis",
+    "p1End": ". La maggior parte dei framework per agenti li tratta come chatbot potenziati incollati a un ciclo d'uso degli strumenti. Phronesis li tratta come sistemi deliberativi con contratti espliciti: input tipizzati, effetti dichiarati, memoria limitata, pattern di esecuzione nominati.",
+    "p2Before": "I framework esistenti impongono una scelta. Da un lato, scrivi flusso di controllo arbitrario come codice: massima espressività e un sistema multi-agente che nessuno può debugare sei mesi dopo. Dall'altro, tutto è descritto in YAML o costruttori di grafi: leggibile a colpo d'occhio, impossibile appena serve qualcosa di non banale. Phronesis separa la specifica dichiarativa dall'esecuzione runtime. Agenti, strumenti, memoria e pipeline sono",
+    "p2Strong": "spec tipizzate, immutabili, serializzabili in JSON",
+    "p2End": ". I pattern di esecuzione provengono da un catalogo chiuso e ben definito — espressività senza caos.",
+    "p3": "Ogni esecuzione è osservabile tramite OpenTelemetry, ogni spec è versionabile, ogni contratto è un controllo runtime, non un commento in un prompt. Questa è la differenza fra un framework che produce demo e uno che produce sistemi che puoi gestire."
+  },
+  "CodeTour": {
+    "eyebrow": "Tour del codice",
+    "heading": "L'API in quattro snippet.",
+    "intro": "Python vero. Forma vera. Il framework qui sotto è in alfa precoce — la superficie crescerà, ma il design rimarrà così snello.",
+    "tabs": {
+      "agent": {
+        "label": "Agent",
+        "description": "Un agente lega un modello, strumenti e memoria sotto una singola spec dichiarativa."
+      },
+      "tool": {
+        "label": "Tool",
+        "description": "Gli strumenti sono contratti tipizzati. Gli effetti sono dichiarati così che il runtime possa ragionare sulla sicurezza."
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "description": "Le pipeline compongono stage. Ogni stage gira in uno di un catalogo chiuso di modalità d'esecuzione."
+      },
+      "mcp": {
+        "label": "MCP",
+        "description": "Collega server MCP come sorgenti di strumenti di prima classe, con gli stessi contratti di sicurezza degli strumenti nativi."
+      }
+    },
+    "tabsAria": "Tour del codice Phronesis"
+  },
+  "Patterns": {
+    "eyebrow": "Pattern",
+    "heading": "Progettato per le forme di agente che ricorrono.",
+    "intro": "Questi sono pattern che il framework supporta oggi. Non sono case study — non abbiamo ancora utenti in produzione da rivendicare, e non fingeremo il contrario.",
+    "items": {
+      "research": {
+        "title": "Agenti di ricerca",
+        "description": "Agenti che raccolgono informazioni, ragionano su di esse e sintetizzano risposte con citazioni."
+      },
+      "document": {
+        "title": "Agenti documentali",
+        "description": "Agenti che leggono, strutturano e agiscono su documenti con memoria esplicita di ciò che hanno visto."
+      },
+      "multiAgent": {
+        "title": "Pipeline multi-agente",
+        "description": "Pipeline che compongono agenti specializzati tramite handoff, dibattito o consenso."
+      },
+      "toolUsing": {
+        "title": "Assistenti con strumenti",
+        "description": "Agenti che invocano strumenti tipizzati e server MCP sotto contratti di sicurezza espliciti."
+      }
+    }
+  },
+  "Principles": {
+    "eyebrow": "Principi",
+    "heading": "Sei scelte, applicate ovunque.",
+    "items": {
+      "composition": {
+        "title": "Composizione invece di ereditarietà",
+        "body": "Gli agenti sono configurati a partire da pezzi — modello, strumenti, memoria, prompt — non sottoclassati. Assembli; non sovrascrivi."
+      },
+      "async": {
+        "title": "Async first",
+        "body": "Streaming, concorrenza e cancellazione sono ipotesi di base. Non c'è un'API sincrona ombra da mantenere."
+      },
+      "typed": {
+        "title": "Fortemente tipizzato",
+        "body": "Pydantic v2 ovunque. I tipi non sono documentazione — sono contratti runtime che il framework fa rispettare."
+      },
+      "immutable": {
+        "title": "Spec immutabili, run mutabili",
+        "body": "Le definizioni sono serializzabili in JSON e riproducibili. Lo stato di esecuzione vive a parte, osservabile e interrogabile."
+      },
+      "observable": {
+        "title": "Osservabilità integrata",
+        "body": "Span OpenTelemetry per ogni run di agente, chiamata di strumento e stage di pipeline — dal primo commit, non avvitati dopo."
+      },
+      "catalog": {
+        "title": "Catalogo chiuso di pattern d'esecuzione",
+        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. Modalità con un nome su cui puoi ragionare — non flusso di controllo arbitrario."
+      }
+    }
+  },
+  "Inside": {
+    "eyebrow": "Cosa c'è dentro",
+    "heading": "Una superficie piccola e con principi.",
+    "intro": "Il framework è intenzionalmente stretto. Ogni strato si guadagna il posto rendendo un sistema più sicuro da operare o il codice più semplice da leggere sei mesi dopo.",
+    "groups": {
+      "core": {
+        "title": "Nucleo",
+        "description": "Le primitive da cui è costruito ogni agente.",
+        "items": {
+          "agents": "Agenti",
+          "tools": "Strumenti",
+          "mcp": "Integrazione MCP",
+          "prompts": "Prompt",
+          "capabilities": "Capacità"
+        }
+      },
+      "state": {
+        "title": "Stato e contesto",
+        "description": "Come gli agenti ricordano e cosa condividono.",
+        "items": {
+          "memory": "Memoria (episodica, semantica, di lavoro, condivisa)",
+          "context": "Gestione del contesto",
+          "sessions": "Sessioni"
+        }
+      },
+      "orchestration": {
+        "title": "Orchestrazione",
+        "description": "Come gli agenti si compongono in sistemi.",
+        "items": {
+          "pipelines": "Pipeline",
+          "modes": "Modalità d'esecuzione",
+          "communication": "Comunicazione tra agenti",
+          "policies": "Politiche",
+          "observability": "Osservabilità"
+        }
+      }
+    },
+    "executionModesTitle": "Modalità d'esecuzione",
+    "executionModesNote": "Un catalogo chiuso — abbastanza espressivo, abbastanza finito da poter ragionare."
+  },
+  "Install": {
+    "eyebrow": "Installa",
+    "heading": "Un comando. Python 3.11 o successivo.",
+    "readDocs": "Leggi i docs",
+    "starGithub": "Metti la stella su GitHub",
+    "copyLabel": "Copia comando d'installazione"
+  },
+  "Status": {
+    "eyebrow": "Stato del progetto",
+    "heading": "Phronesis è in alfa precoce.",
+    "p1": "L'API cambierà. Stiamo lavorando in pubblico per costruire un framework che prenda sul serio i sistemi di agenti — tipizzato, componibile, osservabile. Nessuna rivendicazione di produzione, nessun caso studio inventato, nessuna barriera enterprise. Solo il codice e un impegno onesto verso il suo design.",
+    "p2": "Feedback, idee e contributi sono benvenuti via GitHub Discussions e Issues. La roadmap, le asperità e le questioni aperte sono tutte nel repository.",
+    "discussions": "Discussioni",
+    "openIssues": "Apri issue"
+  },
+  "Footer": {
+    "tagline": "Un framework Python open source per sistemi di agenti IA. Tipizzato, componibile, osservabile.",
+    "rights": "© {year} Phronesis. Licenza Apache 2.0.",
+    "motto": "Saggezza pratica per sistemi di agenti IA.",
+    "columns": {
+      "project": {
+        "title": "Progetto",
+        "framework": "Framework",
+        "documentation": "Documentazione",
+        "changelog": "Changelog",
+        "license": "Licenza"
+      },
+      "community": {
+        "title": "Comunità",
+        "discussions": "Discussioni",
+        "issues": "Issue",
+        "contributing": "Contribuire"
+      },
+      "resources": {
+        "title": "Risorse",
+        "blog": "Blog",
+        "codeOfConduct": "Codice di condotta",
+        "security": "Sicurezza"
+      }
+    }
+  }
+}

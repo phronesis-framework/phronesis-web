@@ -1,19 +1,22 @@
+import { getTranslations } from "next-intl/server";
 import { GITHUB_FRAMEWORK_REPO } from "./nav-data";
 
 /**
  * JSON-LD structured data describing the Phronesis project to search engines
  * and rich result renderers. Rendered as an inline <script type="application/ld+json">.
  */
-export function StructuredData() {
-  const siteUrl = "https://phronesis-framework.com";
+export async function StructuredData() {
+  const t = await getTranslations("Meta");
+  const siteUrl = (
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://phronesis-framework.com"
+  ).replace(/\/$/, "");
 
   const softwareApplication = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "Phronesis",
     alternateName: "Phronesis Framework",
-    description:
-      "Open source Python framework for building AI agent systems with typed contracts, composable execution patterns, and observability built in.",
+    description: t("description"),
     url: siteUrl,
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Cross-platform",

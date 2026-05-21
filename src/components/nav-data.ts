@@ -1,6 +1,6 @@
 export interface NavLink {
   href: string;
-  label: string;
+  key: "framework" | "docs" | "discussions" | "blog";
   external?: boolean;
 }
 
@@ -18,8 +18,8 @@ export const SECURITY_URL = `${GITHUB_FRAMEWORK_REPO}/blob/main/SECURITY.md`;
 export const RELEASES_URL = `${GITHUB_FRAMEWORK_REPO}/releases`;
 
 export const PRIMARY_NAV: readonly NavLink[] = [
-  { href: GITHUB_FRAMEWORK_REPO, label: "Framework", external: true },
-  { href: DOCS_URL, label: "Docs" },
-  { href: DISCUSSIONS_URL, label: "Discussions", external: true },
-  { href: "/blog", label: "Blog" },
+  { href: GITHUB_FRAMEWORK_REPO, key: "framework", external: true },
+  { href: DOCS_URL, key: "docs" },
+  { href: DISCUSSIONS_URL, key: "discussions", external: true },
+  { href: "/blog", key: "blog" },
 ] as const;

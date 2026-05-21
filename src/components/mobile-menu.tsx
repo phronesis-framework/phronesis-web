@@ -3,12 +3,16 @@
 import * as React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Github, Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { PRIMARY_NAV, GITHUB_FRAMEWORK_REPO } from "./nav-data";
 import { Logo } from "./logo";
 import { ThemeToggle } from "./theme-toggle";
+import { LanguageSwitcher } from "./language-switcher";
 import { cn } from "@/lib/utils";
 
 export function MobileMenu() {
+  const tCommon = useTranslations("Common");
+  const tNav = useTranslations("Nav");
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -16,7 +20,7 @@ export function MobileMenu() {
       <Dialog.Trigger asChild>
         <button
           type="button"
-          aria-label="Open navigation menu"
+          aria-label={tCommon("openMenu")}
           className="border-border bg-background-elevated text-muted-foreground hover:text-foreground inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors md:hidden"
         >
           <Menu className="h-4 w-4" aria-hidden="true" />
@@ -44,14 +48,14 @@ export function MobileMenu() {
             <Dialog.Close asChild>
               <button
                 type="button"
-                aria-label="Close navigation menu"
+                aria-label={tCommon("closeMenu")}
                 className="border-border bg-background-elevated text-muted-foreground hover:text-foreground inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors"
               >
                 <X className="h-4 w-4" aria-hidden="true" />
               </button>
             </Dialog.Close>
           </div>
-          <nav className="flex flex-1 flex-col gap-1 px-3 py-5 sm:px-4 sm:py-6" aria-label="Mobile">
+          <nav className="flex flex-1 flex-col gap-1 px-3 py-5 sm:px-4 sm:py-6" aria-label={tNav("mobileLabel")}>
             {PRIMARY_NAV.map((link) => (
               <a
                 key={link.href}
@@ -61,17 +65,20 @@ export function MobileMenu() {
                 onClick={() => setOpen(false)}
                 className="text-foreground hover:bg-background-elevated rounded-md px-3 py-3 text-base font-medium transition-colors"
               >
-                {link.label}
+                {tNav(link.key)}
               </a>
             ))}
           </nav>
-          <div className="border-border flex items-center justify-between border-t px-5 py-3 sm:px-6 sm:py-4">
-            <ThemeToggle />
+          <div className="border-border flex flex-wrap items-center justify-between gap-2 border-t px-5 py-3 sm:px-6 sm:py-4">
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <LanguageSwitcher />
+            </div>
             <a
               href={GITHUB_FRAMEWORK_REPO}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Phronesis on GitHub"
+              aria-label={tCommon("githubAria")}
               className="border-border bg-background-elevated text-muted-foreground hover:text-foreground inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors"
             >
               <Github className="h-4 w-4" aria-hidden="true" />

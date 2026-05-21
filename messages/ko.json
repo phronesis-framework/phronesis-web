@@ -1,0 +1,216 @@
+{
+  "Meta": {
+    "title": "Phronesis — AI 에이전트 시스템을 위한 실천적 지혜",
+    "description": "Phronesis는 타입이 지정된 계약, 합성 가능한 실행 패턴, 내장된 관측성을 갖춘 AI 에이전트 시스템을 구축하기 위한 오픈소스 Python 프레임워크입니다.",
+    "ogDescription": "AI 에이전트 시스템을 위한 오픈소스 Python 프레임워크. 타입화된 계약, 합성 가능한 파이프라인, 내장 관측성."
+  },
+  "Common": {
+    "skipToContent": "본문으로 건너뛰기",
+    "getStarted": "시작하기",
+    "viewOnGithub": "GitHub에서 보기",
+    "githubAria": "GitHub의 Phronesis",
+    "openMenu": "내비게이션 메뉴 열기",
+    "closeMenu": "내비게이션 메뉴 닫기",
+    "toggleTheme": "테마 전환",
+    "switchToDark": "다크 모드로 전환",
+    "switchToLight": "라이트 모드로 전환",
+    "language": "언어",
+    "selectLanguage": "언어 선택"
+  },
+  "Announcement": {
+    "label": "Phronesis v0.1.0 알파가 출시되었습니다",
+    "cta": "공지 읽기",
+    "regionLabel": "사이트 공지",
+    "dismiss": "공지 닫기"
+  },
+  "Nav": {
+    "framework": "프레임워크",
+    "docs": "문서",
+    "discussions": "토론",
+    "blog": "블로그",
+    "primaryLabel": "주 메뉴",
+    "mobileLabel": "모바일"
+  },
+  "Hero": {
+    "badge": "오픈소스 · Apache 2.0 · Python 3.11+",
+    "heading": "AI 에이전트 시스템을 위한 실천적 지혜.",
+    "leadPrefix": "(φρόνησις): 아리스토텔레스에게",
+    "leadStrong": "실천적 지혜",
+    "leadMiddle": "는 구체적인 상황에서 잘 숙고하고 판단을 가지고 행동하는 능력이다. LLM은",
+    "leadEpisteme": "(지식)을 가진다. 에이전트에게는",
+    "leadEnd": "가 필요하다."
+  },
+  "Why": {
+    "eyebrow": "왜 Phronesis인가",
+    "heading": "에이전트는 도구를 가진 챗봇이 아니다.",
+    "p1Before": "LLM은 무언가를 안다 — 그것이",
+    "p1Episteme": "에피스테메(episteme)",
+    "p1Middle": "이다. 그러나 에이전트는 구체적인 상황에서 판단을 가지고",
+    "p1Strong": "결정하고 행동해야",
+    "p1AfterStrong": "한다. 그것이",
+    "p1Phronesis": "프로네시스(phronesis)",
+    "p1End": "이다. 대부분의 에이전트 프레임워크는 에이전트를 도구 사용 루프에 붙은 강화된 챗봇으로 취급한다. Phronesis는 이를 명시적인 계약 — 타입화된 입력, 선언된 효과, 경계가 있는 메모리, 이름 붙은 실행 패턴 — 을 가진 숙고하는 시스템으로 취급한다.",
+    "p2Before": "기존 프레임워크는 선택을 강요한다. 한편으로는 임의의 제어 흐름을 코드로 작성한다: 최대의 표현력과 6개월 후 아무도 디버그할 수 없는 멀티 에이전트 시스템. 다른 한편으로는 모든 것이 YAML이나 그래프 빌더로 기술된다: 한눈에 읽히지만 사소하지 않은 무언가가 필요해지는 순간 불가능해진다. Phronesis는 선언적 명세와 런타임 실행을 분리한다. 에이전트, 도구, 메모리, 파이프라인은",
+    "p2Strong": "타입화되고 불변이며 JSON 직렬화 가능한 스펙",
+    "p2End": "이다. 실행 패턴은 폐쇄적이고 잘 정의된 카탈로그에서 나온다 — 혼돈 없는 표현력.",
+    "p3": "모든 실행은 OpenTelemetry로 관측 가능하고, 모든 스펙은 버전화 가능하며, 모든 계약은 프롬프트 안의 주석이 아니라 런타임 검사다. 이것이 데모를 만드는 프레임워크와 운영할 수 있는 시스템을 만드는 프레임워크의 차이다."
+  },
+  "CodeTour": {
+    "eyebrow": "코드 투어",
+    "heading": "네 개의 스니펫으로 보는 API.",
+    "intro": "진짜 Python. 진짜 형태. 아래의 프레임워크는 초기 알파다 — 표면적은 늘어나겠지만 설계는 이만큼 군더더기 없이 유지될 것이다.",
+    "tabs": {
+      "agent": {
+        "label": "Agent",
+        "description": "에이전트는 단일 선언적 스펙 아래에서 모델, 도구, 메모리를 묶는다."
+      },
+      "tool": {
+        "label": "Tool",
+        "description": "도구는 타입화된 계약이다. 효과가 선언되어 있어 런타임이 안전성에 대해 추론할 수 있다."
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "description": "파이프라인은 스테이지를 구성한다. 각 스테이지는 폐쇄적인 실행 모드 카탈로그 중 하나로 실행된다."
+      },
+      "mcp": {
+        "label": "MCP",
+        "description": "MCP 서버를 일급 도구 소스로 붙이며, 네이티브 도구와 동일한 안전 계약을 적용한다."
+      }
+    },
+    "tabsAria": "Phronesis 코드 투어"
+  },
+  "Patterns": {
+    "eyebrow": "패턴",
+    "heading": "반복되는 에이전트 형태를 위한 설계.",
+    "intro": "이는 프레임워크가 오늘 지원하는 패턴이다. 사례 연구가 아니다 — 우리는 아직 주장할 만한 프로덕션 사용자가 없으며, 다른 척하지도 않을 것이다.",
+    "items": {
+      "research": {
+        "title": "리서치 에이전트",
+        "description": "정보를 모으고, 그에 대해 추론하며, 인용과 함께 답을 합성하는 에이전트."
+      },
+      "document": {
+        "title": "문서 에이전트",
+        "description": "본 것에 대한 명시적 기억을 가지고 문서를 읽고 구조화하며 행동하는 에이전트."
+      },
+      "multiAgent": {
+        "title": "멀티 에이전트 파이프라인",
+        "description": "이양, 토론, 합의를 통해 전문 에이전트를 구성하는 파이프라인."
+      },
+      "toolUsing": {
+        "title": "도구 사용 어시스턴트",
+        "description": "명시적 안전 계약 아래 타입화된 도구와 MCP 서버를 호출하는 에이전트."
+      }
+    }
+  },
+  "Principles": {
+    "eyebrow": "원칙",
+    "heading": "여섯 가지 선택, 어디에나 적용.",
+    "items": {
+      "composition": {
+        "title": "상속보다 합성",
+        "body": "에이전트는 부품 — 모델, 도구, 메모리, 프롬프트 — 으로 구성되며 서브클래스화되지 않는다. 조립하지, 오버라이드하지 않는다."
+      },
+      "async": {
+        "title": "비동기 우선",
+        "body": "스트리밍, 동시성, 취소는 기본 전제다. 유지해야 할 동기 그림자 API가 없다."
+      },
+      "typed": {
+        "title": "강한 타입",
+        "body": "전반에 Pydantic v2. 타입은 문서가 아니다 — 프레임워크가 강제하는 런타임 계약이다."
+      },
+      "immutable": {
+        "title": "불변 스펙, 가변 실행",
+        "body": "정의는 JSON 직렬화 가능하며 재현 가능하다. 실행 상태는 별도로 존재하며 관측 가능하고 조회 가능하다."
+      },
+      "observable": {
+        "title": "내장 관측성",
+        "body": "모든 에이전트 실행, 도구 호출, 파이프라인 스테이지에 OpenTelemetry 스팬 — 첫 커밋부터 나중에 덧붙이지 않는다."
+      },
+      "catalog": {
+        "title": "실행 패턴의 폐쇄 카탈로그",
+        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. 추론할 수 있는 이름 붙은 모드 — 임의의 제어 흐름이 아니다."
+      }
+    }
+  },
+  "Inside": {
+    "eyebrow": "내부에 무엇이 있나",
+    "heading": "작고 원칙적인 표면.",
+    "intro": "프레임워크는 의도적으로 좁다. 각 계층은 시스템을 더 안전하게 운영하게 만들거나, 6개월 후 코드를 더 쉽게 읽게 만들어 그 자리를 얻는다.",
+    "groups": {
+      "core": {
+        "title": "코어",
+        "description": "모든 에이전트가 만들어지는 기본 요소.",
+        "items": {
+          "agents": "에이전트",
+          "tools": "도구",
+          "mcp": "MCP 통합",
+          "prompts": "프롬프트",
+          "capabilities": "기능"
+        }
+      },
+      "state": {
+        "title": "상태와 컨텍스트",
+        "description": "에이전트가 어떻게 기억하고 무엇을 공유하는가.",
+        "items": {
+          "memory": "메모리(에피소딕, 시맨틱, 작업, 공유)",
+          "context": "컨텍스트 관리",
+          "sessions": "세션"
+        }
+      },
+      "orchestration": {
+        "title": "오케스트레이션",
+        "description": "에이전트가 어떻게 시스템으로 구성되는가.",
+        "items": {
+          "pipelines": "파이프라인",
+          "modes": "실행 모드",
+          "communication": "에이전트 간 통신",
+          "policies": "정책",
+          "observability": "관측성"
+        }
+      }
+    },
+    "executionModesTitle": "실행 모드",
+    "executionModesNote": "폐쇄 카탈로그 — 충분히 표현적이면서, 추론할 수 있을 만큼 유한하다."
+  },
+  "Install": {
+    "eyebrow": "설치",
+    "heading": "명령 하나. Python 3.11 이상.",
+    "readDocs": "문서 읽기",
+    "starGithub": "GitHub에서 스타",
+    "copyLabel": "설치 명령 복사"
+  },
+  "Status": {
+    "eyebrow": "프로젝트 상태",
+    "heading": "Phronesis는 초기 알파입니다.",
+    "p1": "API는 바뀔 것이다. 우리는 에이전트 시스템을 진지하게 다루는 프레임워크 — 타입화되고, 합성 가능하며, 관측 가능한 — 를 공개적으로 만들고 있다. 프로덕션 주장도 없고, 조작된 사례 연구도 없으며, 엔터프라이즈 장벽도 없다. 오직 코드와, 그 설계에 대한 정직한 약속뿐이다.",
+    "p2": "피드백, 아이디어, 기여는 GitHub Discussions와 Issues를 통해 환영한다. 로드맵, 거친 부분, 미해결 질문은 모두 저장소에 있다.",
+    "discussions": "토론",
+    "openIssues": "이슈 열기"
+  },
+  "Footer": {
+    "tagline": "AI 에이전트 시스템을 위한 오픈소스 Python 프레임워크. 타입화, 합성 가능, 관측 가능.",
+    "rights": "© {year} Phronesis. Apache 2.0 라이선스.",
+    "motto": "AI 에이전트 시스템을 위한 실천적 지혜.",
+    "columns": {
+      "project": {
+        "title": "프로젝트",
+        "framework": "프레임워크",
+        "documentation": "문서",
+        "changelog": "Changelog",
+        "license": "라이선스"
+      },
+      "community": {
+        "title": "커뮤니티",
+        "discussions": "토론",
+        "issues": "Issues",
+        "contributing": "기여"
+      },
+      "resources": {
+        "title": "리소스",
+        "blog": "블로그",
+        "codeOfConduct": "행동 강령",
+        "security": "보안"
+      }
+    }
+  }
+}

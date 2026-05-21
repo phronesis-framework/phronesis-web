@@ -1,0 +1,216 @@
+{
+  "Meta": {
+    "title": "Phronesis — Praktische wijsheid voor AI-agentsystemen",
+    "description": "Phronesis is een open source Python-framework voor het bouwen van AI-agentsystemen met getypeerde contracten, samenstelbare uitvoeringspatronen en ingebouwde observability.",
+    "ogDescription": "Open source Python-framework voor AI-agentsystemen. Getypeerde contracten, samenstelbare pipelines, ingebouwde observability."
+  },
+  "Common": {
+    "skipToContent": "Naar inhoud",
+    "getStarted": "Aan de slag",
+    "viewOnGithub": "Bekijk op GitHub",
+    "githubAria": "Phronesis op GitHub",
+    "openMenu": "Navigatiemenu openen",
+    "closeMenu": "Navigatiemenu sluiten",
+    "toggleTheme": "Thema wisselen",
+    "switchToDark": "Overschakelen naar donkere modus",
+    "switchToLight": "Overschakelen naar lichte modus",
+    "language": "Taal",
+    "selectLanguage": "Taal selecteren"
+  },
+  "Announcement": {
+    "label": "Phronesis v0.1.0 alpha is beschikbaar",
+    "cta": "Lees de aankondiging",
+    "regionLabel": "Site-aankondiging",
+    "dismiss": "Aankondiging sluiten"
+  },
+  "Nav": {
+    "framework": "Framework",
+    "docs": "Docs",
+    "discussions": "Discussies",
+    "blog": "Blog",
+    "primaryLabel": "Primair",
+    "mobileLabel": "Mobiel"
+  },
+  "Hero": {
+    "badge": "Open source · Apache 2.0 · Python 3.11+",
+    "heading": "Praktische wijsheid voor AI-agentsystemen.",
+    "leadPrefix": "(φρόνησις): voor Aristoteles,",
+    "leadStrong": "praktische wijsheid",
+    "leadMiddle": "— het vermogen om goed te beraadslagen en met oordeel te handelen in concrete situaties. Een LLM heeft",
+    "leadEpisteme": "(kennis). Een agent heeft",
+    "leadEnd": " nodig."
+  },
+  "Why": {
+    "eyebrow": "Waarom Phronesis",
+    "heading": "Een agent is geen chatbot met tools.",
+    "p1Before": "LLM's weten dingen — dat is",
+    "p1Episteme": "episteme",
+    "p1Middle": ". Maar agents moeten",
+    "p1Strong": "beslissen en handelen",
+    "p1AfterStrong": "met oordeel in concrete situaties. Dat is",
+    "p1Phronesis": "phronesis",
+    "p1End": ". De meeste agent-frameworks behandelen agents als verbeterde chatbots geplakt aan een tool-use-loop. Phronesis behandelt ze als beraadslagende systemen met expliciete contracten: getypeerde invoer, gedeclareerde effecten, begrensd geheugen, benoemde uitvoeringspatronen.",
+    "p2Before": "Bestaande frameworks dwingen een keuze af. Aan de ene kant schrijf je willekeurige besturingsstroom als code: maximale expressiviteit, en een multi-agentsysteem dat niemand zes maanden later kan debuggen. Aan de andere kant wordt alles beschreven in YAML of grafenbouwers: in één oogopslag leesbaar, onmogelijk zodra je iets niet-triviaals nodig hebt. Phronesis scheidt declaratieve specificatie van runtime-uitvoering. Agents, tools, geheugen en pipelines zijn",
+    "p2Strong": "getypeerde, onveranderlijke, JSON-serialiseerbare specs",
+    "p2End": ". Uitvoeringspatronen komen uit een gesloten, welomschreven catalogus — expressiviteit zonder chaos.",
+    "p3": "Elke run is observable via OpenTelemetry, elke spec is versioneerbaar, elk contract is een runtime-check, geen commentaar in een prompt. Dat is het verschil tussen een framework dat demo's produceert en een dat systemen produceert die je kunt opereren."
+  },
+  "CodeTour": {
+    "eyebrow": "Code-tour",
+    "heading": "De API in vier snippets.",
+    "intro": "Echte Python. Echte vorm. Het framework hieronder is in vroege alpha — de oppervlakte zal groeien, maar het ontwerp blijft zo strak.",
+    "tabs": {
+      "agent": {
+        "label": "Agent",
+        "description": "Een agent bindt een model, tools en geheugen onder één declaratieve spec."
+      },
+      "tool": {
+        "label": "Tool",
+        "description": "Tools zijn getypeerde contracten. Effecten worden gedeclareerd zodat de runtime over veiligheid kan redeneren."
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "description": "Pipelines stellen stappen samen. Elke stap draait in een van een gesloten catalogus uitvoeringsmodi."
+      },
+      "mcp": {
+        "label": "MCP",
+        "description": "Koppel MCP-servers als eersteklas tool-bronnen, met dezelfde veiligheidscontracten als native tools."
+      }
+    },
+    "tabsAria": "Phronesis code-tour"
+  },
+  "Patterns": {
+    "eyebrow": "Patronen",
+    "heading": "Ontworpen voor de agentvormen die terugkeren.",
+    "intro": "Dit zijn patronen die het framework vandaag ondersteunt. Geen case studies — we hebben nog geen productiegebruikers om op te claimen, en we doen niet alsof.",
+    "items": {
+      "research": {
+        "title": "Onderzoeksagents",
+        "description": "Agents die informatie verzamelen, erover redeneren en antwoorden synthetiseren met citaten."
+      },
+      "document": {
+        "title": "Documentagents",
+        "description": "Agents die documenten lezen, structureren en bewerken met expliciet geheugen van wat ze gezien hebben."
+      },
+      "multiAgent": {
+        "title": "Multi-agent pipelines",
+        "description": "Pipelines die gespecialiseerde agents samenstellen via overdrachten, debat of consensus."
+      },
+      "toolUsing": {
+        "title": "Tool-gebruikende assistenten",
+        "description": "Agents die getypeerde tools en MCP-servers aanroepen onder expliciete veiligheidscontracten."
+      }
+    }
+  },
+  "Principles": {
+    "eyebrow": "Principes",
+    "heading": "Zes keuzes, overal toegepast.",
+    "items": {
+      "composition": {
+        "title": "Compositie boven overerving",
+        "body": "Agents worden geconfigureerd uit onderdelen — model, tools, geheugen, prompts — niet via subklassen. Je stelt samen; je overschrijft niet."
+      },
+      "async": {
+        "title": "Async eerst",
+        "body": "Streaming, concurrency en annulering zijn basisaannames. Er is geen synchrone schaduw-API om te onderhouden."
+      },
+      "typed": {
+        "title": "Sterk getypeerd",
+        "body": "Pydantic v2 overal. Types zijn geen documentatie — het zijn runtime-contracten die het framework afdwingt."
+      },
+      "immutable": {
+        "title": "Onveranderlijke specs, veranderlijke runs",
+        "body": "Definities zijn JSON-serialiseerbaar en reproduceerbaar. Uitvoeringsstaat leeft apart, observable en bevraagbaar."
+      },
+      "observable": {
+        "title": "Observability ingebouwd",
+        "body": "OpenTelemetry-spans voor elke agent-run, tool-aanroep en pipeline-stap — vanaf de eerste commit, niet er achteraf opgeschroefd."
+      },
+      "catalog": {
+        "title": "Gesloten catalogus van uitvoeringspatronen",
+        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. Benoemde modi waarover je kunt redeneren — geen willekeurige besturingsstroom."
+      }
+    }
+  },
+  "Inside": {
+    "eyebrow": "Wat zit erin",
+    "heading": "Een klein, principieel oppervlak.",
+    "intro": "Het framework is opzettelijk smal. Elke laag verdient zijn plek door een systeem veiliger te maken om te bedienen of door code zes maanden later eenvoudiger leesbaar te maken.",
+    "groups": {
+      "core": {
+        "title": "Kern",
+        "description": "De primitieven waarmee elke agent wordt gebouwd.",
+        "items": {
+          "agents": "Agents",
+          "tools": "Tools",
+          "mcp": "MCP-integratie",
+          "prompts": "Prompts",
+          "capabilities": "Capabilities"
+        }
+      },
+      "state": {
+        "title": "Staat en context",
+        "description": "Hoe agents onthouden en wat ze delen.",
+        "items": {
+          "memory": "Geheugen (episodisch, semantisch, werk-, gedeeld)",
+          "context": "Contextbeheer",
+          "sessions": "Sessies"
+        }
+      },
+      "orchestration": {
+        "title": "Orkestratie",
+        "description": "Hoe agents samen systemen vormen.",
+        "items": {
+          "pipelines": "Pipelines",
+          "modes": "Uitvoeringsmodi",
+          "communication": "Inter-agentcommunicatie",
+          "policies": "Beleid",
+          "observability": "Observability"
+        }
+      }
+    },
+    "executionModesTitle": "Uitvoeringsmodi",
+    "executionModesNote": "Een gesloten catalogus — expressief genoeg, eindig genoeg om over te redeneren."
+  },
+  "Install": {
+    "eyebrow": "Installeren",
+    "heading": "Eén commando. Python 3.11 of nieuwer.",
+    "readDocs": "Lees de docs",
+    "starGithub": "Ster op GitHub",
+    "copyLabel": "Installatiecommando kopiëren"
+  },
+  "Status": {
+    "eyebrow": "Projectstatus",
+    "heading": "Phronesis bevindt zich in vroege alpha.",
+    "p1": "De API zal veranderen. We werken openbaar om een framework te bouwen dat agentsystemen serieus neemt — getypeerd, samenstelbaar, observable. Geen productie-claims, geen verzonnen case studies, geen enterprise-poorten. Alleen de code en een eerlijke toewijding aan het ontwerp.",
+    "p2": "Feedback, ideeën en bijdragen zijn welkom via GitHub Discussions en Issues. De roadmap, de ruwe randjes en de open vragen staan allemaal in de repository.",
+    "discussions": "Discussies",
+    "openIssues": "Open issues"
+  },
+  "Footer": {
+    "tagline": "Een open source Python-framework voor AI-agentsystemen. Getypeerd, samenstelbaar, observable.",
+    "rights": "© {year} Phronesis. Apache 2.0 licentie.",
+    "motto": "Praktische wijsheid voor AI-agentsystemen.",
+    "columns": {
+      "project": {
+        "title": "Project",
+        "framework": "Framework",
+        "documentation": "Documentatie",
+        "changelog": "Changelog",
+        "license": "Licentie"
+      },
+      "community": {
+        "title": "Community",
+        "discussions": "Discussies",
+        "issues": "Issues",
+        "contributing": "Bijdragen"
+      },
+      "resources": {
+        "title": "Bronnen",
+        "blog": "Blog",
+        "codeOfConduct": "Gedragscode",
+        "security": "Beveiliging"
+      }
+    }
+  }
+}
