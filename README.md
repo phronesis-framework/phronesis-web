@@ -143,27 +143,6 @@ src/
 | Locale list / RTL set               | [`src/i18n/routing.ts`](./src/i18n/routing.ts)              |
 | Section composition / order         | [`src/app/[locale]/page.tsx`](./src/app/[locale]/page.tsx)  |
 
-## Brand assets
-
-Logo, wordmark, lockup, favicon, and banner assets live in [`public/assets/`](./public/assets) with full usage guidelines in [`public/assets/README.md`](./public/assets/README.md). The master source is `phronesis-master.svg`; every other variant exports from it.
-
-<table>
-  <tr>
-    <td align="center" width="33%">
-      <img src="./public/assets/symbol/symbol.svg" alt="Symbol" height="80" /><br/>
-      <sub><b>Symbol</b><br/>favicons, avatars, inline use</sub>
-    </td>
-    <td align="center" width="33%">
-      <img src="./public/assets/lockup/lockup-horizontal.svg" alt="Horizontal lockup" height="80" /><br/>
-      <sub><b>Lockup (horizontal)</b><br/>headers, docs, primary identity</sub>
-    </td>
-    <td align="center" width="33%">
-      <img src="./public/assets/lockup/lockup-vertical.svg" alt="Vertical lockup" height="80" /><br/>
-      <sub><b>Lockup (vertical)</b><br/>square spaces, narrow columns</sub>
-    </td>
-  </tr>
-</table>
-
 ## Deployment
 
 Optimised for Vercel or Cloudflare Pages. `next build` emits prerendered routes for every locale prefix plus dynamic `/icon` and `/opengraph-image`. Configure the deployment platform to serve `.next/`.
