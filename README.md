@@ -4,7 +4,7 @@
 
 <div align="center">
 
-# phronesis-web
+# Phronesis Framework — Landing Page
 
 </div>
 
@@ -22,6 +22,7 @@
 
 <div align="center">
 
+[![Phronesis Framework](https://img.shields.io/badge/Phronesis%20Framework-2d2d2d?logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjYwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMTAiLz4KICA8bGluZSB4MT0iMTAwIiB5MT0iMjAiIHgyPSIxMDAiIHkyPSIxODAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxMCIvPgo8L3N2Zz4K&logoColor=white)](https://github.com/phronesis-framework/phronesis)
 [![CI](https://img.shields.io/github/actions/workflow/status/phronesis-framework/phronesis-web/ci.yml?branch=main&label=CI&logo=github)](https://github.com/phronesis-framework/phronesis-web/actions/workflows/ci.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
 [![Node](https://img.shields.io/badge/node-22%20LTS-339933?logo=node.js&logoColor=white)](./.nvmrc)
@@ -159,7 +160,7 @@ src/
 
 <div align="center">
 
-### 🔗 Import conventions
+## 🔗 Import conventions
 
 </div>
 
