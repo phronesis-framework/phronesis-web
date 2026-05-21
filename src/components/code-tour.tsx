@@ -7,10 +7,6 @@ import { CODE_TOUR_TABS } from "@/content/snippets";
 import { cn } from "@/lib/utils";
 
 interface CodeTourProps {
-  /**
-   * Pre-rendered code blocks keyed by tab value.
-   * Generated server-side so Shiki ships zero client JS.
-   */
   panels: Record<string, React.ReactNode>;
 }
 
@@ -28,10 +24,10 @@ export function CodeTour({ panels }: CodeTourProps) {
               key={tab.value}
               value={tab.value}
               className={cn(
-                "text-muted-foreground relative inline-flex h-9 flex-shrink-0 items-center rounded-md px-2.5 text-[13px] font-medium whitespace-nowrap transition-colors sm:px-3 sm:text-sm",
-                "hover:text-foreground",
-                "data-[state=active]:text-foreground",
-                "data-[state=active]:after:bg-accent data-[state=active]:after:absolute data-[state=active]:after:right-2.5 data-[state=active]:after:-bottom-[10px] data-[state=active]:after:left-2.5 data-[state=active]:after:h-px sm:data-[state=active]:after:right-3 sm:data-[state=active]:after:left-3",
+                "text-muted-foreground relative inline-flex h-9 flex-shrink-0 cursor-pointer items-center rounded-md px-2.5 text-[13px] font-medium whitespace-nowrap transition-colors duration-150 sm:px-3 sm:text-sm",
+                "after:absolute after:right-2.5 after:-bottom-[10px] after:left-2.5 after:h-px after:bg-transparent after:transition-colors after:duration-150 sm:after:right-3 sm:after:left-3",
+                "hover:text-foreground hover:after:bg-foreground/25",
+                "data-[state=active]:text-foreground data-[state=active]:after:bg-accent",
                 "focus-visible:outline-ring focus-visible:outline-2 focus-visible:outline-offset-2",
               )}
             >

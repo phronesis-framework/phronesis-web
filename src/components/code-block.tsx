@@ -8,10 +8,6 @@ interface CodeBlockProps {
   lang: BundledLanguage;
   filename?: string;
   className?: string;
-  /**
-   * Strip leading/trailing whitespace and the common indentation prefix.
-   * Useful when defining snippets inline as template literals.
-   */
   dedent?: boolean;
 }
 
@@ -24,10 +20,6 @@ function dedentCode(input: string): string {
   return lines.map((line) => line.slice(minIndent)).join("\n");
 }
 
-/**
- * Server component that renders syntax-highlighted code at build/render time.
- * Both light and dark themes are emitted; visibility is controlled by CSS.
- */
 export async function CodeBlock({
   code,
   lang,

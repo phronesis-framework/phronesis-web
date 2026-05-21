@@ -26,9 +26,7 @@ export function CopyButton({ value, label = "Copy code", className }: CopyButton
       setCopied(true);
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
       timeoutRef.current = setTimeout(() => setCopied(false), 1800);
-    } catch {
-      /* clipboard unavailable */
-    }
+    } catch {}
   }, [value]);
 
   return (

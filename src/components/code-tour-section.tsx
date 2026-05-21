@@ -4,10 +4,6 @@ import { CodeBlock } from "./code-block";
 import { CodeTour } from "./code-tour";
 import { CODE_TOUR_TABS } from "@/content/snippets";
 
-/**
- * Server component that renders all code panels server-side via Shiki,
- * then hands the HTML to the client-side Tabs component.
- */
 export async function CodeTourSection() {
   const t = await getTranslations("CodeTour");
   const panels = Object.fromEntries(

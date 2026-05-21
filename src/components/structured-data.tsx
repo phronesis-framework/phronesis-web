@@ -1,10 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { GITHUB_FRAMEWORK_REPO } from "./nav-data";
 
-/**
- * JSON-LD structured data describing the Phronesis project to search engines
- * and rich result renderers. Rendered as an inline <script type="application/ld+json">.
- */
 export async function StructuredData() {
   const t = await getTranslations("Meta");
   const siteUrl = (
@@ -48,7 +44,6 @@ export async function StructuredData() {
     <>
       <script
         type="application/ld+json"
-        // The JSON is statically generated and contains no user input.
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(softwareApplication),
         }}

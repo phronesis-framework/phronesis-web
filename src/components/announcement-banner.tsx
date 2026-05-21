@@ -8,10 +8,6 @@ import { CHANGELOG_URL } from "./nav-data";
 
 const STORAGE_KEY = "announcement-dismissed-v1";
 
-/**
- * Inline script that runs BEFORE paint to hide the banner if previously dismissed.
- * Prevents the layout shift caused by hydration toggling visibility client-side.
- */
 const PREPAINT_SCRIPT = `
 try {
   if (localStorage.getItem('${STORAGE_KEY}') === 'true') {
@@ -21,12 +17,7 @@ try {
 `;
 
 export function AnnouncementBannerScript() {
-  return (
-    <script
-      // No user input — static literal string.
-      dangerouslySetInnerHTML={{ __html: PREPAINT_SCRIPT }}
-    />
-  );
+  return <script dangerouslySetInnerHTML={{ __html: PREPAINT_SCRIPT }} />;
 }
 
 export function AnnouncementBanner({ className }: { className?: string }) {
@@ -38,9 +29,7 @@ export function AnnouncementBanner({ className }: { className?: string }) {
     try {
       window.localStorage.setItem(STORAGE_KEY, "true");
       document.documentElement.dataset.announcementDismissed = "true";
-    } catch {
-      /* ignore — banner will reappear next session */
-    }
+    } catch {}
   }, []);
 
   if (dismissed) return null;
@@ -49,10 +38,6 @@ export function AnnouncementBanner({ className }: { className?: string }) {
     <div
       role="region"
       aria-label={t("regionLabel")}
-      // The `announcement-banner` class is targeted by a CSS rule in
-      // globals.css that hides the banner when the root <html> element has
-      // `data-announcement-dismissed="true"` — applied pre-paint by the
-      // inline script to avoid layout shift after hydration.
       className={cn(
         "announcement-banner border-border bg-accent-muted text-foreground relative w-full border-b",
         className,
