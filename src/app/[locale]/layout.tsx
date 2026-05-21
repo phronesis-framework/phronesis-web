@@ -3,8 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ThemeProvider } from "@/components/theme-provider";
-import { AnnouncementBannerScript } from "@/components/announcement-banner";
+import { ThemeProvider } from "@/components/theme/theme-provider";
+import { AnnouncementBannerScript } from "@/components/layout/announcement-banner";
 import { routing, RTL_LOCALES, type Locale } from "@/i18n/routing";
 import "../globals.css";
 

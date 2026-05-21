@@ -16,8 +16,8 @@ import {
   Wrench,
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Section } from "./ui/section";
-import { Card, CardGrid } from "./ui/card-grid";
+import { Section } from "@/components/ui/section";
+import { Card, CardGrid } from "@/components/ui/card-grid";
 
 type GroupKey = "core" | "state" | "orchestration";
 type CoreItemKey = "agents" | "tools" | "mcp" | "prompts" | "capabilities";

@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
-import { Section } from "./ui/section";
-import { CodeBlock } from "./code-block";
-import { CodeTour } from "./code-tour";
+import { Section } from "@/components/ui/section";
+import { CodeBlock } from "@/components/code/code-block";
+import { CodeTour } from "@/components/code/code-tour";
 import { CODE_TOUR_TABS } from "@/content/snippets";
 
 export async function CodeTourSection() {

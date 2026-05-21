@@ -6,9 +6,9 @@ import { Github, Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { PRIMARY_NAV, GITHUB_FRAMEWORK_REPO } from "./nav-data";
 import { Logo } from "./logo";
-import { ThemeToggle } from "./theme-toggle";
-import { LanguageSwitcher } from "./language-switcher";
-import { IconButton, iconButtonStyles } from "./ui/icon-button";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { LanguageSwitcher } from "@/components/i18n/language-switcher";
+import { IconButton, iconButtonStyles } from "@/components/ui/icon-button";
 import { cn } from "@/lib/utils";
 
 export function MobileMenu() {

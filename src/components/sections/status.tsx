@@ -1,8 +1,8 @@
 import { AlertTriangle } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Section } from "./ui/section";
-import { LinkWithArrow } from "./ui/link-with-arrow";
-import { DISCUSSIONS_URL, ISSUES_URL } from "./nav-data";
+import { Section } from "@/components/ui/section";
+import { LinkWithArrow } from "@/components/ui/link-with-arrow";
+import { DISCUSSIONS_URL, ISSUES_URL } from "@/components/layout/nav-data";
 
 export async function Status() {
   const t = await getTranslations("Status");

@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import { Section } from "./ui/section";
-import { Card, CardGrid } from "./ui/card-grid";
+import { Section } from "@/components/ui/section";
+import { Card, CardGrid } from "@/components/ui/card-grid";
 
 type PrincipleKey =
   | "composition"

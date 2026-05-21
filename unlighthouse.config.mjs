@@ -1,5 +1,5 @@
 /** @type {import('unlighthouse/config').UserConfig} */
-export default {
+const config = {
   // Point directly at the default-locale page so we don't include the
   // root-to-locale 307 redirect or the trailing-slash 308 redirect in the
   // performance budget.
@@ -22,3 +22,5 @@ export default {
     },
   },
 };
+
+export default config;

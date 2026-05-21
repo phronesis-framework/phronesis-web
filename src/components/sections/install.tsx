@@ -1,11 +1,11 @@
 import { Star } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Section } from "./ui/section";
-import { CopyButton } from "./copy-button";
-import { Eyebrow } from "./ui/eyebrow";
-import { LinkWithArrow } from "./ui/link-with-arrow";
+import { Section } from "@/components/ui/section";
+import { CopyButton } from "@/components/code/copy-button";
+import { Eyebrow } from "@/components/ui/eyebrow";
+import { LinkWithArrow } from "@/components/ui/link-with-arrow";
 import { INSTALL_SNIPPET } from "@/content/snippets";
-import { DOCS_URL, GITHUB_FRAMEWORK_REPO } from "./nav-data";
+import { DOCS_URL, GITHUB_FRAMEWORK_REPO } from "@/components/layout/nav-data";
 
 export async function Install() {
   const t = await getTranslations("Install");

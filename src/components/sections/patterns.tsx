@@ -1,7 +1,7 @@
 import { BookOpenText, FileSearch, Network, Wrench } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Section } from "./ui/section";
-import { Card, CardGrid, CardIcon } from "./ui/card-grid";
+import { Section } from "@/components/ui/section";
+import { Card, CardGrid, CardIcon } from "@/components/ui/card-grid";
 
 type PatternKey = "research" | "document" | "multiAgent" | "toolUsing";
 

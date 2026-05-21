@@ -1,10 +1,10 @@
 import { ArrowRight, Github } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { CodeBlock } from "./code-block";
-import { Container } from "./ui/container";
-import { pillButtonStyles } from "./ui/pill-button";
+import { CodeBlock } from "@/components/code/code-block";
+import { Container } from "@/components/ui/container";
+import { pillButtonStyles } from "@/components/ui/pill-button";
 import { HERO_SNIPPET } from "@/content/snippets";
-import { GITHUB_FRAMEWORK_REPO } from "./nav-data";
+import { GITHUB_FRAMEWORK_REPO } from "@/components/layout/nav-data";
 
 export async function Hero() {
   const t = await getTranslations("Hero");

@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { GITHUB_FRAMEWORK_REPO } from "./nav-data";
+import { GITHUB_FRAMEWORK_REPO } from "@/components/layout/nav-data";
 
 export async function StructuredData() {
   const t = await getTranslations("Meta");

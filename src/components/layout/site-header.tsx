@@ -1,11 +1,11 @@
 import { Github } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Logo } from "./logo";
-import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { MobileMenu } from "./mobile-menu";
-import { LanguageSwitcher } from "./language-switcher";
-import { iconButtonStyles } from "./ui/icon-button";
-import { pillButtonStyles } from "./ui/pill-button";
+import { LanguageSwitcher } from "@/components/i18n/language-switcher";
+import { iconButtonStyles } from "@/components/ui/icon-button";
+import { pillButtonStyles } from "@/components/ui/pill-button";
 import { PRIMARY_NAV, GITHUB_FRAMEWORK_REPO } from "./nav-data";
 
 export async function SiteHeader() {
