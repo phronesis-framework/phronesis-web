@@ -12,12 +12,7 @@ const PATTERN_ICONS: Record<PatternKey, React.ComponentType<{ className?: string
   toolUsing: Wrench,
 };
 
-const PATTERN_KEYS: readonly PatternKey[] = [
-  "research",
-  "document",
-  "multiAgent",
-  "toolUsing",
-];
+const PATTERN_KEYS: readonly PatternKey[] = ["research", "document", "multiAgent", "toolUsing"];
 
 export async function Patterns() {
   const t = await getTranslations("Patterns");

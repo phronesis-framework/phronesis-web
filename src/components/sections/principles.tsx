@@ -2,13 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/section";
 import { Card, CardGrid } from "@/components/ui/card-grid";
 
-type PrincipleKey =
-  | "composition"
-  | "async"
-  | "typed"
-  | "immutable"
-  | "observable"
-  | "catalog";
+type PrincipleKey = "composition" | "async" | "typed" | "immutable" | "observable" | "catalog";
 
 const PRINCIPLE_KEYS: readonly PrincipleKey[] = [
   "composition",

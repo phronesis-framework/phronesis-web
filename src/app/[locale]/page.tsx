@@ -15,11 +15,7 @@ import { Reveal } from "@/components/motion/reveal";
 
 export const dynamic = "force-static";
 
-export default async function HomePage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
 

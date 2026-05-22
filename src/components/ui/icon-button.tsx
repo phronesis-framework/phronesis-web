@@ -10,16 +10,6 @@ export function iconButtonStyles(className?: string) {
 
 type IconButtonProps = React.ComponentPropsWithoutRef<"button">;
 
-export function IconButton({
-  className,
-  type = "button",
-  ...props
-}: IconButtonProps) {
-  return (
-    <button
-      type={type}
-      className={iconButtonStyles(className)}
-      {...props}
-    />
-  );
+export function IconButton({ className, type = "button", ...props }: IconButtonProps) {
+  return <button type={type} className={iconButtonStyles(className)} {...props} />;
 }

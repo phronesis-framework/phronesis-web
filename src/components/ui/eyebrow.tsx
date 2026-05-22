@@ -5,12 +5,7 @@ interface EyebrowProps extends React.HTMLAttributes<HTMLParagraphElement> {
   tone?: "accent" | "muted";
 }
 
-export function Eyebrow({
-  className,
-  tone = "accent",
-  children,
-  ...props
-}: EyebrowProps) {
+export function Eyebrow({ className, tone = "accent", children, ...props }: EyebrowProps) {
   return (
     <p
       className={cn(

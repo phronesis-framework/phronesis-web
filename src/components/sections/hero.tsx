@@ -16,7 +16,7 @@ export async function Hero() {
     >
       <Container size="wide" className="relative py-12 sm:py-16 md:py-20 lg:py-28 xl:py-32">
         <div className="grid items-center gap-8 sm:gap-10 md:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14 xl:gap-16">
-          <div className="min-w-0 max-w-full lg:max-w-[640px]">
+          <div className="max-w-full min-w-0 lg:max-w-[640px]">
             <p className="border-border bg-background-elevated text-muted-foreground mb-4 inline-flex max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[10px] sm:mb-5 sm:gap-2 sm:px-3 sm:text-[11px] md:mb-6 md:text-xs">
               <span className="bg-accent inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full" />
               <span className="truncate">{t("badge")}</span>

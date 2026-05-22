@@ -3,9 +3,10 @@ import { GITHUB_FRAMEWORK_REPO } from "@/components/layout/nav-data";
 
 export async function StructuredData() {
   const t = await getTranslations("Meta");
-  const siteUrl = (
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://phronesis-framework.com"
-  ).replace(/\/$/, "");
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://phronesis-framework.com").replace(
+    /\/$/,
+    "",
+  );
 
   const softwareApplication = {
     "@context": "https://schema.org",

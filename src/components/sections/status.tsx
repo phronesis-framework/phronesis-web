@@ -7,12 +7,7 @@ import { DISCUSSIONS_URL, ISSUES_URL } from "@/components/layout/nav-data";
 export async function Status() {
   const t = await getTranslations("Status");
   return (
-    <Section
-      id="status"
-      eyebrow={t("eyebrow")}
-      heading={t("heading")}
-      headingId="status-heading"
-    >
+    <Section id="status" eyebrow={t("eyebrow")} heading={t("heading")} headingId="status-heading">
       <article
         role="region"
         aria-labelledby="status-heading"
@@ -25,7 +20,7 @@ export async function Status() {
           >
             <AlertTriangle className="h-4 w-4" />
           </span>
-          <div className="text-muted-foreground space-y-4 text-[15px] leading-[1.6] text-justify hyphens-auto sm:text-[17px] sm:leading-[1.65]">
+          <div className="text-muted-foreground space-y-4 text-justify text-[15px] leading-[1.6] hyphens-auto sm:text-[17px] sm:leading-[1.65]">
             <p>{t("p1")}</p>
             <p>{t("p2")}</p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm">

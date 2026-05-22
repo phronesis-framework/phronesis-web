@@ -8,8 +8,7 @@ const BASE_STYLES =
   "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-150 ease-out active:scale-[0.98]";
 
 const VARIANT_STYLES: Record<Variant, string> = {
-  primary:
-    "bg-accent text-accent-foreground hover:opacity-90 hover:scale-[1.02]",
+  primary: "bg-accent text-accent-foreground hover:opacity-90 hover:scale-[1.02]",
   secondary:
     "border-border bg-background-elevated text-foreground hover:border-accent/40 hover:bg-background-elevated/80 hover:scale-[1.02] border",
 };

@@ -1,4 +1,5 @@
-# 
+#
+
 <div align="center">
   <img src="./public/assets/lockup/lockup-horizontal-dark.svg" alt="Phronesis Framework" width="60%" />
 </div>
@@ -49,21 +50,21 @@ A **single multilingual landing page**, not a SaaS marketing site. No signup, no
 
 </div>
 
-| Concern              | Choice                                                    |
-| -------------------- | --------------------------------------------------------- |
-| Framework            | Next.js 16 (App Router, RSC by default, Turbopack)        |
-| Language             | TypeScript (strict)                                       |
-| Runtime              | React 19                                                  |
-| Styling              | Tailwind CSS v4 (CSS-first config, no `tailwind.config`)  |
-| Primitives           | Radix UI (Dialog, Tabs, Slot)                             |
-| Icons                | `lucide-react`                                            |
-| Code highlighting    | Shiki (server-rendered, zero client JS)                   |
-| Fonts                | Geist Sans + Geist Mono via `next/font`                   |
-| Theme                | `next-themes` (dark default, no flash)                    |
-| i18n                 | `next-intl` v4 — 12 locales, RTL support for Arabic       |
-| Lighthouse audits    | `unlighthouse` (`pnpm lh`)                                |
-| Package manager      | `pnpm`                                                    |
-| Node                 | 22 (LTS) — pinned in [`.nvmrc`](./.nvmrc)                 |
+| Concern           | Choice                                                   |
+| ----------------- | -------------------------------------------------------- |
+| Framework         | Next.js 16 (App Router, RSC by default, Turbopack)       |
+| Language          | TypeScript (strict)                                      |
+| Runtime           | React 19                                                 |
+| Styling           | Tailwind CSS v4 (CSS-first config, no `tailwind.config`) |
+| Primitives        | Radix UI (Dialog, Tabs, Slot)                            |
+| Icons             | `lucide-react`                                           |
+| Code highlighting | Shiki (server-rendered, zero client JS)                  |
+| Fonts             | Geist Sans + Geist Mono via `next/font`                  |
+| Theme             | `next-themes` (dark default, no flash)                   |
+| i18n              | `next-intl` v4 — 12 locales, RTL support for Arabic      |
+| Lighthouse audits | `unlighthouse` (`pnpm lh`)                               |
+| Package manager   | `pnpm`                                                   |
+| Node              | 22 (LTS) — pinned in [`.nvmrc`](./.nvmrc)                |
 
 <div align="center">
 
@@ -71,14 +72,14 @@ A **single multilingual landing page**, not a SaaS marketing site. No signup, no
 
 </div>
 
-| Code | Language     | Code | Language       |
-| ---- | ------------ | ---- | -------------- |
-| `en` | English      | `it` | Italiano       |
-| `es` | Español      | `ja` | 日本語           |
-| `fr` | Français     | `ko` | 한국어           |
-| `de` | Deutsch      | `zh` | 中文             |
-| `pt` | Português    | `nl` | Nederlands     |
-| `ru` | Русский      | `ar` | العربية (RTL)  |
+| Code | Language  | Code | Language      |
+| ---- | --------- | ---- | ------------- |
+| `en` | English   | `it` | Italiano      |
+| `es` | Español   | `ja` | 日本語        |
+| `fr` | Français  | `ko` | 한국어        |
+| `de` | Deutsch   | `zh` | 中文          |
+| `pt` | Português | `nl` | Nederlands    |
+| `ru` | Русский   | `ar` | العربية (RTL) |
 
 Default locale is `en`. The prefix is always present in the URL (`/en/...`, `/es/...`). Translation messages live in [`messages/<locale>.json`](./messages); routing and the RTL set are configured in [`src/i18n/routing.ts`](./src/i18n/routing.ts).
 
@@ -101,16 +102,16 @@ Open <http://localhost:3000>. You will be redirected to the prefix for the negot
 
 </div>
 
-| Script              | Purpose                                              |
-| ------------------- | ---------------------------------------------------- |
-| `pnpm dev`          | Next.js dev server (Turbopack)                       |
-| `pnpm build`        | Production build                                     |
-| `pnpm start`        | Serve the production build                           |
-| `pnpm lint`         | ESLint                                               |
-| `pnpm typecheck`    | TypeScript with `--noEmit`                           |
-| `pnpm format`       | Prettier (write)                                     |
-| `pnpm format:check` | Prettier (verify)                                    |
-| `pnpm lh`           | Local Lighthouse audit via `unlighthouse`            |
+| Script              | Purpose                                   |
+| ------------------- | ----------------------------------------- |
+| `pnpm dev`          | Next.js dev server (Turbopack)            |
+| `pnpm build`        | Production build                          |
+| `pnpm start`        | Serve the production build                |
+| `pnpm lint`         | ESLint                                    |
+| `pnpm typecheck`    | TypeScript with `--noEmit`                |
+| `pnpm format`       | Prettier (write)                          |
+| `pnpm format:check` | Prettier (verify)                         |
+| `pnpm lh`           | Local Lighthouse audit via `unlighthouse` |
 
 CI runs `lint`, `typecheck`, `format:check`, and `build` on every PR — see [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
 
@@ -183,13 +184,13 @@ src/
 
 </div>
 
-| What you want to edit               | Where it lives                                              |
-| ----------------------------------- | ----------------------------------------------------------- |
-| Copy / translations                 | [`messages/<locale>.json`](./messages)                      |
-| Code snippets on the page           | [`src/content/snippets.ts`](./src/content/snippets.ts)      |
-| Top-level links (GitHub, docs…)     | [`src/components/layout/nav-data.ts`](./src/components/layout/nav-data.ts) |
-| Locale list / RTL set               | [`src/i18n/routing.ts`](./src/i18n/routing.ts)              |
-| Section composition / order         | [`src/app/[locale]/page.tsx`](./src/app/[locale]/page.tsx)  |
+| What you want to edit           | Where it lives                                                             |
+| ------------------------------- | -------------------------------------------------------------------------- |
+| Copy / translations             | [`messages/<locale>.json`](./messages)                                     |
+| Code snippets on the page       | [`src/content/snippets.ts`](./src/content/snippets.ts)                     |
+| Top-level links (GitHub, docs…) | [`src/components/layout/nav-data.ts`](./src/components/layout/nav-data.ts) |
+| Locale list / RTL set           | [`src/i18n/routing.ts`](./src/i18n/routing.ts)                             |
+| Section composition / order     | [`src/app/[locale]/page.tsx`](./src/app/[locale]/page.tsx)                 |
 
 <div align="center">
 

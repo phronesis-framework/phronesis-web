@@ -53,8 +53,7 @@ export function Card({
     <Tag
       className={cn(
         "bg-background-elevated flex flex-col p-5 sm:p-6 lg:p-7",
-        interactive &&
-          "hover:bg-background-elevated/70 transition-colors duration-150",
+        interactive && "hover:bg-background-elevated/70 transition-colors duration-150",
         className,
       )}
       {...props}

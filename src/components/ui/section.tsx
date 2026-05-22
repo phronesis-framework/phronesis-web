@@ -60,10 +60,7 @@ export function Section({
               className="object-cover object-center"
             />
           )}
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 block bg-amber-50/55 dark:hidden"
-          />
+          <div aria-hidden="true" className="absolute inset-0 block bg-amber-50/55 dark:hidden" />
           <div
             aria-hidden="true"
             className="absolute inset-0 hidden bg-black dark:block"
@@ -89,7 +86,7 @@ export function Section({
             {intro && (
               <div
                 className={cn(
-                  "mt-4 text-[15px] leading-[1.65] text-justify hyphens-auto sm:mt-5 sm:text-[17px]",
+                  "mt-4 text-justify text-[15px] leading-[1.65] hyphens-auto sm:mt-5 sm:text-[17px]",
                   isImage ? "text-white/80" : "text-muted-foreground",
                 )}
               >

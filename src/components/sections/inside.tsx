@@ -22,12 +22,7 @@ import { Card, CardGrid } from "@/components/ui/card-grid";
 type GroupKey = "core" | "state" | "orchestration";
 type CoreItemKey = "agents" | "tools" | "mcp" | "prompts" | "capabilities";
 type StateItemKey = "memory" | "context" | "sessions";
-type OrchestrationItemKey =
-  | "pipelines"
-  | "modes"
-  | "communication"
-  | "policies"
-  | "observability";
+type OrchestrationItemKey = "pipelines" | "modes" | "communication" | "policies" | "observability";
 type ItemKey = CoreItemKey | StateItemKey | OrchestrationItemKey;
 
 type IconComponent = React.ComponentType<{ className?: string }>;

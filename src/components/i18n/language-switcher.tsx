@@ -53,7 +53,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
         value={locale}
         onChange={onChange}
         disabled={pending}
-        className="absolute inset-0 cursor-pointer opacity-0 [color-scheme:light] dark:[color-scheme:dark]"
+        className="absolute inset-0 cursor-pointer [color-scheme:light] opacity-0 dark:[color-scheme:dark]"
       >
         {routing.locales.map((code) => (
           <option key={code} value={code} className="bg-background text-foreground">

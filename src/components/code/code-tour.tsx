@@ -42,7 +42,7 @@ export function CodeTour({ panels }: CodeTourProps) {
           value={tab.value}
           className="mt-5 focus-visible:outline-none sm:mt-6 md:mt-8"
         >
-          <p className="text-muted-foreground mb-4 text-[14px] leading-[1.6] text-justify hyphens-auto sm:mb-5 sm:text-[15px] md:text-[17px] md:leading-[1.65]">
+          <p className="text-muted-foreground mb-4 text-justify text-[14px] leading-[1.6] hyphens-auto sm:mb-5 sm:text-[15px] md:text-[17px] md:leading-[1.65]">
             {t(`tabs.${tab.value}.description`)}
           </p>
           {panels[tab.value]}
