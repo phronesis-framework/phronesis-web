@@ -18,6 +18,10 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "puppeteer"
+    ],
+    "ignoredBuiltDependencies": [
+      "sharp",
+      "unrs-resolver"
     ]
   },
   "dependencies": {
