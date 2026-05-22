@@ -6,7 +6,7 @@ export interface NavLink {
 
 export const GITHUB_REPO = "https://github.com/phronesis-framework";
 export const GITHUB_WEB_REPO = "https://github.com/phronesis-framework/phronesis-web";
-export const GITHUB_FRAMEWORK_REPO = "https://github.com/phronesis-framework/phronesis";
+export const GITHUB_FRAMEWORK_REPO = "https://github.com/phronesis-framework/phronesis-framework";
 export const DOCS_URL = "https://phronesis-framework.com/docs";
 export const DISCUSSIONS_URL = `${GITHUB_FRAMEWORK_REPO}/discussions`;
 export const ISSUES_URL = `${GITHUB_FRAMEWORK_REPO}/issues`;
