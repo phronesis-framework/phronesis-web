@@ -4,6 +4,7 @@
   "private": true,
   "description": "Landing page for the Phronesis framework.",
   "license": "Apache-2.0",
+  "packageManager": "pnpm@10.15.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
