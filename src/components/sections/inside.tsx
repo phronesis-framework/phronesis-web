@@ -4,15 +4,15 @@ import {
   Boxes,
   Brain,
   Combine,
+  Cpu,
   GitBranch,
   Layers,
-  Link2,
-  MessageSquare,
   Network,
   Plug,
+  Repeat,
+  Save,
   ScrollText,
-  ShieldCheck,
-  Sparkles,
+  Workflow,
   Wrench,
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
@@ -20,9 +20,9 @@ import { Section } from "@/components/ui/section";
 import { Card, CardGrid } from "@/components/ui/card-grid";
 
 type GroupKey = "core" | "state" | "orchestration";
-type CoreItemKey = "agents" | "tools" | "mcp" | "prompts" | "capabilities";
-type StateItemKey = "memory" | "context" | "sessions";
-type OrchestrationItemKey = "pipelines" | "modes" | "communication" | "policies" | "observability";
+type CoreItemKey = "agents" | "tools" | "mcp" | "providers" | "context";
+type StateItemKey = "memory" | "checkpoints" | "sessions";
+type OrchestrationItemKey = "pipelines" | "modes" | "middleware" | "replay" | "observability";
 type ItemKey = CoreItemKey | StateItemKey | OrchestrationItemKey;
 
 type IconComponent = React.ComponentType<{ className?: string }>;
@@ -43,15 +43,15 @@ const GROUPS: readonly [
       { icon: Bot, itemKey: "agents" },
       { icon: Wrench, itemKey: "tools" },
       { icon: Plug, itemKey: "mcp" },
-      { icon: MessageSquare, itemKey: "prompts" },
-      { icon: Sparkles, itemKey: "capabilities" },
+      { icon: Cpu, itemKey: "providers" },
+      { icon: Layers, itemKey: "context" },
     ],
   },
   {
     key: "state",
     items: [
       { icon: Brain, itemKey: "memory" },
-      { icon: Layers, itemKey: "context" },
+      { icon: Save, itemKey: "checkpoints" },
       { icon: ScrollText, itemKey: "sessions" },
     ],
   },
@@ -60,8 +60,8 @@ const GROUPS: readonly [
     items: [
       { icon: GitBranch, itemKey: "pipelines" },
       { icon: Combine, itemKey: "modes" },
-      { icon: Link2, itemKey: "communication" },
-      { icon: ShieldCheck, itemKey: "policies" },
+      { icon: Workflow, itemKey: "middleware" },
+      { icon: Repeat, itemKey: "replay" },
       { icon: Activity, itemKey: "observability" },
     ],
   },
@@ -70,12 +70,23 @@ const GROUPS: readonly [
 const EXECUTION_MODES = [
   "Sequence",
   "Parallel",
-  "ReActLoop",
-  "PlanAndExecute",
-  "Consensus",
-  "Debate",
-  "HandoffChain",
+  "Race",
+  "Fallback",
+  "Cascade",
   "Conditional",
+  "Router",
+  "Loop",
+  "Retry",
+  "Consensus",
+  "HandoffChain",
+  "Supervisor",
+  "Debate",
+  "Reflexion",
+  "Validation",
+  "PlanAndExecute",
+  "TreeSearch",
+  "MapReduce",
+  "Approval",
 ] as const;
 
 export async function Inside() {

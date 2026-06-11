@@ -55,26 +55,63 @@
     "p2End": ". Los patrones de ejecución provienen de un catálogo cerrado y bien definido — expresividad sin caos.",
     "p3": "Cada ejecución es observable mediante OpenTelemetry, cada especificación es versionable, cada contrato es una comprobación en tiempo de ejecución, no un comentario en un prompt. Esa es la diferencia entre un framework que produce demos y uno que produce sistemas que puedes operar."
   },
+  "Metrics": {
+    "eyebrow": "En cifras",
+    "heading": "Construido como infraestructura, no como una demo.",
+    "intro": "Phronesis es temprano, pero no es ligero. La superficie es pequeña a propósito — y cada capa carga con sus propios tests, tipos y observabilidad.",
+    "items": {
+      "modes": {
+        "value": "19",
+        "label": "Modos de ejecución",
+        "description": "Un catálogo cerrado y con nombre — de Sequence y Parallel a Reflexion y Tree Search."
+      },
+      "examples": {
+        "value": "22",
+        "label": "Ejemplos ejecutables",
+        "description": "Cada modo con un cassette determinista, más una mini-app multiagente completa."
+      },
+      "tests": {
+        "value": "1.600+",
+        "label": "Tests",
+        "description": "Cobertura de ramas con umbral del 90% — el build falla por debajo del mínimo."
+      },
+      "modules": {
+        "value": "14",
+        "label": "Módulos estables",
+        "description": "Agentes, herramientas, memoria, providers, MCP, pipelines, observabilidad y más."
+      },
+      "typing": {
+        "value": "100%",
+        "label": "Superficie tipada",
+        "description": "mypy --strict en todo el árbol de código, sin vías de escape."
+      },
+      "license": {
+        "value": "Apache 2.0",
+        "label": "Código abierto",
+        "description": "Licencia permisiva, hoja de ruta pública, sin barreras empresariales."
+      }
+    }
+  },
   "CodeTour": {
     "eyebrow": "Recorrido por el código",
     "heading": "La API en cuatro fragmentos.",
-    "intro": "Python real. Forma real. El framework que ves abajo está en alfa temprana — la superficie crecerá, pero el diseño seguirá siendo así de delgado.",
+    "intro": "Python real, usando la API pública tal como está hoy. El framework está en alfa temprana — la superficie crecerá, pero el diseño seguirá siendo así de delgado.",
     "tabs": {
       "agent": {
         "label": "Agente",
-        "description": "Un agente vincula un modelo, herramientas y memoria bajo una única especificación declarativa."
+        "description": "El decorador @agent vincula un modelo, herramientas tipadas y un system prompt en una única especificación declarativa."
       },
       "tool": {
         "label": "Herramienta",
-        "description": "Las herramientas son contratos tipados. Los efectos se declaran para que el runtime pueda razonar sobre la seguridad."
+        "description": "Las herramientas son contratos tipados. Los efectos se declaran para que el runtime y el código de políticas puedan razonar sobre la seguridad."
       },
       "pipeline": {
         "label": "Pipeline",
-        "description": "Los pipelines componen etapas. Cada etapa se ejecuta en uno de un catálogo cerrado de modos de ejecución."
+        "description": "Los pipelines componen modos del runtime. Cada paso es un Executable — un agente, un callable o un modo anidado."
       },
       "mcp": {
         "label": "MCP",
-        "description": "Conecta servidores MCP como fuentes de herramientas de primera clase, con los mismos contratos de seguridad que las herramientas nativas."
+        "description": "Conecta servidores MCP como fuentes de herramientas de primera clase, expuestas a los agentes bajo los mismos contratos de seguridad que las herramientas nativas."
       }
     },
     "tabsAria": "Recorrido por el código de Phronesis"
@@ -82,7 +119,7 @@
   "Patterns": {
     "eyebrow": "Patrones",
     "heading": "Diseñado para las formas de agente que se repiten.",
-    "intro": "Estos son patrones que el framework soporta hoy. No son casos de estudio — aún no tenemos usuarios en producción que reclamar, y no fingiremos lo contrario.",
+    "intro": "Patrones que el framework soporta hoy — cada uno respaldado por un ejemplo ejecutable en el repositorio, no por una diapositiva.",
     "items": {
       "research": {
         "title": "Agentes de investigación",
@@ -102,6 +139,27 @@
       }
     }
   },
+  "Reference": {
+    "eyebrow": "Implementación de referencia",
+    "heading": "Un paper multiagente, reproducido.",
+    "intro": "Para demostrar que la capa de orquestación sostiene sistemas reales y no solo demos, el repositorio incluye una reproducción fiel del organigrama de TradingAgents (Xiao et al., 2024) — cableada por completo desde la API pública.",
+    "bullets": {
+      "agents": {
+        "title": "13 agentes especializados",
+        "description": "Cuatro analistas en paralelo, un debate de investigación bull contra bear, un trader, un debate de riesgo a tres bandas y un gestor de cartera."
+      },
+      "phases": {
+        "title": "5 fases compuestas",
+        "description": "Fan-out paralelo, dos Debates moderados y adaptadores callable hilvanados en una única Sequence."
+      },
+      "deterministic": {
+        "title": "Determinista por defecto",
+        "description": "Se ejecuta contra un cassette versionado — sin red, salida estable byte a byte, reproducible en CI."
+      }
+    },
+    "note": "Mismo modelo y mismo ticker que el paper original. La diferencia vive en la orquestación, no en el LLM.",
+    "cta": "Leer el recorrido"
+  },
   "Principles": {
     "eyebrow": "Principios",
     "heading": "Seis decisiones, aplicadas en todas partes.",
@@ -116,11 +174,11 @@
       },
       "typed": {
         "title": "Fuertemente tipado",
-        "body": "Pydantic v2 en todo. Los tipos no son documentación — son contratos en tiempo de ejecución que el framework hace cumplir."
+        "body": "Pydantic v2 y mypy --strict en todo. Los tipos no son documentación — son contratos en tiempo de ejecución que el framework hace cumplir."
       },
       "immutable": {
         "title": "Specs inmutables, ejecuciones mutables",
-        "body": "Las definiciones son serializables a JSON y reproducibles. El estado de ejecución vive aparte, observable y consultable."
+        "body": "Las definiciones son congeladas, serializables a JSON y reproducibles. El estado de ejecución vive aparte, observable y consultable."
       },
       "observable": {
         "title": "Observabilidad integrada",
@@ -128,7 +186,7 @@
       },
       "catalog": {
         "title": "Catálogo cerrado de patrones de ejecución",
-        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. Modos con nombre sobre los que puedes razonar — no flujo de control arbitrario."
+        "body": "Sequence, Parallel, Debate, Consensus, Handoff, Reflexion, Tree Search y más — diecinueve modos con nombre sobre los que puedes razonar, no flujo de control arbitrario."
       }
     }
   },
@@ -141,36 +199,67 @@
         "title": "Núcleo",
         "description": "Los primitivos a partir de los que se construye cada agente.",
         "items": {
-          "agents": "Agentes",
-          "tools": "Herramientas",
-          "mcp": "Integración con MCP",
-          "prompts": "Prompts",
-          "capabilities": "Capacidades"
+          "agents": "Agentes (@agent, sesiones, bucle de tool-calling)",
+          "tools": "Herramientas (tipadas, con efectos declarados)",
+          "mcp": "Cliente y servidor MCP",
+          "providers": "Providers (Anthropic, OpenAI, Ollama, vLLM)",
+          "context": "Constructores de contexto"
         }
       },
       "state": {
-        "title": "Estado y contexto",
-        "description": "Cómo recuerdan los agentes y qué comparten.",
+        "title": "Estado y memoria",
+        "description": "Cómo recuerdan los agentes y cómo reanudan.",
         "items": {
-          "memory": "Memoria (episódica, semántica, de trabajo, compartida)",
-          "context": "Gestión del contexto",
+          "memory": "Memoria (de trabajo, clave-valor, vectorial, episódica)",
+          "checkpoints": "Checkpoints (pausar y reanudar)",
           "sessions": "Sesiones"
         }
       },
       "orchestration": {
-        "title": "Orquestación",
-        "description": "Cómo se componen los agentes en sistemas.",
+        "title": "Orquestación y operación",
+        "description": "Cómo se componen los agentes en sistemas que puedes ejecutar.",
         "items": {
           "pipelines": "Pipelines",
-          "modes": "Modos de ejecución",
-          "communication": "Comunicación entre agentes",
-          "policies": "Políticas",
-          "observability": "Observabilidad"
+          "modes": "19 modos de ejecución",
+          "middleware": "Middleware de provider",
+          "replay": "Cassettes de record / replay",
+          "observability": "Observabilidad con OpenTelemetry"
         }
       }
     },
     "executionModesTitle": "Modos de ejecución",
-    "executionModesNote": "Un catálogo cerrado — suficientemente expresivo, suficientemente finito para razonar sobre él."
+    "executionModesNote": "Diecinueve modos con nombre — suficientemente expresivos, suficientemente finitos para razonar sobre ellos."
+  },
+  "Quality": {
+    "eyebrow": "Ingeniería",
+    "heading": "Las garantías, no las promesas.",
+    "intro": "Un framework de agentes vale tanto como la disciplina que lo respalda. Estas son las barreras que cada cambio supera antes de aterrizar.",
+    "items": {
+      "typed": {
+        "title": "Tipado de extremo a extremo",
+        "description": "mypy --strict y specs con Pydantic v2 en todo el árbol de código. Sin vías de escape sin tipar."
+      },
+      "tested": {
+        "title": "Probado hasta un mínimo",
+        "description": "Más de 1.600 tests con cobertura de ramas bajo umbral del 90% — el build falla por debajo."
+      },
+      "deterministic": {
+        "title": "Replay determinista",
+        "description": "Graba una vez, reproduce siempre: las ejecuciones respaldadas por cassette hacen el comportamiento de los agentes reproducible en tests y CI sin red."
+      },
+      "observable": {
+        "title": "Observable por construcción",
+        "description": "Spans de OpenTelemetry para cada ejecución de agente, llamada a herramienta, etapa de pipeline y sesión MCP — correlacionados por ids estables."
+      },
+      "immutable": {
+        "title": "Specs inmutables",
+        "description": "Agentes, herramientas y pipelines son dataclasses congeladas y serializables a JSON — versionables, diffables, reproducibles."
+      },
+      "linted": {
+        "title": "Limpio de lint",
+        "description": "ruff format y un ruff check estricto vigilan cada commit, junto a las suites de tipos y tests."
+      }
+    }
   },
   "Install": {
     "eyebrow": "Instalar",
@@ -182,7 +271,7 @@
   "Status": {
     "eyebrow": "Estado del proyecto",
     "heading": "Phronesis está en alfa temprana.",
-    "p1": "La API cambiará. Estamos trabajando en público para construir un framework que se tome en serio los sistemas de agentes — tipado, componible, observable. Sin afirmaciones de producción, sin casos de estudio inventados, sin barreras empresariales. Solo el código, y un compromiso honesto con su diseño.",
+    "p1": "La API cambiará. Pero los cimientos ya están aquí: specs tipadas e inmutables; diecinueve modos de ejecución con nombre; record y replay deterministas; OpenTelemetry desde el primer commit; y más de 1.600 tests sostenidos sobre un umbral de cobertura del 90%. Construimos en público — sin afirmaciones de producción, sin casos de estudio inventados, sin barreras empresariales. Solo el código, y un compromiso honesto con su diseño.",
     "p2": "Los comentarios, ideas y contribuciones son bienvenidos a través de GitHub Discussions e Issues. La hoja de ruta, los detalles ásperos y las preguntas abiertas están todos en el repositorio.",
     "discussions": "Debates",
     "openIssues": "Abrir issues"

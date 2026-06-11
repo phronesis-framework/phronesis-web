@@ -55,26 +55,63 @@
     "p2End": ". Execution patterns come from a closed, well-defined catalog — expressiveness without chaos.",
     "p3": "Every run is observable through OpenTelemetry, every spec is versionable, every contract is a runtime check, not a comment in a prompt. This is the difference between a framework that produces demos and one that produces systems you can operate."
   },
+  "Metrics": {
+    "eyebrow": "By the numbers",
+    "heading": "Built like infrastructure, not a demo.",
+    "intro": "Phronesis is early, but it is not thin. The surface is small on purpose — and every layer carries its own tests, types, and observability.",
+    "items": {
+      "modes": {
+        "value": "19",
+        "label": "Execution modes",
+        "description": "A closed, named catalog — from Sequence and Parallel to Reflexion and Tree Search."
+      },
+      "examples": {
+        "value": "22",
+        "label": "Runnable examples",
+        "description": "Every mode with a deterministic cassette, plus a full multi-agent mini-app."
+      },
+      "tests": {
+        "value": "1,600+",
+        "label": "Tests",
+        "description": "Branch coverage gated at 90% — the build fails below the floor."
+      },
+      "modules": {
+        "value": "14",
+        "label": "Stable modules",
+        "description": "Agents, tools, memory, providers, MCP, pipelines, observability and more."
+      },
+      "typing": {
+        "value": "100%",
+        "label": "Typed surface",
+        "description": "mypy --strict across the entire source tree, no escape hatches."
+      },
+      "license": {
+        "value": "Apache 2.0",
+        "label": "Open source",
+        "description": "Permissive license, public roadmap, no enterprise gates."
+      }
+    }
+  },
   "CodeTour": {
     "eyebrow": "Code tour",
     "heading": "The API in four snippets.",
-    "intro": "Real Python. Real shape. The framework you see below is in early alpha — the surface area will grow, but the design will stay this lean.",
+    "intro": "Real Python, using the public API as it stands today. The framework is in early alpha — the surface will grow, but the design will stay this lean.",
     "tabs": {
       "agent": {
         "label": "Agent",
-        "description": "An agent binds a model, tools, and memory under a single declarative spec."
+        "description": "The @agent decorator binds a model, typed tools, and a system prompt into a single declarative spec."
       },
       "tool": {
         "label": "Tool",
-        "description": "Tools are typed contracts. Effects are declared so the runtime can reason about safety."
+        "description": "Tools are typed contracts. Effects are declared so the runtime and policy code can reason about safety."
       },
       "pipeline": {
         "label": "Pipeline",
-        "description": "Pipelines compose stages. Each stage runs in one of a closed catalog of execution modes."
+        "description": "Pipelines compose runtime modes. Each step is an Executable — an agent, a callable, or a nested mode."
       },
       "mcp": {
         "label": "MCP",
-        "description": "Attach MCP servers as first-class tool sources, with the same safety contracts as native tools."
+        "description": "Connect MCP servers as first-class tool sources, exposed to agents under the same safety contracts as native tools."
       }
     },
     "tabsAria": "Phronesis code tour"
@@ -82,7 +119,7 @@
   "Patterns": {
     "eyebrow": "Patterns",
     "heading": "Designed for the agent shapes that recur.",
-    "intro": "These are patterns the framework supports today. They are not case studies — we have no production users to claim yet, and we will not pretend otherwise.",
+    "intro": "Patterns the framework supports today — each one backed by a runnable example in the repository, not a slide.",
     "items": {
       "research": {
         "title": "Research agents",
@@ -102,6 +139,27 @@
       }
     }
   },
+  "Reference": {
+    "eyebrow": "Reference implementation",
+    "heading": "A multi-agent paper, reproduced.",
+    "intro": "To show the orchestration layer carries real systems and not just demos, the repository ships a faithful reproduction of the TradingAgents organigram (Xiao et al., 2024) — wired entirely from the public API.",
+    "bullets": {
+      "agents": {
+        "title": "13 specialized agents",
+        "description": "Four parallel analysts, a bull-versus-bear research debate, a trader, a three-way risk debate, and a portfolio manager."
+      },
+      "phases": {
+        "title": "5 composed phases",
+        "description": "Parallel fan-out, two moderated Debates, and callable adapters threaded into a single Sequence."
+      },
+      "deterministic": {
+        "title": "Deterministic by default",
+        "description": "Runs against a committed cassette — no network, byte-stable output, reproducible in CI."
+      }
+    },
+    "note": "Same model and same ticker as the original paper. The difference lives in the orchestration, not the LLM.",
+    "cta": "Read the walkthrough"
+  },
   "Principles": {
     "eyebrow": "Principles",
     "heading": "Six choices, applied everywhere.",
@@ -116,11 +174,11 @@
       },
       "typed": {
         "title": "Strongly typed",
-        "body": "Pydantic v2 throughout. Types are not documentation — they are runtime contracts the framework enforces."
+        "body": "Pydantic v2 and mypy --strict throughout. Types are not documentation — they are runtime contracts the framework enforces."
       },
       "immutable": {
         "title": "Immutable specs, mutable runs",
-        "body": "Definitions are JSON-serializable and reproducible. Execution state lives apart, observable and queryable."
+        "body": "Definitions are frozen, JSON-serializable and reproducible. Execution state lives apart, observable and queryable."
       },
       "observable": {
         "title": "Observability built in",
@@ -128,7 +186,7 @@
       },
       "catalog": {
         "title": "Closed catalog of execution patterns",
-        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. Named modes you can reason about — not arbitrary control flow."
+        "body": "Sequence, Parallel, Debate, Consensus, Handoff, Reflexion, Tree Search and more — nineteen named modes you can reason about, not arbitrary control flow."
       }
     }
   },
@@ -141,36 +199,67 @@
         "title": "Core",
         "description": "The primitives every agent is built from.",
         "items": {
-          "agents": "Agents",
-          "tools": "Tools",
-          "mcp": "MCP integration",
-          "prompts": "Prompts",
-          "capabilities": "Capabilities"
+          "agents": "Agents (@agent, sessions, tool-calling loop)",
+          "tools": "Tools (typed, effect-declaring)",
+          "mcp": "MCP client and server",
+          "providers": "Providers (Anthropic, OpenAI, Ollama, vLLM)",
+          "context": "Context builders"
         }
       },
       "state": {
-        "title": "State and context",
-        "description": "How agents remember and what they share.",
+        "title": "State and memory",
+        "description": "How agents remember and resume.",
         "items": {
-          "memory": "Memory (episodic, semantic, working, shared)",
-          "context": "Context management",
+          "memory": "Memory (working, key-value, vector, episodic)",
+          "checkpoints": "Checkpoints (pause and resume)",
           "sessions": "Sessions"
         }
       },
       "orchestration": {
-        "title": "Orchestration",
-        "description": "How agents compose into systems.",
+        "title": "Orchestration and ops",
+        "description": "How agents compose into systems you can run.",
         "items": {
           "pipelines": "Pipelines",
-          "modes": "Execution modes",
-          "communication": "Inter-agent communication",
-          "policies": "Policies",
-          "observability": "Observability"
+          "modes": "19 execution modes",
+          "middleware": "Provider middleware",
+          "replay": "Record / replay cassettes",
+          "observability": "OpenTelemetry observability"
         }
       }
     },
     "executionModesTitle": "Execution modes",
-    "executionModesNote": "A closed catalog — expressive enough, finite enough to reason about."
+    "executionModesNote": "Nineteen named modes — expressive enough, finite enough to reason about."
+  },
+  "Quality": {
+    "eyebrow": "Engineering",
+    "heading": "The guarantees, not the promises.",
+    "intro": "An agent framework is only as trustworthy as the discipline behind it. These are the gates every change passes before it lands.",
+    "items": {
+      "typed": {
+        "title": "Typed end to end",
+        "description": "mypy --strict and Pydantic v2 specs across the whole source tree. No untyped escape hatches."
+      },
+      "tested": {
+        "title": "Tested to a floor",
+        "description": "1,600+ tests with branch coverage gated at 90% — the build fails below it, never above it on paper."
+      },
+      "deterministic": {
+        "title": "Deterministic replay",
+        "description": "Record once, replay forever: cassette-backed runs make agent behavior reproducible in tests and CI without a network."
+      },
+      "observable": {
+        "title": "Observable by construction",
+        "description": "OpenTelemetry spans for every agent run, tool call, pipeline stage, and MCP session — correlated by stable ids."
+      },
+      "immutable": {
+        "title": "Immutable specs",
+        "description": "Agents, tools, and pipelines are frozen, JSON-serializable dataclasses — versionable, diffable, reproducible."
+      },
+      "linted": {
+        "title": "Lint-clean",
+        "description": "ruff format and a strict ruff check gate every commit, alongside the type and test suites."
+      }
+    }
   },
   "Install": {
     "eyebrow": "Install",
@@ -182,7 +271,7 @@
   "Status": {
     "eyebrow": "Project status",
     "heading": "Phronesis is in early alpha.",
-    "p1": "The API will change. We are working in public to build a framework that takes agent systems seriously — typed, composable, observable. No production claims, no fabricated case studies, no enterprise gates. Just the code, and an honest commitment to its design.",
+    "p1": "The API will change. But the foundations are already here: typed, immutable specs; nineteen named execution modes; deterministic record and replay; OpenTelemetry from the first commit; and over 1,600 tests held to a 90% coverage floor. We build in public — no production claims, no fabricated case studies, no enterprise gates. Just the code, and an honest commitment to its design.",
     "p2": "Feedback, ideas, and contributions are welcome through GitHub Discussions and Issues. The roadmap, the rough edges, and the open questions are all in the repository.",
     "discussions": "Discussions",
     "openIssues": "Open issues"

@@ -1,74 +1,95 @@
 /**
  * Canonical Phronesis code snippets used across the landing page.
  * Each snippet is intentionally minimal — it showcases the framework's
- * shape, not its full surface area.
+ * shape, not its full surface area. Every snippet uses the real public
+ * API as exported by the framework.
  */
 
-export const HERO_SNIPPET = `from phronesis import Agent, anthropic
+export const HERO_SNIPPET = `from phronesis.agents import agent
+from phronesis.providers import anthropic
 
-researcher = Agent(
-    name="researcher",
-    model=anthropic("claude-opus-4-7"),
+
+@agent(
+    model=anthropic(model="claude-sonnet-4-6"),
     system_prompt="You investigate questions thoroughly and cite sources.",
 )
+def researcher() -> str:
+    """Investigate a question and synthesize a cited answer."""
 
-answer = await researcher.run("What is phronesis in Aristotelian ethics?")
+
+result = await researcher.run("What is phronesis in Aristotelian ethics?")
+print(result.output)
 `;
 
-export const AGENT_SNIPPET = `from phronesis import Agent, anthropic
-from phronesis.memory import SemanticMemory
+export const AGENT_SNIPPET = `from phronesis import ToolEffect
+from phronesis.agents import agent
+from phronesis.providers import anthropic
+from phronesis.tools import tool
 
-agent = Agent(
-    name="assistant",
-    model=anthropic("claude-opus-4-7"),
-    tools=[search_web, read_file],
-    memory=SemanticMemory(scope="session"),
+
+@tool(effects=(ToolEffect.NETWORK,))
+async def search_web(query: str, limit: int = 5) -> list[str]:
+    """Search the web and return ranked snippets."""
+    ...
+
+
+@agent(
+    model=anthropic(model="claude-sonnet-4-6"),
+    tools=(search_web,),
     system_prompt="You are a careful research assistant.",
+    max_iterations=8,
 )
+def assistant() -> str:
+    """Answer questions grounded in live search results."""
 `;
 
-export const TOOL_SNIPPET = `from phronesis import tool
+export const TOOL_SNIPPET = `from phronesis import ToolEffect
+from phronesis.tools import tool
 from pydantic import BaseModel
+
 
 class SearchResult(BaseModel):
     title: str
     url: str
     snippet: str
 
-@tool(effects=["network"])
+
+@tool(effects=(ToolEffect.NETWORK,))
 async def search_web(query: str, limit: int = 5) -> list[SearchResult]:
     """Search the web and return ranked results."""
     ...
 `;
 
-export const PIPELINE_SNIPPET = `from phronesis import Pipeline, Stage
-from phronesis.modes import Sequence, ReActLoop
+export const PIPELINE_SNIPPET = `from phronesis.pipelines import pipeline
+from phronesis.runtime import ExecutionContext, Parallel, agent_node
 
-research = Pipeline(
+research = pipeline(
+    Parallel(nodes=(agent_node(fundamental), agent_node(sentiment))),
+    agent_node(writer),
+    agent_node(editor),
     name="research-and-synthesize",
-    stages=[
-        Stage("gather", mode=ReActLoop(agent=researcher, max_iterations=8)),
-        Stage("synthesize", mode=Sequence(agents=[writer, editor])),
-    ],
 )
 
-report = await research.run(input="Compare Aristotle and Kant on practical reason.")
+ctx = ExecutionContext.new()
+outcome = await research(ctx, "Compare Aristotle and Kant on practical reason.")
+print(outcome.output)
 `;
 
-export const MCP_SNIPPET = `from phronesis import Agent, anthropic
-from phronesis.mcp import MCPServer
+export const MCP_SNIPPET = `from phronesis.mcp import McpClient, McpServerSpec, StdioTransport
 
-filesystem = MCPServer(
+spec = McpServerSpec(
     name="filesystem",
-    command="npx",
-    args=["-y", "@modelcontextprotocol/server-filesystem", "/workspace"],
+    transport=StdioTransport(
+        command="npx",
+        args=("-y", "@modelcontextprotocol/server-filesystem", "/workspace"),
+    ),
 )
 
-agent = Agent(
-    name="developer",
-    model=anthropic("claude-opus-4-7"),
-    mcp_servers=[filesystem],
-)
+async with McpClient.connect(spec) as client:
+    tools = await client.list_tools()
+
+    developer = assistant.with_added_tools(tools)
+    result = await developer.run("List the Python files in /workspace.")
 `;
 
 export const INSTALL_SNIPPET = `pip install phronesis-framework`;

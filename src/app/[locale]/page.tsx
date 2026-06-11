@@ -3,10 +3,13 @@ import { AnnouncementBanner } from "@/components/layout/announcement-banner";
 import { SiteHeader } from "@/components/layout/site-header";
 import { Hero } from "@/components/sections/hero";
 import { Why } from "@/components/sections/why";
+import { Metrics } from "@/components/sections/metrics";
 import { CodeTourSection } from "@/components/sections/code-tour-section";
 import { Patterns } from "@/components/sections/patterns";
+import { Reference } from "@/components/sections/reference";
 import { Principles } from "@/components/sections/principles";
 import { Inside } from "@/components/sections/inside";
+import { Quality } from "@/components/sections/quality";
 import { Install } from "@/components/sections/install";
 import { Status } from "@/components/sections/status";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -32,16 +35,25 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <Why />
         </Reveal>
         <Reveal>
+          <Metrics />
+        </Reveal>
+        <Reveal>
           <CodeTourSection />
         </Reveal>
         <Reveal>
           <Patterns />
         </Reveal>
         <Reveal>
+          <Reference />
+        </Reveal>
+        <Reveal>
           <Principles />
         </Reveal>
         <Reveal>
           <Inside />
+        </Reveal>
+        <Reveal>
+          <Quality />
         </Reveal>
         <Reveal>
           <Install />
