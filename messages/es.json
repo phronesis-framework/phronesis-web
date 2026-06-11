@@ -116,50 +116,6 @@
     },
     "tabsAria": "Recorrido por el código de Phronesis"
   },
-  "Patterns": {
-    "eyebrow": "Patrones",
-    "heading": "Diseñado para las formas de agente que se repiten.",
-    "intro": "Patrones que el framework soporta hoy — cada uno respaldado por un ejemplo ejecutable en el repositorio, no por una diapositiva.",
-    "items": {
-      "research": {
-        "title": "Agentes de investigación",
-        "description": "Agentes que reúnen información, razonan sobre ella y sintetizan respuestas con citas."
-      },
-      "document": {
-        "title": "Agentes de documentos",
-        "description": "Agentes que leen, estructuran y actúan sobre documentos con memoria explícita de lo que han visto."
-      },
-      "multiAgent": {
-        "title": "Pipelines multiagente",
-        "description": "Pipelines que componen agentes especializados mediante traspasos, debate o consenso."
-      },
-      "toolUsing": {
-        "title": "Asistentes con herramientas",
-        "description": "Agentes que invocan herramientas tipadas y servidores MCP bajo contratos de seguridad explícitos."
-      }
-    }
-  },
-  "Reference": {
-    "eyebrow": "Implementación de referencia",
-    "heading": "Un paper multiagente, reproducido.",
-    "intro": "Para demostrar que la capa de orquestación sostiene sistemas reales y no solo demos, el repositorio incluye una reproducción fiel del organigrama de TradingAgents (Xiao et al., 2024) — cableada por completo desde la API pública.",
-    "bullets": {
-      "agents": {
-        "title": "13 agentes especializados",
-        "description": "Cuatro analistas en paralelo, un debate de investigación bull contra bear, un trader, un debate de riesgo a tres bandas y un gestor de cartera."
-      },
-      "phases": {
-        "title": "5 fases compuestas",
-        "description": "Fan-out paralelo, dos Debates moderados y adaptadores callable hilvanados en una única Sequence."
-      },
-      "deterministic": {
-        "title": "Determinista por defecto",
-        "description": "Se ejecuta contra un cassette versionado — sin red, salida estable byte a byte, reproducible en CI."
-      }
-    },
-    "note": "Mismo modelo y mismo ticker que el paper original. La diferencia vive en la orquestación, no en el LLM.",
-    "cta": "Leer el recorrido"
-  },
   "Principles": {
     "eyebrow": "Principios",
     "heading": "Seis decisiones, aplicadas en todas partes.",

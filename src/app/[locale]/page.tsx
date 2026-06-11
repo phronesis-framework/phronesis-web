@@ -5,8 +5,6 @@ import { Hero } from "@/components/sections/hero";
 import { Why } from "@/components/sections/why";
 import { Metrics } from "@/components/sections/metrics";
 import { CodeTourSection } from "@/components/sections/code-tour-section";
-import { Patterns } from "@/components/sections/patterns";
-import { Reference } from "@/components/sections/reference";
 import { Principles } from "@/components/sections/principles";
 import { Inside } from "@/components/sections/inside";
 import { Quality } from "@/components/sections/quality";
@@ -39,12 +37,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </Reveal>
         <Reveal>
           <CodeTourSection />
-        </Reveal>
-        <Reveal>
-          <Patterns />
-        </Reveal>
-        <Reveal>
-          <Reference />
         </Reveal>
         <Reveal>
           <Principles />

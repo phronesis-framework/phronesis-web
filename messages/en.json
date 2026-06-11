@@ -116,50 +116,6 @@
     },
     "tabsAria": "Phronesis code tour"
   },
-  "Patterns": {
-    "eyebrow": "Patterns",
-    "heading": "Designed for the agent shapes that recur.",
-    "intro": "Patterns the framework supports today — each one backed by a runnable example in the repository, not a slide.",
-    "items": {
-      "research": {
-        "title": "Research agents",
-        "description": "Agents that gather information, reason over it, and synthesize answers with citations."
-      },
-      "document": {
-        "title": "Document agents",
-        "description": "Agents that read, structure, and act on documents with explicit memory of what they have seen."
-      },
-      "multiAgent": {
-        "title": "Multi-agent pipelines",
-        "description": "Pipelines composing specialized agents through handoffs, debate, or consensus."
-      },
-      "toolUsing": {
-        "title": "Tool-using assistants",
-        "description": "Agents that invoke typed tools and MCP servers under explicit safety contracts."
-      }
-    }
-  },
-  "Reference": {
-    "eyebrow": "Reference implementation",
-    "heading": "A multi-agent paper, reproduced.",
-    "intro": "To show the orchestration layer carries real systems and not just demos, the repository ships a faithful reproduction of the TradingAgents organigram (Xiao et al., 2024) — wired entirely from the public API.",
-    "bullets": {
-      "agents": {
-        "title": "13 specialized agents",
-        "description": "Four parallel analysts, a bull-versus-bear research debate, a trader, a three-way risk debate, and a portfolio manager."
-      },
-      "phases": {
-        "title": "5 composed phases",
-        "description": "Parallel fan-out, two moderated Debates, and callable adapters threaded into a single Sequence."
-      },
-      "deterministic": {
-        "title": "Deterministic by default",
-        "description": "Runs against a committed cassette — no network, byte-stable output, reproducible in CI."
-      }
-    },
-    "note": "Same model and same ticker as the original paper. The difference lives in the orchestration, not the LLM.",
-    "cta": "Read the walkthrough"
-  },
   "Principles": {
     "eyebrow": "Principles",
     "heading": "Six choices, applied everywhere.",
