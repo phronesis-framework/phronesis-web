@@ -2,13 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/section";
 import { Card, CardGrid } from "@/components/ui/card-grid";
 
-type QualityKey =
-  | "typed"
-  | "tested"
-  | "deterministic"
-  | "observable"
-  | "immutable"
-  | "linted";
+type QualityKey = "typed" | "tested" | "deterministic" | "observable" | "immutable" | "linted";
 
 const QUALITY_KEYS: readonly QualityKey[] = [
   "typed",
