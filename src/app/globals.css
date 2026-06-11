@@ -20,7 +20,7 @@
 }
 
 :root {
-  /* Light mode — toggleable, but not default. */
+  /* Light mode - toggleable, but not default. */
   --background: oklch(0.99 0.002 80);
   --foreground: oklch(0.18 0.01 80);
   --background-elevated: oklch(0.97 0.003 80);
@@ -35,7 +35,7 @@
 }
 
 .dark {
-  /* Dark mode — default. Near-black background, warm muted neutrals. */
+  /* Dark mode - default. Near-black background, warm muted neutrals. */
   --background: oklch(0.16 0.004 80);
   --foreground: oklch(0.96 0.005 80);
   --background-elevated: oklch(0.2 0.005 80);
@@ -106,7 +106,7 @@ html[data-announcement-dismissed="true"] .announcement-banner {
   display: none;
 }
 
-/* Section reveal — fade + small upward translate.
+/* Section reveal - fade + small upward translate.
    Gated behind `@media (scripting: enabled)` so browsers without JS render
    the content as visible immediately. Disabled under reduced-motion. */
 @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {

@@ -1,6 +1,6 @@
 /**
  * Canonical Phronesis code snippets used across the landing page.
- * Each snippet is intentionally minimal — it showcases the framework's
+ * Each snippet is intentionally minimal - it showcases the framework's
  * shape, not its full surface area. Every snippet uses the real public
  * API as exported by the framework.
  */

@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "title": "Phronesis — Praktische Weisheit für KI-Agentensysteme",
+    "title": "Phronesis - Praktische Weisheit für KI-Agentensysteme",
     "description": "Phronesis ist ein Open-Source-Python-Framework zum Erstellen von KI-Agentensystemen mit typisierten Verträgen, komponierbaren Ausführungsmustern und integrierter Observability.",
     "ogDescription": "Open-Source-Python-Framework für KI-Agentensysteme. Typisierte Verträge, komponierbare Pipelines, integrierte Observability."
   },
@@ -36,14 +36,14 @@
     "heading": "Praktische Weisheit für KI-Agentensysteme.",
     "leadPrefix": "(φρόνησις): für Aristoteles,",
     "leadStrong": "praktische Weisheit",
-    "leadMiddle": "— die Fähigkeit, gut zu deliberieren und in konkreten Situationen mit Urteilsvermögen zu handeln. Ein LLM verfügt über",
+    "leadMiddle": "- die Fähigkeit, gut zu deliberieren und in konkreten Situationen mit Urteilsvermögen zu handeln. Ein LLM verfügt über",
     "leadEpisteme": "(Wissen). Ein Agent benötigt",
     "leadEnd": "."
   },
   "Why": {
     "eyebrow": "Warum Phronesis",
     "heading": "Ein Agent ist kein Chatbot mit Tools.",
-    "p1Before": "LLMs wissen Dinge — das ist",
+    "p1Before": "LLMs wissen Dinge - das ist",
     "p1Episteme": "Episteme",
     "p1Middle": ". Aber Agenten müssen",
     "p1Strong": "entscheiden und handeln",
@@ -52,13 +52,13 @@
     "p1End": ". Die meisten Agent-Frameworks behandeln Agenten als erweiterte Chatbots, die an eine Tool-Use-Schleife geklebt sind. Phronesis behandelt sie als deliberative Systeme mit expliziten Verträgen: typisierte Eingaben, deklarierte Effekte, begrenzter Speicher, benannte Ausführungsmuster.",
     "p2Before": "Bestehende Frameworks erzwingen eine Wahl. Auf der einen Seite schreibt man beliebigen Kontrollfluss als Code: maximale Ausdrucksstärke und ein Multi-Agenten-System, das sechs Monate später niemand debuggen kann. Auf der anderen wird alles in YAML oder Graph-Buildern beschrieben: auf den ersten Blick lesbar, unmöglich, sobald etwas Nicht-Triviales nötig ist. Phronesis trennt deklarative Spezifikation von der Laufzeitausführung. Agenten, Tools, Speicher und Pipelines sind",
     "p2Strong": "typisierte, unveränderliche, JSON-serialisierbare Specs",
-    "p2End": ". Ausführungsmuster stammen aus einem geschlossenen, klar definierten Katalog — Ausdrucksstärke ohne Chaos.",
+    "p2End": ". Ausführungsmuster stammen aus einem geschlossenen, klar definierten Katalog - Ausdrucksstärke ohne Chaos.",
     "p3": "Jeder Lauf ist über OpenTelemetry beobachtbar, jede Spec ist versionierbar, jeder Vertrag ist eine Laufzeitprüfung, kein Kommentar in einem Prompt. Das ist der Unterschied zwischen einem Framework, das Demos produziert, und einem, das Systeme produziert, die man betreiben kann."
   },
   "CodeTour": {
     "eyebrow": "Code-Tour",
     "heading": "Die API in vier Snippets.",
-    "intro": "Echtes Python. Echte Form. Das Framework unten befindet sich im frühen Alpha — die Oberfläche wird wachsen, aber das Design bleibt so schlank.",
+    "intro": "Echtes Python. Echte Form. Das Framework unten befindet sich im frühen Alpha - die Oberfläche wird wachsen, aber das Design bleibt so schlank.",
     "tabs": {
       "agent": {
         "label": "Agent",
@@ -74,7 +74,7 @@
       },
       "mcp": {
         "label": "MCP",
-        "description": "Schließen Sie MCP-Server als erstklassige Tool-Quellen an — mit denselben Sicherheitsverträgen wie native Tools."
+        "description": "Schließen Sie MCP-Server als erstklassige Tool-Quellen an - mit denselben Sicherheitsverträgen wie native Tools."
       }
     },
     "tabsAria": "Phronesis-Code-Tour"
@@ -82,7 +82,7 @@
   "Patterns": {
     "eyebrow": "Muster",
     "heading": "Entworfen für die wiederkehrenden Agent-Formen.",
-    "intro": "Dies sind Muster, die das Framework heute unterstützt. Es handelt sich nicht um Fallstudien — wir haben noch keine Produktionsnutzer zu beanspruchen, und wir werden nichts anderes vorgeben.",
+    "intro": "Dies sind Muster, die das Framework heute unterstützt. Es handelt sich nicht um Fallstudien - wir haben noch keine Produktionsnutzer zu beanspruchen, und wir werden nichts anderes vorgeben.",
     "items": {
       "research": {
         "title": "Recherche-Agenten",
@@ -108,7 +108,7 @@
     "items": {
       "composition": {
         "title": "Komposition statt Vererbung",
-        "body": "Agenten werden aus Teilen konfiguriert — Modell, Tools, Speicher, Prompts — nicht unterklassiert. Sie setzen zusammen; Sie überschreiben nicht."
+        "body": "Agenten werden aus Teilen konfiguriert - Modell, Tools, Speicher, Prompts - nicht unterklassiert. Sie setzen zusammen; Sie überschreiben nicht."
       },
       "async": {
         "title": "Async zuerst",
@@ -116,7 +116,7 @@
       },
       "typed": {
         "title": "Stark typisiert",
-        "body": "Pydantic v2 überall. Typen sind keine Dokumentation — sie sind Laufzeitverträge, die das Framework durchsetzt."
+        "body": "Pydantic v2 überall. Typen sind keine Dokumentation - sie sind Laufzeitverträge, die das Framework durchsetzt."
       },
       "immutable": {
         "title": "Unveränderliche Specs, veränderliche Läufe",
@@ -124,11 +124,11 @@
       },
       "observable": {
         "title": "Observability eingebaut",
-        "body": "OpenTelemetry-Spans für jeden Agent-Lauf, Tool-Aufruf und jede Pipeline-Stufe — vom ersten Commit an, nicht nachträglich angeschraubt."
+        "body": "OpenTelemetry-Spans für jeden Agent-Lauf, Tool-Aufruf und jede Pipeline-Stufe - vom ersten Commit an, nicht nachträglich angeschraubt."
       },
       "catalog": {
         "title": "Geschlossener Katalog von Ausführungsmustern",
-        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. Benannte Modi, über die man nachdenken kann — kein beliebiger Kontrollfluss."
+        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. Benannte Modi, über die man nachdenken kann - kein beliebiger Kontrollfluss."
       }
     }
   },
@@ -170,7 +170,7 @@
       }
     },
     "executionModesTitle": "Ausführungsmodi",
-    "executionModesNote": "Ein geschlossener Katalog — ausdrucksstark genug, endlich genug, um darüber nachzudenken."
+    "executionModesNote": "Ein geschlossener Katalog - ausdrucksstark genug, endlich genug, um darüber nachzudenken."
   },
   "Install": {
     "eyebrow": "Installieren",
@@ -182,7 +182,7 @@
   "Status": {
     "eyebrow": "Projektstatus",
     "heading": "Phronesis befindet sich im frühen Alpha.",
-    "p1": "Die API wird sich ändern. Wir arbeiten öffentlich, um ein Framework zu bauen, das Agentensysteme ernst nimmt — typisiert, komponierbar, beobachtbar. Keine Produktionsbehauptungen, keine erfundenen Fallstudien, keine Enterprise-Schranken. Nur der Code und ein ehrliches Bekenntnis zu seinem Design.",
+    "p1": "Die API wird sich ändern. Wir arbeiten öffentlich, um ein Framework zu bauen, das Agentensysteme ernst nimmt - typisiert, komponierbar, beobachtbar. Keine Produktionsbehauptungen, keine erfundenen Fallstudien, keine Enterprise-Schranken. Nur der Code und ein ehrliches Bekenntnis zu seinem Design.",
     "p2": "Feedback, Ideen und Beiträge sind über GitHub Discussions und Issues willkommen. Die Roadmap, die rauen Kanten und die offenen Fragen sind alle im Repository.",
     "discussions": "Diskussionen",
     "openIssues": "Offene Issues"

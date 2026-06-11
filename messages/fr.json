@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "title": "Phronesis — Sagesse pratique pour les systèmes d'agents IA",
+    "title": "Phronesis - Sagesse pratique pour les systèmes d'agents IA",
     "description": "Phronesis est un framework Python open source pour construire des systèmes d'agents IA avec des contrats typés, des modèles d'exécution composables et une observabilité intégrée.",
     "ogDescription": "Framework Python open source pour systèmes d'agents IA. Contrats typés, pipelines composables, observabilité intégrée."
   },
@@ -36,14 +36,14 @@
     "heading": "Sagesse pratique pour les systèmes d'agents IA.",
     "leadPrefix": "(φρόνησις) : pour Aristote,",
     "leadStrong": "sagesse pratique",
-    "leadMiddle": "— la capacité de délibérer avec justesse et d'agir avec discernement dans des situations concrètes. Un LLM possède",
+    "leadMiddle": "- la capacité de délibérer avec justesse et d'agir avec discernement dans des situations concrètes. Un LLM possède",
     "leadEpisteme": "(connaissance). Un agent a besoin de",
     "leadEnd": "."
   },
   "Why": {
     "eyebrow": "Pourquoi Phronesis",
     "heading": "Un agent n'est pas un chatbot équipé d'outils.",
-    "p1Before": "Les LLM savent des choses — c'est",
+    "p1Before": "Les LLM savent des choses - c'est",
     "p1Episteme": "épistémè",
     "p1Middle": ". Mais les agents doivent",
     "p1Strong": "décider et agir",
@@ -52,13 +52,13 @@
     "p1End": ". La plupart des frameworks d'agents les traitent comme des chatbots améliorés collés à une boucle d'utilisation d'outils. Phronesis les traite comme des systèmes délibératifs avec des contrats explicites : entrées typées, effets déclarés, mémoire bornée, modèles d'exécution nommés.",
     "p2Before": "Les frameworks existants imposent un choix. D'un côté, vous écrivez un flux de contrôle arbitraire en code : expressivité maximale, et un système multi-agents que personne ne peut déboguer six mois plus tard. De l'autre, tout est décrit en YAML ou en constructeurs de graphes : lisible au premier coup d'œil, impossible dès que vous avez besoin de quelque chose de non trivial. Phronesis sépare la spécification déclarative de l'exécution. Les agents, outils, mémoire et pipelines sont des",
     "p2Strong": "specs typées, immuables, sérialisables en JSON",
-    "p2End": ". Les modèles d'exécution proviennent d'un catalogue fermé et bien défini — expressivité sans chaos.",
+    "p2End": ". Les modèles d'exécution proviennent d'un catalogue fermé et bien défini - expressivité sans chaos.",
     "p3": "Chaque exécution est observable via OpenTelemetry, chaque spec est versionnable, chaque contrat est une vérification à l'exécution, pas un commentaire dans un prompt. C'est la différence entre un framework qui produit des démos et un qui produit des systèmes que vous pouvez exploiter."
   },
   "CodeTour": {
     "eyebrow": "Tour du code",
     "heading": "L'API en quatre extraits.",
-    "intro": "Du vrai Python. De la vraie forme. Le framework ci-dessous est en alpha précoce — la surface va croître, mais le design restera aussi épuré.",
+    "intro": "Du vrai Python. De la vraie forme. Le framework ci-dessous est en alpha précoce - la surface va croître, mais le design restera aussi épuré.",
     "tabs": {
       "agent": {
         "label": "Agent",
@@ -82,7 +82,7 @@
   "Patterns": {
     "eyebrow": "Modèles",
     "heading": "Conçu pour les formes d'agents qui reviennent.",
-    "intro": "Ce sont des modèles que le framework prend en charge aujourd'hui. Ce ne sont pas des études de cas — nous n'avons pas encore d'utilisateurs en production à revendiquer, et nous ne prétendrons pas le contraire.",
+    "intro": "Ce sont des modèles que le framework prend en charge aujourd'hui. Ce ne sont pas des études de cas - nous n'avons pas encore d'utilisateurs en production à revendiquer, et nous ne prétendrons pas le contraire.",
     "items": {
       "research": {
         "title": "Agents de recherche",
@@ -108,7 +108,7 @@
     "items": {
       "composition": {
         "title": "Composition plutôt qu'héritage",
-        "body": "Les agents sont configurés à partir de pièces — modèle, outils, mémoire, prompts — pas sous-classés. Vous assemblez ; vous ne surchargez pas."
+        "body": "Les agents sont configurés à partir de pièces - modèle, outils, mémoire, prompts - pas sous-classés. Vous assemblez ; vous ne surchargez pas."
       },
       "async": {
         "title": "Async d'abord",
@@ -116,7 +116,7 @@
       },
       "typed": {
         "title": "Fortement typé",
-        "body": "Pydantic v2 partout. Les types ne sont pas de la documentation — ce sont des contrats à l'exécution que le framework applique."
+        "body": "Pydantic v2 partout. Les types ne sont pas de la documentation - ce sont des contrats à l'exécution que le framework applique."
       },
       "immutable": {
         "title": "Specs immuables, exécutions mutables",
@@ -124,11 +124,11 @@
       },
       "observable": {
         "title": "Observabilité intégrée",
-        "body": "Spans OpenTelemetry pour chaque exécution d'agent, appel d'outil et étape de pipeline — dès le premier commit, pas greffé après coup."
+        "body": "Spans OpenTelemetry pour chaque exécution d'agent, appel d'outil et étape de pipeline - dès le premier commit, pas greffé après coup."
       },
       "catalog": {
         "title": "Catalogue fermé de modèles d'exécution",
-        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. Des modes nommés sur lesquels vous pouvez raisonner — pas du flux de contrôle arbitraire."
+        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. Des modes nommés sur lesquels vous pouvez raisonner - pas du flux de contrôle arbitraire."
       }
     }
   },
@@ -170,7 +170,7 @@
       }
     },
     "executionModesTitle": "Modes d'exécution",
-    "executionModesNote": "Un catalogue fermé — suffisamment expressif, suffisamment fini pour qu'on puisse raisonner dessus."
+    "executionModesNote": "Un catalogue fermé - suffisamment expressif, suffisamment fini pour qu'on puisse raisonner dessus."
   },
   "Install": {
     "eyebrow": "Installer",
@@ -182,7 +182,7 @@
   "Status": {
     "eyebrow": "Statut du projet",
     "heading": "Phronesis est en alpha précoce.",
-    "p1": "L'API va changer. Nous travaillons publiquement pour construire un framework qui prend au sérieux les systèmes d'agents — typé, composable, observable. Aucune revendication de production, aucune étude de cas inventée, aucune barrière entreprise. Juste le code, et un engagement honnête envers son design.",
+    "p1": "L'API va changer. Nous travaillons publiquement pour construire un framework qui prend au sérieux les systèmes d'agents - typé, composable, observable. Aucune revendication de production, aucune étude de cas inventée, aucune barrière entreprise. Juste le code, et un engagement honnête envers son design.",
     "p2": "Retours, idées et contributions sont les bienvenus via GitHub Discussions et Issues. La feuille de route, les aspérités et les questions ouvertes sont toutes dans le dépôt.",
     "discussions": "Discussions",
     "openIssues": "Ouvrir des issues"

@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "title": "Phronesis — 面向 AI 智能体系统的实践智慧",
+    "title": "Phronesis - 面向 AI 智能体系统的实践智慧",
     "description": "Phronesis 是一个开源 Python 框架,用于构建具有类型化契约、可组合执行模式和内置可观测性的 AI 智能体系统。",
     "ogDescription": "面向 AI 智能体系统的开源 Python 框架。类型化契约、可组合的管道、内置可观测性。"
   },
@@ -36,14 +36,14 @@
     "heading": "面向 AI 智能体系统的实践智慧。",
     "leadPrefix": "(φρόνησις):对亚里士多德而言,",
     "leadStrong": "实践智慧",
-    "leadMiddle": "— 是在具体情境中善于审议并以判断力行动的能力。LLM 拥有",
+    "leadMiddle": "- 是在具体情境中善于审议并以判断力行动的能力。LLM 拥有",
     "leadEpisteme": "(知识)。智能体需要",
     "leadEnd": "。"
   },
   "Why": {
     "eyebrow": "为何选择 Phronesis",
     "heading": "智能体不是带工具的聊天机器人。",
-    "p1Before": "LLM 知道事物 — 那是",
+    "p1Before": "LLM 知道事物 - 那是",
     "p1Episteme": "知识(episteme)",
     "p1Middle": "。但智能体必须在具体情境中带着判断力",
     "p1Strong": "做出决定并采取行动",
@@ -52,13 +52,13 @@
     "p1End": "。多数智能体框架把它们当作粘在工具使用循环上的增强聊天机器人。Phronesis 把它们当作具有显式契约的审议系统:类型化输入、声明的副作用、有界记忆、命名的执行模式。",
     "p2Before": "现有框架强迫做出选择。一方面,你以代码编写任意控制流:表达力最大,而六个月后没人能调试的多智能体系统。另一方面,一切都用 YAML 或图构造器描述:一眼可读,需要稍微复杂一点的东西时却不可能。Phronesis 将声明式规范与运行时执行分离。智能体、工具、记忆、管道都是",
     "p2Strong": "类型化、不可变、可序列化为 JSON 的规范",
-    "p2End": "。执行模式来自一个闭合、明确定义的目录 — 在不混乱的前提下保有表达力。",
+    "p2End": "。执行模式来自一个闭合、明确定义的目录 - 在不混乱的前提下保有表达力。",
     "p3": "每次运行都可通过 OpenTelemetry 观测,每份规范都可版本化,每个契约都是运行时校验,而不是提示词中的注释。这就是产出 demo 的框架与产出可运维系统的框架之间的区别。"
   },
   "CodeTour": {
     "eyebrow": "代码导览",
     "heading": "四段代码看懂 API。",
-    "intro": "真实的 Python。真实的形态。下面这个框架处于早期 alpha — 表面积会增长,但设计会保持精简。",
+    "intro": "真实的 Python。真实的形态。下面这个框架处于早期 alpha - 表面积会增长,但设计会保持精简。",
     "tabs": {
       "agent": {
         "label": "Agent",
@@ -82,7 +82,7 @@
   "Patterns": {
     "eyebrow": "模式",
     "heading": "为反复出现的智能体形态而设计。",
-    "intro": "这些是框架今天支持的模式。它们不是案例研究 — 我们尚无可宣称的生产用户,也不会假装有。",
+    "intro": "这些是框架今天支持的模式。它们不是案例研究 - 我们尚无可宣称的生产用户,也不会假装有。",
     "items": {
       "research": {
         "title": "研究型智能体",
@@ -108,7 +108,7 @@
     "items": {
       "composition": {
         "title": "组合优于继承",
-        "body": "智能体由组件 — 模型、工具、记忆、提示词 — 配置而成,而非通过子类化。你在装配,而不是覆写。"
+        "body": "智能体由组件 - 模型、工具、记忆、提示词 - 配置而成,而非通过子类化。你在装配,而不是覆写。"
       },
       "async": {
         "title": "异步优先",
@@ -116,7 +116,7 @@
       },
       "typed": {
         "title": "强类型",
-        "body": "全程使用 Pydantic v2。类型不是文档 — 它们是框架强制执行的运行时契约。"
+        "body": "全程使用 Pydantic v2。类型不是文档 - 它们是框架强制执行的运行时契约。"
       },
       "immutable": {
         "title": "规范不可变,运行可变",
@@ -124,11 +124,11 @@
       },
       "observable": {
         "title": "内置可观测性",
-        "body": "每次智能体运行、每次工具调用、每个管道阶段都有 OpenTelemetry span — 从首次提交起,而非后期硬拼。"
+        "body": "每次智能体运行、每次工具调用、每个管道阶段都有 OpenTelemetry span - 从首次提交起,而非后期硬拼。"
       },
       "catalog": {
         "title": "执行模式的闭合目录",
-        "body": "Sequence、Parallel、ReActLoop、Consensus、Debate、Handoff。可推理的命名模式 — 而非任意控制流。"
+        "body": "Sequence、Parallel、ReActLoop、Consensus、Debate、Handoff。可推理的命名模式 - 而非任意控制流。"
       }
     }
   },
@@ -170,7 +170,7 @@
       }
     },
     "executionModesTitle": "执行模式",
-    "executionModesNote": "一个闭合目录 — 足够表达,亦足够有限以便推理。"
+    "executionModesNote": "一个闭合目录 - 足够表达,亦足够有限以便推理。"
   },
   "Install": {
     "eyebrow": "安装",
@@ -182,7 +182,7 @@
   "Status": {
     "eyebrow": "项目状态",
     "heading": "Phronesis 处于早期 alpha。",
-    "p1": "API 会变化。我们公开工作,构建一个严肃对待智能体系统的框架 — 类型化、可组合、可观测。没有生产承诺,没有捏造的案例研究,没有企业门槛。只有代码,以及对其设计的诚实承诺。",
+    "p1": "API 会变化。我们公开工作,构建一个严肃对待智能体系统的框架 - 类型化、可组合、可观测。没有生产承诺,没有捏造的案例研究,没有企业门槛。只有代码,以及对其设计的诚实承诺。",
     "p2": "欢迎通过 GitHub Discussions 和 Issues 提供反馈、想法和贡献。路线图、粗糙之处和悬而未决的问题都在仓库里。",
     "discussions": "讨论",
     "openIssues": "打开 Issues"

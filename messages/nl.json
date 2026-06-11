@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "title": "Phronesis — Praktische wijsheid voor AI-agentsystemen",
+    "title": "Phronesis - Praktische wijsheid voor AI-agentsystemen",
     "description": "Phronesis is een open source Python-framework voor het bouwen van AI-agentsystemen met getypeerde contracten, samenstelbare uitvoeringspatronen en ingebouwde observability.",
     "ogDescription": "Open source Python-framework voor AI-agentsystemen. Getypeerde contracten, samenstelbare pipelines, ingebouwde observability."
   },
@@ -36,14 +36,14 @@
     "heading": "Praktische wijsheid voor AI-agentsystemen.",
     "leadPrefix": "(φρόνησις): voor Aristoteles,",
     "leadStrong": "praktische wijsheid",
-    "leadMiddle": "— het vermogen om goed te beraadslagen en met oordeel te handelen in concrete situaties. Een LLM heeft",
+    "leadMiddle": "- het vermogen om goed te beraadslagen en met oordeel te handelen in concrete situaties. Een LLM heeft",
     "leadEpisteme": "(kennis). Een agent heeft",
     "leadEnd": " nodig."
   },
   "Why": {
     "eyebrow": "Waarom Phronesis",
     "heading": "Een agent is geen chatbot met tools.",
-    "p1Before": "LLM's weten dingen — dat is",
+    "p1Before": "LLM's weten dingen - dat is",
     "p1Episteme": "episteme",
     "p1Middle": ". Maar agents moeten",
     "p1Strong": "beslissen en handelen",
@@ -52,13 +52,13 @@
     "p1End": ". De meeste agent-frameworks behandelen agents als verbeterde chatbots geplakt aan een tool-use-loop. Phronesis behandelt ze als beraadslagende systemen met expliciete contracten: getypeerde invoer, gedeclareerde effecten, begrensd geheugen, benoemde uitvoeringspatronen.",
     "p2Before": "Bestaande frameworks dwingen een keuze af. Aan de ene kant schrijf je willekeurige besturingsstroom als code: maximale expressiviteit, en een multi-agentsysteem dat niemand zes maanden later kan debuggen. Aan de andere kant wordt alles beschreven in YAML of grafenbouwers: in één oogopslag leesbaar, onmogelijk zodra je iets niet-triviaals nodig hebt. Phronesis scheidt declaratieve specificatie van runtime-uitvoering. Agents, tools, geheugen en pipelines zijn",
     "p2Strong": "getypeerde, onveranderlijke, JSON-serialiseerbare specs",
-    "p2End": ". Uitvoeringspatronen komen uit een gesloten, welomschreven catalogus — expressiviteit zonder chaos.",
+    "p2End": ". Uitvoeringspatronen komen uit een gesloten, welomschreven catalogus - expressiviteit zonder chaos.",
     "p3": "Elke run is observable via OpenTelemetry, elke spec is versioneerbaar, elk contract is een runtime-check, geen commentaar in een prompt. Dat is het verschil tussen een framework dat demo's produceert en een dat systemen produceert die je kunt opereren."
   },
   "CodeTour": {
     "eyebrow": "Code-tour",
     "heading": "De API in vier snippets.",
-    "intro": "Echte Python. Echte vorm. Het framework hieronder is in vroege alpha — de oppervlakte zal groeien, maar het ontwerp blijft zo strak.",
+    "intro": "Echte Python. Echte vorm. Het framework hieronder is in vroege alpha - de oppervlakte zal groeien, maar het ontwerp blijft zo strak.",
     "tabs": {
       "agent": {
         "label": "Agent",
@@ -82,7 +82,7 @@
   "Patterns": {
     "eyebrow": "Patronen",
     "heading": "Ontworpen voor de agentvormen die terugkeren.",
-    "intro": "Dit zijn patronen die het framework vandaag ondersteunt. Geen case studies — we hebben nog geen productiegebruikers om op te claimen, en we doen niet alsof.",
+    "intro": "Dit zijn patronen die het framework vandaag ondersteunt. Geen case studies - we hebben nog geen productiegebruikers om op te claimen, en we doen niet alsof.",
     "items": {
       "research": {
         "title": "Onderzoeksagents",
@@ -108,7 +108,7 @@
     "items": {
       "composition": {
         "title": "Compositie boven overerving",
-        "body": "Agents worden geconfigureerd uit onderdelen — model, tools, geheugen, prompts — niet via subklassen. Je stelt samen; je overschrijft niet."
+        "body": "Agents worden geconfigureerd uit onderdelen - model, tools, geheugen, prompts - niet via subklassen. Je stelt samen; je overschrijft niet."
       },
       "async": {
         "title": "Async eerst",
@@ -116,7 +116,7 @@
       },
       "typed": {
         "title": "Sterk getypeerd",
-        "body": "Pydantic v2 overal. Types zijn geen documentatie — het zijn runtime-contracten die het framework afdwingt."
+        "body": "Pydantic v2 overal. Types zijn geen documentatie - het zijn runtime-contracten die het framework afdwingt."
       },
       "immutable": {
         "title": "Onveranderlijke specs, veranderlijke runs",
@@ -124,11 +124,11 @@
       },
       "observable": {
         "title": "Observability ingebouwd",
-        "body": "OpenTelemetry-spans voor elke agent-run, tool-aanroep en pipeline-stap — vanaf de eerste commit, niet er achteraf opgeschroefd."
+        "body": "OpenTelemetry-spans voor elke agent-run, tool-aanroep en pipeline-stap - vanaf de eerste commit, niet er achteraf opgeschroefd."
       },
       "catalog": {
         "title": "Gesloten catalogus van uitvoeringspatronen",
-        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. Benoemde modi waarover je kunt redeneren — geen willekeurige besturingsstroom."
+        "body": "Sequence, Parallel, ReActLoop, Consensus, Debate, Handoff. Benoemde modi waarover je kunt redeneren - geen willekeurige besturingsstroom."
       }
     }
   },
@@ -170,7 +170,7 @@
       }
     },
     "executionModesTitle": "Uitvoeringsmodi",
-    "executionModesNote": "Een gesloten catalogus — expressief genoeg, eindig genoeg om over te redeneren."
+    "executionModesNote": "Een gesloten catalogus - expressief genoeg, eindig genoeg om over te redeneren."
   },
   "Install": {
     "eyebrow": "Installeren",
@@ -182,7 +182,7 @@
   "Status": {
     "eyebrow": "Projectstatus",
     "heading": "Phronesis bevindt zich in vroege alpha.",
-    "p1": "De API zal veranderen. We werken openbaar om een framework te bouwen dat agentsystemen serieus neemt — getypeerd, samenstelbaar, observable. Geen productie-claims, geen verzonnen case studies, geen enterprise-poorten. Alleen de code en een eerlijke toewijding aan het ontwerp.",
+    "p1": "De API zal veranderen. We werken openbaar om een framework te bouwen dat agentsystemen serieus neemt - getypeerd, samenstelbaar, observable. Geen productie-claims, geen verzonnen case studies, geen enterprise-poorten. Alleen de code en een eerlijke toewijding aan het ontwerp.",
     "p2": "Feedback, ideeën en bijdragen zijn welkom via GitHub Discussions en Issues. De roadmap, de ruwe randjes en de open vragen staan allemaal in de repository.",
     "discussions": "Discussies",
     "openIssues": "Open issues"

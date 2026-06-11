@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "title": "Phronesis — Practical wisdom for AI agent systems",
+    "title": "Phronesis - Practical wisdom for AI agent systems",
     "description": "Phronesis is an open source Python framework for building AI agent systems with typed contracts, composable execution patterns, and observability built in.",
     "ogDescription": "Open source Python framework for AI agent systems. Typed contracts, composable pipelines, observability built in."
   },
@@ -36,14 +36,14 @@
     "heading": "Practical wisdom for AI agent systems.",
     "leadPrefix": "(φρόνησις): for Aristotle,",
     "leadStrong": "practical wisdom",
-    "leadMiddle": "— the capacity to deliberate well and act with judgment in concrete situations. An LLM has",
+    "leadMiddle": "- the capacity to deliberate well and act with judgment in concrete situations. An LLM has",
     "leadEpisteme": "(knowledge). An agent needs",
     "leadEnd": "."
   },
   "Why": {
     "eyebrow": "Why Phronesis",
     "heading": "An agent is not a chatbot with tools.",
-    "p1Before": "LLMs know things — that is",
+    "p1Before": "LLMs know things - that is",
     "p1Episteme": "episteme",
     "p1Middle": ". But agents must",
     "p1Strong": "decide and act",
@@ -52,18 +52,18 @@
     "p1End": ". Most agent frameworks treat agents as enhanced chatbots glued to a tool-use loop. Phronesis treats them as deliberating systems with explicit contracts: typed inputs, declared effects, bounded memory, named execution patterns.",
     "p2Before": "Existing frameworks force a choice. On one side, you write arbitrary control flow as code: maximal expressiveness, and a multi-agent system that nobody can debug six months later. On the other, everything is described in YAML or graph-builders: legible at a glance, impossible the moment you need something non-trivial. Phronesis separates declarative specification from runtime execution. Agents, tools, memory, pipelines are",
     "p2Strong": "typed, immutable, JSON-serializable specs",
-    "p2End": ". Execution patterns come from a closed, well-defined catalog — expressiveness without chaos.",
+    "p2End": ". Execution patterns come from a closed, well-defined catalog - expressiveness without chaos.",
     "p3": "Every run is observable through OpenTelemetry, every spec is versionable, every contract is a runtime check, not a comment in a prompt. This is the difference between a framework that produces demos and one that produces systems you can operate."
   },
   "Metrics": {
     "eyebrow": "By the numbers",
     "heading": "Built like infrastructure, not a demo.",
-    "intro": "Phronesis is early, but it is not thin. The surface is small on purpose — and every layer carries its own tests, types, and observability.",
+    "intro": "Phronesis is early, but it is not thin. The surface is small on purpose - and every layer carries its own tests, types, and observability.",
     "items": {
       "modes": {
         "value": "19",
         "label": "Execution modes",
-        "description": "A closed, named catalog — from Sequence and Parallel to Reflexion and Tree Search."
+        "description": "A closed, named catalog - from Sequence and Parallel to Reflexion and Tree Search."
       },
       "examples": {
         "value": "22",
@@ -73,7 +73,7 @@
       "tests": {
         "value": "1,600+",
         "label": "Tests",
-        "description": "Branch coverage gated at 90% — the build fails below the floor."
+        "description": "Branch coverage gated at 90% - the build fails below the floor."
       },
       "modules": {
         "value": "14",
@@ -95,7 +95,7 @@
   "CodeTour": {
     "eyebrow": "Code tour",
     "heading": "The API in four snippets.",
-    "intro": "Real Python, using the public API as it stands today. The framework is in early alpha — the surface will grow, but the design will stay this lean.",
+    "intro": "Real Python, using the public API as it stands today. The framework is in early alpha - the surface will grow, but the design will stay this lean.",
     "tabs": {
       "agent": {
         "label": "Agent",
@@ -107,7 +107,7 @@
       },
       "pipeline": {
         "label": "Pipeline",
-        "description": "Pipelines compose runtime modes. Each step is an Executable — an agent, a callable, or a nested mode."
+        "description": "Pipelines compose runtime modes. Each step is an Executable - an agent, a callable, or a nested mode."
       },
       "mcp": {
         "label": "MCP",
@@ -122,7 +122,7 @@
     "items": {
       "composition": {
         "title": "Composition over inheritance",
-        "body": "Agents are configured from parts — model, tools, memory, prompts — not subclassed. You assemble; you don't override."
+        "body": "Agents are configured from parts - model, tools, memory, prompts - not subclassed. You assemble; you don't override."
       },
       "async": {
         "title": "Async-first",
@@ -130,7 +130,7 @@
       },
       "typed": {
         "title": "Strongly typed",
-        "body": "Pydantic v2 and mypy --strict throughout. Types are not documentation — they are runtime contracts the framework enforces."
+        "body": "Pydantic v2 and mypy --strict throughout. Types are not documentation - they are runtime contracts the framework enforces."
       },
       "immutable": {
         "title": "Immutable specs, mutable runs",
@@ -138,11 +138,11 @@
       },
       "observable": {
         "title": "Observability built in",
-        "body": "OpenTelemetry spans for every agent run, tool call, and pipeline stage — from the first commit, not bolted on."
+        "body": "OpenTelemetry spans for every agent run, tool call, and pipeline stage - from the first commit, not bolted on."
       },
       "catalog": {
         "title": "Closed catalog of execution patterns",
-        "body": "Sequence, Parallel, Debate, Consensus, Handoff, Reflexion, Tree Search and more — nineteen named modes you can reason about, not arbitrary control flow."
+        "body": "Sequence, Parallel, Debate, Consensus, Handoff, Reflexion, Tree Search and more - nineteen named modes you can reason about, not arbitrary control flow."
       }
     }
   },
@@ -184,7 +184,7 @@
       }
     },
     "executionModesTitle": "Execution modes",
-    "executionModesNote": "Nineteen named modes — expressive enough, finite enough to reason about."
+    "executionModesNote": "Nineteen named modes - expressive enough, finite enough to reason about."
   },
   "Quality": {
     "eyebrow": "Engineering",
@@ -197,7 +197,7 @@
       },
       "tested": {
         "title": "Tested to a floor",
-        "description": "1,600+ tests with branch coverage gated at 90% — the build fails below it, never above it on paper."
+        "description": "1,600+ tests with branch coverage gated at 90% - the build fails below it, never above it on paper."
       },
       "deterministic": {
         "title": "Deterministic replay",
@@ -205,11 +205,11 @@
       },
       "observable": {
         "title": "Observable by construction",
-        "description": "OpenTelemetry spans for every agent run, tool call, pipeline stage, and MCP session — correlated by stable ids."
+        "description": "OpenTelemetry spans for every agent run, tool call, pipeline stage, and MCP session - correlated by stable ids."
       },
       "immutable": {
         "title": "Immutable specs",
-        "description": "Agents, tools, and pipelines are frozen, JSON-serializable dataclasses — versionable, diffable, reproducible."
+        "description": "Agents, tools, and pipelines are frozen, JSON-serializable dataclasses - versionable, diffable, reproducible."
       },
       "linted": {
         "title": "Lint-clean",
@@ -227,7 +227,7 @@
   "Status": {
     "eyebrow": "Project status",
     "heading": "Phronesis is in early alpha.",
-    "p1": "The API will change. But the foundations are already here: typed, immutable specs; nineteen named execution modes; deterministic record and replay; OpenTelemetry from the first commit; and over 1,600 tests held to a 90% coverage floor. We build in public — no production claims, no fabricated case studies, no enterprise gates. Just the code, and an honest commitment to its design.",
+    "p1": "The API will change. But the foundations are already here: typed, immutable specs; nineteen named execution modes; deterministic record and replay; OpenTelemetry from the first commit; and over 1,600 tests held to a 90% coverage floor. We build in public - no production claims, no fabricated case studies, no enterprise gates. Just the code, and an honest commitment to its design.",
     "p2": "Feedback, ideas, and contributions are welcome through GitHub Discussions and Issues. The roadmap, the rough edges, and the open questions are all in the repository.",
     "discussions": "Discussions",
     "openIssues": "Open issues"

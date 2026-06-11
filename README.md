@@ -6,12 +6,12 @@
 
 <div align="center">
 
-# Phronesis Framework — Landing Page
+# Phronesis Framework - Landing Page
 
 </div>
 
 <div align="center">
-  The public landing page for the <a href="https://github.com/phronesis-framework/phronesis">Phronesis</a> framework —
+  The public landing page for the <a href="https://github.com/phronesis-framework/phronesis">Phronesis</a> framework -
   an open-source Python framework for AI agent systems with typed contracts,
   composable execution patterns, and observability built in.
 </div>
@@ -41,7 +41,7 @@ A **single multilingual landing page**, not a SaaS marketing site. No signup, no
 
 - Content is translated into **12 languages** via `next-intl` (RTL aware).
 - All page sections are React Server Components; client JavaScript is reserved for genuinely interactive primitives.
-- Code snippets are syntax-highlighted at **build time** with Shiki — zero highlighter JS reaches the browser.
+- Code snippets are syntax-highlighted at **build time** with Shiki - zero highlighter JS reaches the browser.
 - Lighthouse budget: **95+ across all categories**.
 
 <div align="center">
@@ -61,10 +61,10 @@ A **single multilingual landing page**, not a SaaS marketing site. No signup, no
 | Code highlighting | Shiki (server-rendered, zero client JS)                  |
 | Fonts             | Geist Sans + Geist Mono via `next/font`                  |
 | Theme             | `next-themes` (dark default, no flash)                   |
-| i18n              | `next-intl` v4 — 12 locales, RTL support for Arabic      |
+| i18n              | `next-intl` v4 - 12 locales, RTL support for Arabic      |
 | Lighthouse audits | `unlighthouse` (`pnpm lh`)                               |
 | Package manager   | `pnpm`                                                   |
-| Node              | 22 (LTS) — pinned in [`.nvmrc`](./.nvmrc)                |
+| Node              | 22 (LTS) - pinned in [`.nvmrc`](./.nvmrc)                |
 
 <div align="center">
 
@@ -113,7 +113,7 @@ Open <http://localhost:3000>. You will be redirected to the prefix for the negot
 | `pnpm format:check` | Prettier (verify)                         |
 | `pnpm lh`           | Local Lighthouse audit via `unlighthouse` |
 
-CI runs `lint`, `typecheck`, `format:check`, and `build` on every PR — see [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
+CI runs `lint`, `typecheck`, `format:check`, and `build` on every PR - see [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
 
 <div align="center">
 
@@ -162,7 +162,7 @@ src/
 - Inside a bounded context, sibling imports stay relative (`./logo`, `./nav-data`).
 - Across contexts, use `@/components/<bc>/<file>` for clarity.
 - Hooks are always `@/hooks/use-xxx`.
-- No barrel `index.ts` files — direct imports keep the dependency graph explicit and preserve Next.js tree-shaking.
+- No barrel `index.ts` files - direct imports keep the dependency graph explicit and preserve Next.js tree-shaking.
 
 <div align="center">
 
@@ -171,11 +171,11 @@ src/
 </div>
 
 - **Polished and honest.** Polished typography, generous whitespace; every claim points to something real.
-- **Show code, not screenshots of code.** Real, syntax-highlighted, copy-paste-able snippets — driven from [`src/content/snippets.ts`](./src/content/snippets.ts).
+- **Show code, not screenshots of code.** Real, syntax-highlighted, copy-paste-able snippets - driven from [`src/content/snippets.ts`](./src/content/snippets.ts).
 - **No fake testimonials, metrics, or logos.** Until we genuinely have organisations using Phronesis in production with written permission, there is no "Trusted by" section.
 - **No third-party tracking.** No analytics, no widgets, no cookie banners.
 - **Dark mode default**, light mode toggleable, no flash on load.
-- **Performance is part of the message.** Lighthouse 95+ on all metrics. Shiki runs at build time. No motion libraries — animation is a ~40-line `useReveal` hook on top of `IntersectionObserver`.
+- **Performance is part of the message.** Lighthouse 95+ on all metrics. Shiki runs at build time. No motion libraries - animation is a ~40-line `useReveal` hook on top of `IntersectionObserver`.
 - **WCAG 2.1 AA.** Semantic HTML, keyboard navigable, visible focus rings, RTL aware.
 
 <div align="center">

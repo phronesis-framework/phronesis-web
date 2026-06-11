@@ -34,7 +34,7 @@ export function Logo({ className, markOnly = false, asSpan = false, ...props }: 
   }
 
   return (
-    <Link href="/" aria-label="Phronesis — home" className={classes} {...props}>
+    <Link href="/" aria-label="Phronesis - home" className={classes} {...props}>
       {inner}
     </Link>
   );
