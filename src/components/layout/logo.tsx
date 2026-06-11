@@ -7,7 +7,10 @@ interface LogoProps extends React.HTMLAttributes<HTMLAnchorElement> {
   asSpan?: boolean;
 }
 
-export function Logo({ className, markOnly = false, asSpan = false, ...props }: LogoProps) {
+export const Logo = React.forwardRef<HTMLElement, LogoProps>(function Logo(
+  { className, markOnly = false, asSpan = false, ...props },
+  ref,
+) {
   const inner = (
     <>
       <PhiMark className="text-foreground h-6 w-6 sm:h-7 sm:w-7" />
@@ -27,18 +30,29 @@ export function Logo({ className, markOnly = false, asSpan = false, ...props }: 
 
   if (asSpan) {
     return (
-      <span className={classes} aria-label="Phronesis">
+      <span
+        ref={ref as React.Ref<HTMLSpanElement>}
+        className={classes}
+        aria-label="Phronesis"
+        {...props}
+      >
         {inner}
       </span>
     );
   }
 
   return (
-    <Link href="/" aria-label="Phronesis - home" className={classes} {...props}>
+    <Link
+      ref={ref as React.Ref<HTMLAnchorElement>}
+      href="/"
+      aria-label="Phronesis - home"
+      className={classes}
+      {...props}
+    >
       {inner}
     </Link>
   );
-}
+});
 
 function PhiMark({ className }: { className?: string }) {
   return (
