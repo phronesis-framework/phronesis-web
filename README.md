@@ -24,8 +24,9 @@
 
 <div align="center">
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=next.js&logoColor=white)](https://nextjs.org)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,nodejs,pnpm" alt="Next.js · React · TypeScript · Tailwind CSS · Node.js · pnpm" />
+</a>
 
 </div>
 
