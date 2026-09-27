@@ -1,7 +1,5 @@
-#
-
 <div align="center">
-  <img src="./public/assets/lockup/lockup-horizontal-dark.svg" alt="Phronesis Framework" width="60%" />
+  <img src="public/assets/lockup/lockup-horizontal-dark.png" alt="Phronesis Framework - Landing Page" width="100%" />
 </div>
 
 <div align="center">
@@ -11,30 +9,26 @@
 </div>
 
 <div align="center">
-  The public landing page for the <a href="https://github.com/phronesis-framework/phronesis">Phronesis</a> framework -
-  an open-source Python framework for AI agent systems with typed contracts,
-  composable execution patterns, and observability built in.
+  Practical wisdom for AI agent systems.
 </div>
 
 <div align="center">
-  <a href="https://phronesis-framework.com">phronesis-framework.com</a> ·
-  <a href="https://github.com/phronesis-framework/phronesis">framework repo</a> ·
-  <a href="./LICENSE">license</a>
+  <a href="src/">source</a>
 </div>
 
+<br />
+
 <div align="center">
-
-<a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,nodejs,pnpm" alt="Next.js · React · TypeScript · Tailwind CSS · Node.js · pnpm" />
-</a>
-
+  <a href="https://go-skill-icons.vercel.app/">
+    <img src="https://go-skill-icons.vercel.app/api/icons?i=python,typescript,react,nextjs,git&titles=true" alt="Technology stack" />
+  </a>
 </div>
 
 ---
 
 <div align="center">
 
-## 🎯 Project shape
+## 🎯 Purpose
 
 </div>
 
@@ -47,78 +41,15 @@ A **single multilingual landing page**, not a SaaS marketing site. No signup, no
 
 <div align="center">
 
-## 🛠️ Tech stack
+## 🏗️ Architecture
 
 </div>
 
-| Concern           | Choice                                                   |
-| ----------------- | -------------------------------------------------------- |
-| Framework         | Next.js 16 (App Router, RSC by default, Turbopack)       |
-| Language          | TypeScript (strict)                                      |
-| Runtime           | React 19                                                 |
-| Styling           | Tailwind CSS v4 (CSS-first config, no `tailwind.config`) |
-| Primitives        | Radix UI (Dialog, Tabs, Slot)                            |
-| Icons             | `lucide-react`                                           |
-| Code highlighting | Shiki (server-rendered, zero client JS)                  |
-| Fonts             | Geist Sans + Geist Mono via `next/font`                  |
-| Theme             | `next-themes` (dark default, no flash)                   |
-| i18n              | `next-intl` v4 - 12 locales, RTL support for Arabic      |
-| Lighthouse audits | `unlighthouse` (`pnpm lh`)                               |
-| Package manager   | `pnpm`                                                   |
-| Node              | 22 (LTS) - pinned in [`.nvmrc`](./.nvmrc)                |
+The implementation is organized in [src/](src/). See the project layout and source code for the component boundaries.
 
 <div align="center">
 
-## 🌐 Locales
-
-</div>
-
-| Code | Language  | Code | Language      |
-| ---- | --------- | ---- | ------------- |
-| `en` | English   | `it` | Italiano      |
-| `es` | Español   | `ja` | 日本語        |
-| `fr` | Français  | `ko` | 한국어        |
-| `de` | Deutsch   | `zh` | 中文          |
-| `pt` | Português | `nl` | Nederlands    |
-| `ru` | Русский   | `ar` | العربية (RTL) |
-
-Default locale is `en`. The prefix is always present in the URL (`/en/...`, `/es/...`). Translation messages live in [`messages/<locale>.json`](./messages); routing and the RTL set are configured in [`src/i18n/routing.ts`](./src/i18n/routing.ts).
-
-<div align="center">
-
-## 💻 Local development
-
-</div>
-
-```bash
-pnpm install
-pnpm dev
-```
-
-Open <http://localhost:3000>. You will be redirected to the prefix for the negotiated locale.
-
-<div align="center">
-
-## ⚡ Scripts
-
-</div>
-
-| Script              | Purpose                                   |
-| ------------------- | ----------------------------------------- |
-| `pnpm dev`          | Next.js dev server (Turbopack)            |
-| `pnpm build`        | Production build                          |
-| `pnpm start`        | Serve the production build                |
-| `pnpm lint`         | ESLint                                    |
-| `pnpm typecheck`    | TypeScript with `--noEmit`                |
-| `pnpm format`       | Prettier (write)                          |
-| `pnpm format:check` | Prettier (verify)                         |
-| `pnpm lh`           | Local Lighthouse audit via `unlighthouse` |
-
-CI runs `lint`, `typecheck`, `format:check`, and `build` on every PR - see [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
-
-<div align="center">
-
-## 📁 Repository layout
+## 📦 Project layout
 
 </div>
 
@@ -155,7 +86,90 @@ src/
 
 <div align="center">
 
-## 🔗 Import conventions
+## 🛠️ Tech stack
+
+</div>
+
+| Concern           | Choice                                                   |
+| ----------------- | -------------------------------------------------------- |
+| Framework         | Next.js 16 (App Router, RSC by default, Turbopack)       |
+| Language          | TypeScript (strict)                                      |
+| Runtime           | React 19                                                 |
+| Styling           | Tailwind CSS v4 (CSS-first config, no `tailwind.config`) |
+| Primitives        | Radix UI (Dialog, Tabs, Slot)                            |
+| Icons             | `lucide-react`                                           |
+| Code highlighting | Shiki (server-rendered, zero client JS)                  |
+| Fonts             | Geist Sans + Geist Mono via `next/font`                  |
+| Theme             | `next-themes` (dark default, no flash)                   |
+| i18n              | `next-intl` v4 - 12 locales, RTL support for Arabic      |
+| Lighthouse audits | `unlighthouse` (`pnpm lh`)                               |
+| Package manager   | `pnpm`                                                   |
+| Node              | 22 (LTS) - pinned in [`.nvmrc`](./.nvmrc)                |
+
+<div align="center">
+
+## 🚀 Development setup
+
+</div>
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Open <http://localhost:3000>. You will be redirected to the prefix for the negotiated locale.
+
+<div align="center">
+
+## 🧪 Testing and quality gates
+
+</div>
+
+```bash
+npm run typecheck
+npm run lint
+npm run build
+```
+
+<div align="center">
+
+## 🔹 Locales
+
+</div>
+
+| Code | Language  | Code | Language      |
+| ---- | --------- | ---- | ------------- |
+| `en` | English   | `it` | Italiano      |
+| `es` | Español   | `ja` | 日本語        |
+| `fr` | Français  | `ko` | 한국어        |
+| `de` | Deutsch   | `zh` | 中文          |
+| `pt` | Português | `nl` | Nederlands    |
+| `ru` | Русский   | `ar` | العربية (RTL) |
+
+Default locale is `en`. The prefix is always present in the URL (`/en/...`, `/es/...`). Translation messages live in [`messages/<locale>.json`](./messages); routing and the RTL set are configured in [`src/i18n/routing.ts`](./src/i18n/routing.ts).
+
+<div align="center">
+
+## 🔹 Scripts
+
+</div>
+
+| Script              | Purpose                                   |
+| ------------------- | ----------------------------------------- |
+| `pnpm dev`          | Next.js dev server (Turbopack)            |
+| `pnpm build`        | Production build                          |
+| `pnpm start`        | Serve the production build                |
+| `pnpm lint`         | ESLint                                    |
+| `pnpm typecheck`    | TypeScript with `--noEmit`                |
+| `pnpm format`       | Prettier (write)                          |
+| `pnpm format:check` | Prettier (verify)                         |
+| `pnpm lh`           | Local Lighthouse audit via `unlighthouse` |
+
+CI runs `lint`, `typecheck`, `format:check`, and `build` on every PR - see [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
+
+<div align="center">
+
+## 🔹 Import conventions
 
 </div>
 
@@ -167,7 +181,7 @@ src/
 
 <div align="center">
 
-## 🎨 Design principles
+## 🔹 Design principles
 
 </div>
 
@@ -181,7 +195,7 @@ src/
 
 <div align="center">
 
-## ✏️ Editing content
+## 🔹 Editing content
 
 </div>
 
@@ -195,7 +209,7 @@ src/
 
 <div align="center">
 
-## 🚀 Deployment
+## 🔹 Deployment
 
 </div>
 
@@ -203,8 +217,24 @@ Optimised for Vercel or Cloudflare Pages. `next build` emits prerendered routes 
 
 <div align="center">
 
-## 📄 License
-
-[Apache 2.0](./LICENSE).
+## 📚 Documentation
 
 </div>
+
+The sections in this README document the project setup and usage.
+
+<div align="center">
+
+## 🔬 Scope and status
+
+</div>
+
+Practical wisdom for AI agent systems.
+
+<div align="center">
+
+## 📄 License
+
+</div>
+
+[Apache 2.0](./LICENSE).
